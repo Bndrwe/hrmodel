@@ -606,7 +606,13 @@ select:focus,input:focus{outline:1px solid var(--cyan);border-color:var(--cyan);
       <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;">LAST 30 DAYS · AUTO-TRACKED · FACTOR 29</span>
     </div>
     <div id="accuracyPanel" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;" id="accStatGrid">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px;" id="accStatGrid">
+        <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+            <div style="font-family:'Bebas Neue';font-size:28px;color:var(--gold)" id="accPrec15">--%</div>
+            <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">PRECISION@15</div>
+            <div style="font-family:'Space Mono';font-size:8px;color:var(--text3)" id="accPrec15N">Top 15 Picks/Slate</div>
+        </div>
+
         <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
           <div style="font-family:'Bebas Neue';font-size:28px;color:var(--amber)" id="accHiPct">—</div>
           <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">HIGH CONF ACC</div>
@@ -1205,6 +1211,27 @@ function updateLearningLedgers(predData, hrMap){
   }
   lsSet(factorPerfKey(),fp);
 
+  // ── 4. Precision@15 Tracking ──
+  try {
+    const precStats = lsGet('STORE_PREFIX_precision15_v3', { slates: 0, totalTop15: 0, hitsInTop15: 0 });
+    const sortedPicks = [...preds].sort((a, b) => b.gameProb - a.gameProb);
+    const top15 = sortedPicks.slice(0, 15);
+    if (top15.length > 0) {
+      precStats.slates++;
+      precStats.totalTop15 += top15.length;
+      precStats.hitsInTop15 += top15.filter(p => (hrMap[p.pid] || 0) > 0).length;
+      lsSet('STORE_PREFIX_precision15_v3', precStats);
+    }
+    const prec15El = document.getElementById('accPrec15');
+    if (prec15El && precStats.totalTop15 > 0) {
+      const precPct = (precStats.hitsInTop15 / precStats.totalTop15) * 100;
+      prec15El.textContent = precPct.toFixed(1) + '%';
+      const precNEl = document.getElementById('accPrec15N');
+      if (precNEl) precNEl.textContent = precStats.slates + ' slates tracked';
+    }
+  } catch(e) { console.error("Precision tracking error:", e); }
+
+
   // ── 2. Tier calibration (bucket observed vs expected) ──
   // This is the one place we DO use raw hits — because with 50+ picks per bucket
   // luck averages out, so the bucket residual IS a real model bias signal.
@@ -1605,6 +1632,8 @@ function estimatePitchMix(hand,era,gbPct,kPct){
 // BUILD PREDICTIONS
 // ═══════════════════════════════════════
 async function buildPredictions(){
+  try {
+
   // Load today's weather cache (avoids re-fetching wx every rebuild)
   loadWxCache();
 
@@ -1770,6 +1799,15 @@ async function buildPredictions(){
   // Resolve yesterday's predictions in background
   setTimeout(resolveYesterday,3000);
   startLivePolling(games);
+  } catch(e) {
+    console.error("Fatal error in buildPredictions:", e);
+    const l = document.getElementById('loading');
+    if(l) {
+        l.classList.add('fade');
+        setTimeout(()=>l.classList.add('hidden'), 400);
+    }
+    document.getElementById('tableBody').innerHTML = `<tr><td colspan="16" class="empty" style="color:var(--red);">⚠️ Model failed to load due to an error. Check console.</td></tr>`;
+  }
 }
 
 // ═══════════════════════════════════════
@@ -3001,6 +3039,26 @@ window.addEventListener('load',async()=>{
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closeModal();closeBetslip();}
 });
+
+// --- FAILSAFE BOOT LOADER ---
+// Ensures the app never gets stuck on the INITIALIZING screen even if fetch fails or is blocked by file://
+setTimeout(() => {
+  const l = document.getElementById('loading');
+  if (l && !l.classList.contains('hidden') && !l.classList.contains('fade')) {
+    console.warn("Boot timeout or error caught by failsafe. Hiding loader.");
+    const msg = document.getElementById('ldMsg');
+    if(msg) msg.textContent = "PARTIAL LOAD / ERROR";
+    l.classList.add('fade');
+    setTimeout(()=>l.classList.add('hidden'), 400);
+
+    // Check if table is empty
+    const tb = document.getElementById('tableBody');
+    if (tb && tb.innerHTML.includes('Loading predictions...')) {
+        tb.innerHTML = `<tr><td colspan="16" class="empty" style="color:var(--amber);">⚠️ Network Error or API blocked. If opening locally, try running a local server (e.g. <code>python -m http.server</code>).</td></tr>`;
+    }
+  }
+}, 8000); // 8 second failsafe
+
 </script>
 </body>
 </html>
