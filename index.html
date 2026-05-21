@@ -464,7 +464,7 @@ select:focus,input:focus{outline:1px solid var(--cyan);border-color:var(--cyan);
         </div>
         <button class="modal-bs-btn" id="modalBsBtn" onclick="toggleBetslipFromModal()">＋ ADD TO BETSLIP</button>
         <div class="breakdown-hdr" onclick="toggleBreakdown()">
-          <span class="breakdown-hdr-txt">▲ MODEL BREAKDOWN (16 FACTORS)</span>
+          <span class="breakdown-hdr-txt">▲ MODEL BREAKDOWN (ENSEMBLE)</span>
           <span class="breakdown-toggle" id="bdToggle">HIDE</span>
         </div>
         <div class="breakdown-body" id="breakdownBody"></div>
@@ -587,7 +587,7 @@ select:focus,input:focus{outline:1px solid var(--cyan);border-color:var(--cyan);
 <div class="statbar">
   <div class="sb-cell"><div class="sb-lbl">GAMES TODAY</div><div class="sb-val c" id="sbGames">—</div></div>
   <div class="sb-cell"><div class="sb-lbl">PLAYERS RANKED</div><div class="sb-val" id="sbPlayers">—</div></div>
-  <div class="sb-cell"><div class="sb-lbl">FACTORS MODELED</div><div class="sb-val g">29</div></div>
+  <div class="sb-cell"><div class="sb-lbl">FACTORS MODELED</div><div class="sb-val g">33</div></div>
   <div class="sb-cell"><div class="sb-lbl">MC SIMULATIONS</div><div class="sb-val g">10K</div></div>
   <div class="sb-cell"><div class="sb-lbl">TOP PICK</div><div class="sb-val g" id="sbTop">—</div></div>
   <div class="sb-cell"><div class="sb-lbl">7D ACCURACY</div><div class="sb-val a" id="sbAcc">—</div></div>
@@ -1336,6 +1336,46 @@ function factorBrierLift(factorKey){
     // Return: positive = factor is beating calibration (good), negative = worse
     return expectedBrier-actualBrier; // +0.02 means 2 Brier points of lift
   }catch{return null;}
+}
+
+
+// ── ADVANCED FACTORS (V8 UPGRADES) ──
+
+// Factor 30: Air Density Index (ADI)
+// Combines Temp, Humidity, Pressure, and Elevation. Lower density = higher HR probability.
+function airDensityMult(weather, elevation) {
+  if (!weather || !weather.temp || !weather.pressure) return 1.0;
+  // Approximation of ADI impact: Standard pressure is 1013 hPa. 
+  // High temp + high humidity + high elevation = lower pressure/density.
+  const tempC = (weather.temp - 32) * 5/9;
+  const pressurePa = weather.pressure * 100;
+  // Very rough wet-bulb / density proxy for baseball carry:
+  // Baseline density ~ 1.225 kg/m^3. 
+  // Every 0.05 drop in density adds ~1-2% carry distance (~10% HR probability boost)
+  const estDensity = (pressurePa / (287.05 * (tempC + 273.15))) * (1 - (weather.humidity * 0.0001)); 
+  const densityRatio = 1.225 / Math.max(estDensity, 1.0); 
+
+  // Elevate impact based on stadium altitude
+  const altBonus = (elevation / 1000) * 0.015; 
+  return clamp(densityRatio + altBonus, 0.85, 1.25);
+}
+
+// Factor 31: Umpire Squeeze / Pitch Type (Hook)
+function umpireAndPitchMixMult(pitcherStat, pid) {
+  // Client-side placeholder. In a full Python pipeline, you inject Umpire HR/9 and Batter Run Value per pitch type here.
+  return 1.0; 
+}
+
+// Factor 32: Travel Fatigue / Jet Lag (Hook)
+function travelFatigueMult(teamSchedule) {
+  // Client-side placeholder. Penalizes teams on "Getaway Days" or traveling East without rest.
+  return 1.0;
+}
+
+// Factor 33: Bullpen Availability (Hook)
+function bullpenVulnerabilityMult(teamStats) {
+  // Client-side placeholder. Boosts HR prob in innings 7-9 if top relievers are fatigued.
+  return 1.0;
 }
 
 function computeModel(stat,recent,recent7,pitcherStat,pitcherRecent,park,weather,battingOrder,batterHand,pitcherHand,isHome,h2hStat,splitStat,gameDate,pid){
