@@ -2375,7 +2375,22 @@ function applyFilters(){
   if(sort==='iso')arr.sort((a,b)=>b.model.raw.iso-a.model.raw.iso);
   else if(sort==='hrRate')arr.sort((a,b)=>(b.model.raw.hr/b.model.raw.pa)-(a.model.raw.hr/a.model.raw.pa));
   else arr.sort((a,b)=>b.gameProb-a.gameProb);
-  FILTERED=arr;
+  // KEEP ENTIRE SLATE: Only clear games when ALL games from that day are final
+    if(status==='live'){
+      // Group by game date and only show slates where not all games are final
+      const gamesByDate = {};
+      arr.forEach(p => {
+        const d = p.gameDate || 'unknown';
+        if(!gamesByDate[d]) gamesByDate[d] = [];
+        gamesByDate[d].push(p);
+      });
+      // Filter out entire dates where ALL games are final
+      const activeDates = Object.keys(gamesByDate).filter(date => {
+        const games = gamesByDate[date];
+        return games.some(g => g.gameState !== 'Final');
+      });
+      arr = arr.filter(p => activeDates.includes(p.gameDate || 'unknown'));
+    }
   renderTable(arr);
 }
 
