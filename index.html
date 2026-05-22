@@ -2371,8 +2371,7 @@ function applyFilters(){
   if(search)arr=arr.filter(p=>p.name.toLowerCase().includes(search)||p.gameMatchup.toLowerCase().includes(search));
   if(hand==='R')arr=arr.filter(p=>p.batterHand!=='L');
   if(hand==='L')arr=arr.filter(p=>p.batterHand==='L');
-  if(status==='live')arr=arr.filter(p=>p.gameState==='Live');
-  if(status==='conf')arr=arr.filter(p=>p.confirmed);
+  // KEEP PLAYERS AFTER GAME ENDS: if(status==='live'){/* Show live AND final games */} // Was: arr=arr.filter(p=>p.gameState==='Live');  if(status==='conf')arr=arr.filter(p=>p.confirmed);
   if(sort==='iso')arr.sort((a,b)=>b.model.raw.iso-a.model.raw.iso);
   else if(sort==='hrRate')arr.sort((a,b)=>(b.model.raw.hr/b.model.raw.pa)-(a.model.raw.hr/a.model.raw.pa));
   else arr.sort((a,b)=>b.gameProb-a.gameProb);
