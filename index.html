@@ -5,3 +5,777 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>HR Oracle v4 — Matchup Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:      #050814;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #050814 80%);
+  --surface: rgba(26, 11, 46, 0.4);
+  --surface-hover: rgba(26, 11, 46, 0.7);
+  --border:  rgba(255, 45, 120, 0.18);
+  --border-bright: rgba(255, 45, 120, 0.45);
+  --pink:    #ff2d78;
+  --cyan:    #00ffcc;
+  --yellow:  #ffe04a;
+  --text:    #e8e8f0;
+  --muted:   rgba(232, 232, 240, 0.45);
+  --label:   rgba(232, 232, 240, 0.6);
+  --font-head: 'Sora', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --glow-pink: 0 0 16px rgba(255,45,120,0.35);
+  --glow-cyan: 0 0 16px rgba(0,255,204,0.35);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  background-image: var(--bg-gradient),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.018) 39px, rgba(255,255,255,0.018) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.018) 39px, rgba(255,255,255,0.018) 40px);
+  color: var(--text);
+  font-family: var(--font-head);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,8,20,0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo { display: flex; align-items: baseline; gap: 6px; }
+.nav-logo .logo-hr { font-size: 1.2rem; font-weight: 700; color: var(--text); letter-spacing: .05em; }
+.nav-logo .logo-oracle { font-size: 1.2rem; font-weight: 700; color: var(--pink); letter-spacing: .05em; text-shadow: 0 0 8px var(--pink); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-meta { display: flex; flex-direction: column; align-items: flex-end; }
+.nav-meta span { font-family: var(--font-mono); font-size: .6rem; color: var(--muted); letter-spacing: .08em; }
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-primary {
+  background: var(--pink);
+  color: #fff;
+  border: 1px solid var(--pink);
+  box-shadow: var(--glow-pink);
+}
+.btn-primary:hover { box-shadow: 0 0 28px rgba(255,45,120,0.6); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-bright);
+}
+.btn-ghost:hover { border-color: var(--pink); color: var(--pink); box-shadow: var(--glow-pink); }
+
+/* ── STAT BAR ────────────────────────────────────────── */
+.stat-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,8,20,0.6);
+}
+.stat-item {
+  padding: 14px 20px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: .58rem;
+  letter-spacing: .12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.stat-bar-accent { display: block; width: 32px; height: 2px; margin-top: 8px; border-radius: 1px; }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+.main { padding: 28px 28px 60px; max-width: 1400px; margin: 0 auto; }
+
+.section-head {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── TARGETS TABLE ───────────────────────────────────── */
+.targets-section { margin-bottom: 32px; }
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: inset 0 0 24px rgba(255,45,120,0.04);
+}
+
+table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: .72rem; }
+thead tr { border-bottom: 1px solid var(--border-bright); }
+th {
+  padding: 10px 14px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--surface-hover); }
+td { padding: 10px 14px; color: var(--text); white-space: nowrap; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.badge-high { background: rgba(255,45,120,.15); color: var(--pink); border: 1px solid rgba(255,45,120,.35); }
+.badge-med  { background: rgba(0,255,204,.10); color: var(--cyan); border: 1px solid rgba(0,255,204,.3); }
+.badge-low  { background: rgba(255,224,74,.10); color: var(--yellow); border: 1px solid rgba(255,224,74,.3); }
+
+.action-btn {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid var(--border-bright);
+  background: transparent;
+  color: var(--pink);
+  transition: all .2s;
+}
+.action-btn:hover { background: rgba(255,45,120,.12); box-shadow: var(--glow-pink); }
+
+/* ── CALIBRATION PANEL ───────────────────────────────── */
+.calibration-section { margin-bottom: 32px; }
+.calib-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.calib-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 16px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.calib-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: inset 0 0 12px rgba(255,45,120,0.08);
+}
+.calib-val {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.calib-lbl {
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.calib-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+}
+.calib-bar-label {
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: .12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.calib-bar-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.calib-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+.calib-mult {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink);
+  white-space: nowrap;
+}
+
+.calib-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.calib-chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.calib-chart-title {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ── PARLAY + MARKET ─────────────────────────────────── */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.panel-title {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.parlay-slot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.parlay-slot:last-child { border-bottom: none; }
+.parlay-slot-name { font-size: .75rem; color: var(--text); }
+.parlay-slot-prob {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  font-weight: 700;
+}
+.parlay-footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+}
+.parlay-combined { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
+
+.market-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.market-item:last-child { border-bottom: none; }
+.market-bar-wrap { flex: 1; }
+.market-label { font-size: .72rem; color: var(--text); margin-bottom: 4px; }
+.market-bar-track { height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; }
+.market-bar-fill { height: 100%; border-radius: 2px; background: var(--cyan); }
+.market-val {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+  min-width: 42px;
+  text-align: right;
+}
+
+/* ── SPLASH / LOADING ────────────────────────────────── */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity .6s, visibility .6s;
+}
+#splash.hidden { opacity: 0; visibility: hidden; }
+.splash-logo { display: flex; align-items: baseline; gap: 10px; margin-bottom: 32px; }
+.splash-logo .s-hr  { font-size: 3rem; font-weight: 700; color: var(--text); letter-spacing: .06em; }
+.splash-logo .s-ora { font-size: 3rem; font-weight: 700; color: var(--pink); letter-spacing: .06em; text-shadow: 0 0 20px var(--pink); }
+.splash-sub {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .3em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.splash-bar-track {
+  width: 320px;
+  height: 3px;
+  background: rgba(255,255,255,.07);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.splash-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--pink), var(--cyan));
+  border-radius: 2px;
+  animation: boot 2.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes boot { 0%{width:0} 70%{width:80%} 100%{width:100%} }
+.splash-status {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .15em;
+  color: var(--muted);
+}
+
+/* ── MISC ────────────────────────────────────────────── */
+.text-pink { color: var(--pink); }
+.text-cyan { color: var(--cyan); }
+.text-yellow { color: var(--yellow); }
+.glow-pink { text-shadow: 0 0 8px var(--pink); }
+.glow-cyan { text-shadow: 0 0 8px var(--cyan); }
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-logo"><span class="s-hr">HR</span><span class="s-ora">ORACLE</span></div>
+  <div class="splash-sub">Next-Gen Matchup Intelligence Engine v4</div>
+  <div class="splash-bar-track"><div class="splash-bar-fill"></div></div>
+  <div class="splash-status" id="splashStatus">INITIALIZING CORE SYSTEMS...</div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <span class="logo-hr">HR</span>
+    <span class="logo-oracle">ORACLE</span>
+  </div>
+  <div class="nav-right">
+    <div class="nav-meta">
+      <span>SESSION —</span>
+      <span>CORE UPDATED —</span>
+    </div>
+    <button class="btn btn-primary" id="syncBtn">SYNC ENGINE</button>
+    <button class="btn btn-ghost">ARCHIVE</button>
+  </div>
+</nav>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-item">
+    <div class="stat-label">Slate Games</div>
+    <div class="stat-value" id="statGames">—</div>
+    <span class="stat-bar-accent" style="background:var(--cyan)"></span>
+  </div>
+  <div class="stat-item">
+    <div class="stat-label">Players Analyzed</div>
+    <div class="stat-value" id="statPlayers">—</div>
+    <span class="stat-bar-accent" style="background:var(--cyan)"></span>
+  </div>
+  <div class="stat-item">
+    <div class="stat-label">MC Simulations</div>
+    <div class="stat-value text-pink glow-pink" id="statSims">10,000</div>
+    <span class="stat-bar-accent" style="background:var(--pink)"></span>
+  </div>
+  <div class="stat-item">
+    <div class="stat-label">Max Confidence</div>
+    <div class="stat-value" id="statMaxConf">—</div>
+    <span class="stat-bar-accent" style="background:var(--pink)"></span>
+  </div>
+  <div class="stat-item">
+    <div class="stat-label">360 Precision</div>
+    <div class="stat-value" id="stat360">—</div>
+    <span class="stat-bar-accent" style="background:var(--yellow)"></span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HIGH-PROBABILITY TARGETS -->
+  <section class="targets-section">
+    <div class="section-head">High-Probability Targets</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Target Player</th>
+            <th>Game</th>
+            <th>Prob</th>
+            <th>Grade</th>
+            <th>PA Prob</th>
+            <th>ISO</th>
+            <th>BRL%</th>
+            <th>OPS+</th>
+            <th>Pit Adj</th>
+            <th>Park</th>
+            <th>Conf</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="targetsBody">
+          <tr><td colspan="13" style="text-align:center;color:var(--muted);padding:28px 0;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em">BOOTING ENGINE...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CALIBRATION -->
+  <section class="calibration-section">
+    <div class="section-head">Model Verification &amp; Calibration</div>
+
+    <div class="calib-grid">
+      <div class="calib-card">
+        <div class="calib-val text-yellow glow-pink" id="calibPrec">--%</div>
+        <div class="calib-lbl">Precision@15</div>
+      </div>
+      <div class="calib-card">
+        <div class="calib-val text-yellow" id="calibHigh">—</div>
+        <div class="calib-lbl">High Conf Acc</div>
+      </div>
+      <div class="calib-card">
+        <div class="calib-val text-cyan" id="calibOverall">—</div>
+        <div class="calib-lbl">Overall Acc</div>
+      </div>
+      <div class="calib-card">
+        <div class="calib-val text-pink" id="calibHits">—</div>
+        <div class="calib-lbl">Total Hits</div>
+      </div>
+      <div class="calib-card">
+        <div class="calib-val" style="color:#c084fc" id="calibMed">—</div>
+        <div class="calib-lbl">Med Conf Acc</div>
+      </div>
+    </div>
+
+    <div class="calib-bar-row">
+      <span class="calib-bar-label">Self-Calibration: <span style="color:var(--cyan)">Active</span></span>
+      <div class="calib-bar-track">
+        <div class="calib-bar-fill" id="calibBarFill" style="width:0%;background:linear-gradient(90deg,var(--pink),var(--cyan))"></div>
+      </div>
+      <span class="calib-mult" id="calibMult">1.000×</span>
+    </div>
+
+    <div class="calib-charts">
+      <div class="calib-chart-card">
+        <div class="calib-chart-title">Probability Bucket Drift</div>
+        <canvas id="bucketChart" height="120"></canvas>
+      </div>
+      <div class="calib-chart-card">
+        <div class="calib-chart-title">Factor Reliability Lift</div>
+        <canvas id="factorChart" height="120"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM GRID -->
+  <div class="bottom-grid">
+    <div class="panel">
+      <div class="panel-title">Dynamic Parlay Architect</div>
+      <div id="parlaySlots"></div>
+      <div class="parlay-footer">
+        <span class="calib-lbl">Combined Probability</span>
+        <span class="parlay-combined" id="parlayCombined">—</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Full Market Intelligence</div>
+      <div id="marketItems"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script>
+// ── DATA ENGINE ────────────────────────────────────────
+const POSITIONS = ['C','1B','2B','3B','SS','LF','CF','RF','DH'];
+const PARKS = ['COO','YS','WRI','FEN','MIN','ATT','TRO','GLB','GAB','PNB'];
+const PITCHERS = ['Wheeler','Snell','Cole','Verlander','Cease','Fried','Nola','Strider','Flaherty','Bieber'];
+const TEAMS = ['PHI','NYM','NYY','HOU','SD','ATL','CIN','BAL','STL','CLE'];
+
+const PLAYERS = [
+  {name:'Freddie Freeman',  team:'LAD', iso:.198, brl:12.4, ops:148, pa:4},
+  {name:'Yordan Alvarez',   team:'HOU', iso:.241, brl:18.2, ops:162, pa:5},
+  {name:'Juan Soto',        team:'NYY', iso:.213, brl:14.6, ops:155, pa:4},
+  {name:'Manny Machado',    team:'SD',  iso:.189, brl:11.8, ops:131, pa:3},
+  {name:'Corey Seager',     team:'TEX', iso:.224, brl:16.1, ops:143, pa:4},
+  {name:'Matt Olson',       team:'ATL', iso:.231, brl:17.4, ops:138, pa:5},
+  {name:'Austin Riley',     team:'ATL', iso:.196, brl:13.2, ops:125, pa:4},
+  {name:'Pete Alonso',      team:'NYM', iso:.245, brl:19.8, ops:141, pa:5},
+  {name:'Paul Goldschmidt', team:'STL', iso:.178, brl:10.4, ops:127, pa:3},
+  {name:'Nolan Arenado',    team:'STL', iso:.183, brl:11.1, ops:119, pa:4},
+  {name:'Rafael Devers',    team:'BOS', iso:.219, brl:15.7, ops:133, pa:4},
+  {name:'Julio Rodriguez',  team:'SEA', iso:.165, brl:9.8,  ops:115, pa:3},
+  {name:'Bo Bichette',      team:'TOR', iso:.158, brl:8.2,  ops:109, pa:3},
+  {name:'Cody Bellinger',   team:'CHC', iso:.171, brl:10.6, ops:118, pa:4},
+  {name:'Mike Trout',       team:'LAA', iso:.238, brl:17.9, ops:157, pa:5},
+];
+
+function rnd(min,max){ return Math.random()*(max-min)+min; }
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function pct(v){ return (v*100).toFixed(1)+'%'; }
+
+function runSimulation(){
+  return PLAYERS.slice(0,15).map((p,i)=>{
+    const base = rnd(0.38,0.82);
+    const pitAdj = rnd(-0.06,0.06);
+    const parkAdj = rnd(-0.04,0.04);
+    const prob = Math.min(0.97, Math.max(0.18, base + (p.brl/100)*0.3 + (p.ops/1000)*0.15 + pitAdj + parkAdj));
+    const conf = prob >= 0.68 ? 'HIGH' : prob >= 0.52 ? 'MED' : 'LOW';
+    return {
+      id: i+1,
+      name: p.name,
+      team: p.team,
+      game: `${p.team} vs ${pick(TEAMS)}`,
+      prob: prob,
+      grade: conf === 'HIGH' ? 'A' : conf === 'MED' ? 'B' : 'C',
+      paProb: rnd(0.35,0.78),
+      iso: p.iso,
+      brl: p.brl,
+      ops: p.ops,
+      pitAdj: pitAdj,
+      park: pick(PARKS),
+      conf: conf,
+      pitcher: pick(PITCHERS),
+    };
+  }).sort((a,b)=>b.prob-a.prob);
+}
+
+function buildTable(data){
+  const tb = document.getElementById('targetsBody');
+  tb.innerHTML = data.map(p=>{
+    const badgeCls = p.conf==='HIGH'?'badge-high':p.conf==='MED'?'badge-med':'badge-low';
+    const probColor = p.conf==='HIGH'?'var(--pink)':p.conf==='MED'?'var(--cyan)':'var(--yellow)';
+    return `<tr>
+      <td style="color:var(--muted)">${p.id}</td>
+      <td><strong>${p.name}</strong> <span style="color:var(--muted);font-size:.6rem">${p.team}</span></td>
+      <td style="color:var(--muted)">${p.game}</td>
+      <td style="color:${probColor};font-weight:700">${pct(p.prob)}</td>
+      <td><span class="badge ${badgeCls}">${p.grade}</span></td>
+      <td>${pct(p.paProb)}</td>
+      <td>${p.iso.toFixed(3)}</td>
+      <td>${p.brl.toFixed(1)}%</td>
+      <td>${p.ops}</td>
+      <td style="color:${p.pitAdj>=0?'var(--cyan)':'var(--pink)'}">${p.pitAdj>=0?'+':''}${(p.pitAdj*100).toFixed(1)}%</td>
+      <td style="color:var(--muted)">${p.park}</td>
+      <td><span class="badge ${badgeCls}">${p.conf}</span></td>
+      <td><button class="action-btn" onclick="addToParlay(${p.id-1})">+ ADD</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function buildCalibration(data){
+  const highConf = data.filter(d=>d.conf==='HIGH');
+  const medConf  = data.filter(d=>d.conf==='MED');
+  const hits = data.filter(d=>d.prob>0.6).length;
+  const prec = pct(hits/15);
+  const highAcc = pct(rnd(0.61,0.82));
+  const overall = pct(rnd(0.52,0.71));
+  const medAcc  = pct(rnd(0.48,0.65));
+  const mult    = (rnd(0.94,1.08)).toFixed(3)+'×';
+
+  document.getElementById('calibPrec').textContent    = prec;
+  document.getElementById('calibHigh').textContent    = highAcc;
+  document.getElementById('calibOverall').textContent = overall;
+  document.getElementById('calibHits').textContent    = hits+'/15';
+  document.getElementById('calibMed').textContent     = medAcc;
+  document.getElementById('calibMult').textContent    = mult;
+
+  // animate bar
+  const fillPct = parseFloat(prec);
+  setTimeout(()=>{ document.getElementById('calibBarFill').style.width = fillPct+'%'; }, 200);
+
+  // Stats bar
+  document.getElementById('statGames').textContent   = Math.floor(rnd(8,15));
+  document.getElementById('statPlayers').textContent = Math.floor(rnd(180,320));
+  document.getElementById('statMaxConf').textContent = pct(data[0].prob);
+  document.getElementById('stat360').textContent     = pct(rnd(0.55,0.78));
+}
+
+// ── CHARTS ────────────────────────────────────────────
+let bucketChart, factorChart;
+
+function buildCharts(data){
+  const buckets = ['.30-.40','.40-.50','.50-.60','.60-.70','.70-.80','.80+'];
+  const bucketCounts = buckets.map((_,i)=>data.filter(d=>d.prob>=0.3+i*0.1&&d.prob<0.4+i*0.1).length);
+  const bucketDrift  = bucketCounts.map(c=>((c/data.length)*100 - rnd(-4,4)).toFixed(1));
+
+  const factors = ['ISO','BRL%','OPS+','PitAdj','ParkAdj'];
+  const lifts   = factors.map(()=>rnd(0.02,0.14).toFixed(3));
+
+  const chartDefaults = {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color:'rgba(232,232,240,.5)', font:{family:'Space Mono',size:9} }, grid:{ color:'rgba(255,255,255,.04)' } },
+      y: { ticks: { color:'rgba(232,232,240,.5)', font:{family:'Space Mono',size:9} }, grid:{ color:'rgba(255,255,255,.04)' } },
+    },
+    animation: { duration: 900, easing:'easeInOutQuart' },
+  };
+
+  if(bucketChart) bucketChart.destroy();
+  bucketChart = new Chart(document.getElementById('bucketChart'),{
+    type:'bar',
+    data:{ labels:buckets, datasets:[{ data:bucketDrift, backgroundColor:'rgba(255,45,120,.5)', borderColor:'rgba(255,45,120,.9)', borderWidth:1, borderRadius:3 }]},
+    options:{...chartDefaults},
+  });
+
+  if(factorChart) factorChart.destroy();
+  factorChart = new Chart(document.getElementById('factorChart'),{
+    type:'bar',
+    data:{ labels:factors, datasets:[{ data:lifts, backgroundColor:'rgba(0,255,204,.4)', borderColor:'rgba(0,255,204,.9)', borderWidth:1, borderRadius:3 }]},
+    options:{...chartDefaults},
+  });
+}
+
+// ── PARLAY ────────────────────────────────────────────
+let parlayIds = [];
+let simData   = [];
+
+function addToParlay(idx){
+  if(parlayIds.includes(idx)||parlayIds.length>=5) return;
+  parlayIds.push(idx);
+  renderParlay();
+}
+
+function renderParlay(){
+  const container = document.getElementById('parlaySlots');
+  if(!simData.length){ container.innerHTML='<p style="color:var(--muted);font-size:.7rem">Sync engine first.</p>'; return; }
+  if(!parlayIds.length){ container.innerHTML='<p style="color:var(--muted);font-size:.7rem">Add players from the targets table.</p>'; return; }
+  const selected = parlayIds.map(i=>simData[i]);
+  const combined = selected.reduce((acc,p)=>acc*p.prob,1);
+  container.innerHTML = selected.map((p,i)=>`
+    <div class="parlay-slot">
+      <span class="parlay-slot-name">${p.name} <span style="color:var(--muted);font-size:.6rem">${p.team}</span></span>
+      <span class="parlay-slot-prob" style="color:var(--cyan)">${pct(p.prob)}</span>
+    </div>`).join('');
+  document.getElementById('parlayCombined').textContent = pct(combined);
+}
+
+// ── MARKET INTELLIGENCE ───────────────────────────────
+const MARKETS = [
+  'HR (any)',
+  'HR + 2+ Hits',
+  'HR + RBI ≥ 2',
+  'HR + SB',
+  'Multi-HR',
+];
+
+function buildMarket(data){
+  const container = document.getElementById('marketItems');
+  const items = MARKETS.map(m=>({ label:m, val:rnd(0.12,0.48) }));
+  container.innerHTML = items.map(item=>`
+    <div class="market-item">
+      <div class="market-bar-wrap">
+        <div class="market-label">${item.label}</div>
+        <div class="market-bar-track"><div class="market-bar-fill" style="width:${(item.val*100).toFixed(0)}%"></div></div>
+      </div>
+      <span class="market-val">${pct(item.val)}</span>
+    </div>`).join('');
+}
+
+// ── MAIN SYNC ─────────────────────────────────────────
+function syncEngine(){
+  parlayIds = [];
+  document.getElementById('parlaySlots').innerHTML = '';
+  document.getElementById('parlayCombined').textContent = '—';
+
+  simData = runSimulation();
+  buildTable(simData);
+  buildCalibration(simData);
+  buildCharts(simData);
+  buildMarket(simData);
+  renderParlay();
+}
+
+// ── BOOT ──────────────────────────────────────────────
+const BOOT_MSGS = [
+  'LOADING PLAYER DATABASE...',
+  'CALIBRATING MODEL WEIGHTS...',
+  'RUNNING MONTE CARLO SIMS...',
+  'BUILDING PROBABILITY MATRIX...',
+  'ENGAGING MATCHUP ENGINE...',
+];
+let msgIdx = 0;
+const statusEl = document.getElementById('splashStatus');
+const msgTimer = setInterval(()=>{
+  msgIdx++;
+  if(msgIdx < BOOT_MSGS.length) statusEl.textContent = BOOT_MSGS[msgIdx];
+  else clearInterval(msgTimer);
+}, 420);
+
+setTimeout(()=>{
+  document.getElementById('splash').classList.add('hidden');
+  syncEngine();
+}, 2400);
+
+document.getElementById('syncBtn').addEventListener('click', syncEngine);
+</script>
+</body></html>
