@@ -20,9 +20,10 @@ def evaluate_slate(date_str):
     if not predictions:
         return None
     actuals = {}
+    p10 = precision_at_k(predictions, actuals, 10)
     p15 = precision_at_k(predictions, actuals, 15)
     p20 = precision_at_k(predictions, actuals, 20)
-    return {"date": date_str, "precision@15": p15, "precision@20": p20}
+    return {"date": date_str, "precision@10": p10, "precision@15": p15, "precision@20": p20}
 
 def season_summary():
     history_dir = Path("data/history")
@@ -38,9 +39,11 @@ def season_summary():
     if not results:
         print("No evaluation results")
         return
+    avg_p10 = sum(r["precision@10"] for r in results) / len(results)
     avg_p15 = sum(r["precision@15"] for r in results) / len(results)
     avg_p20 = sum(r["precision@20"] for r in results) / len(results)
     print(f"Season Summary ({len(results)} slates):")
+    print(f"  Average Precision@10: {avg_p10:.3f}")
     print(f"  Average Precision@15: {avg_p15:.3f}")
     print(f"  Average Precision@20: {avg_p20:.3f}")
 
@@ -49,5 +52,6 @@ if __name__ == "__main__":
     result = evaluate_slate(yesterday)
     if result:
         print(f"Yesterday ({yesterday}):")
+        print(f"  Precision@10: {result['precision@10']:.3f}")
         print(f"  Precision@15: {result['precision@15']:.3f}")
         print(f"  Precision@20: {result['precision@20']:.3f}")
