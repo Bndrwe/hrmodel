@@ -24,8 +24,8 @@ def collect_yesterdays_results():
     
     if not schedule or 'dates' not in schedule:
         print(f"No schedule data for {yesterday}")
-    results = [][]
-        
+    results = []
+
     print(f"Collecting results for {yesterday}...")
     
     for dt in schedule.get('dates', []):
