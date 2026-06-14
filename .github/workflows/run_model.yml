@@ -12,90 +12,100 @@ on:
       - 'backend/**'
       - '.github/workflows/run_model.yml'
 
+# Grant write access to the built-in GITHUB_TOKEN so the auto-commit
+# step can push generated data files back to the repository.  Without
+# this block the default token is read-only and every push returns 403.
+permissions:
+  contents: write
+
 jobs:
   generate-predictions:
     if: github.event.schedule == '0 15 * * *' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # Persist credentials so subsequent git commands can push.
+          persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
-        run: |
-          pip install -r backend/requirements.txt
-      
+        run: pip install -r backend/requirements.txt
+
       - name: Run model predictions
-        run: |
-          python backend/model.py
+        run: python backend/model.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Update precision tracking
-        run: |
-          python backend/precision_k.py
-      
+        run: python backend/precision_k.py
+
       - name: Commit predictions
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add data/predictions.json
-          git add data/history/*.json || true
-          git diff-index --quiet HEAD || git commit -m "Update predictions - $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/predictions.json || true
+          git add "data/history/*.json" || true
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit - skipping push."
+          else
+            git commit -m "chore: update predictions $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
 
   collect-results:
     if: github.event.schedule == '0 22 * * *'
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       - name: Install dependencies
-        run: |
-          pip install -r backend/requirements.txt
-      
+        run: pip install -r backend/requirements.txt
+
       - name: Collect game results
-        run: |
-          python backend/collect_results.py
+        run: python backend/collect_results.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Train/adjust model
-        run: |
-          python backend/train_model.py
+        run: python backend/train_model.py
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      
+
       - name: Archive old season data
-        run: |
-          python backend/archive_season.py
-      
+        run: python backend/archive_season.py
+
       - name: Commit results and model updates
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add data/results/*.json || true
-          git add data/model_weights.json || true
-          git add data/training_log.json || true
-          git diff-index --quiet HEAD || git commit -m "Update results and model weights - $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "data/results/*.json"       || true
+          git add data/model_weights.json     || true
+          git add data/training_log.json      || true
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit - skipping push."
+          else
+            git commit -m "chore: update results and model weights $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
