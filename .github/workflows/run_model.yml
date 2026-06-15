@@ -53,12 +53,17 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Stage generated data files (|| true so the step never fails
+          # when a path glob matches nothing).
           git add data/predictions.json || true
           git add "data/history/*.json" || true
+          # Only commit when there are actual changes.
           if git diff-index --quiet HEAD; then
             echo "No changes to commit - skipping push."
           else
             git commit -m "chore: update predictions $(date -u +'%Y-%m-%d %H:%M UTC')"
+            # Use the HTTPS remote that actions/checkout already configured
+            # with the GITHUB_TOKEN credential.
             git push origin HEAD:${{ github.ref_name }}
           fi
 

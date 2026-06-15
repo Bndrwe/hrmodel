@@ -17,7 +17,7 @@ from factors import compute_model
 MLB_API = "https://statsapi.mlb.com/api/v1"
 WEATHER_API = "https://api.open-meteo.com/v1/forecast"
 
-# -- helpers ------------------------------------------------------------------
+# -- helpers ----------------------------------------------------------
 
 def fetch_json(url):
     try:
@@ -46,7 +46,7 @@ def _safe_int(d, key, default=0):
         return default
 
 
-# -- pitcher fetching ---------------------------------------------------------
+# -- pitcher fetching -------------------------------------------------
 
 def fetch_pitcher_data(pitcher_id, season):
     """Fetch season pitching stats and last-3-game log for *pitcher_id*.
@@ -134,7 +134,7 @@ def fetch_pitcher_data(pitcher_id, season):
     return pitcher_stat, pitcher_l3, throws, ip_season
 
 
-# -- weather ------------------------------------------------------------------
+# -- weather ----------------------------------------------------------
 
 def fetch_weather(lat, lon):
     url = (
@@ -147,7 +147,7 @@ def fetch_weather(lat, lon):
         return None
     try:
         hourly = data["hourly"]
-        idx = 13  # Use midday hour (1 PM)
+        idx = 13  # 1 PM local
         return {
             "wind_speed": hourly["wind_speed_10m"][idx],
             "wind_dir":   hourly["wind_direction_10m"][idx],
@@ -157,7 +157,7 @@ def fetch_weather(lat, lon):
         return None
 
 
-# -- venue helpers ------------------------------------------------------------
+# -- venue helpers ----------------------------------------------------
 
 # Minimal park factor table (neutral = 1.0).  Extend as needed.
 PARK_FACTORS = {
@@ -169,7 +169,6 @@ PARK_FACTORS = {
     15:   (1.01, 1.01, 1.01),  # Fenway Park
 }
 
-# Rough lat/lon for weather lookups keyed by park_id.
 PARK_COORDS = {
     2392: (39.7559, -104.9942),
     2395: (32.7073, -117.1566),
@@ -178,7 +177,6 @@ PARK_COORDS = {
     15:   (42.3467, -71.0972),
 }
 
-# CF bearing (degrees) per park for wind calculation.
 PARK_CF_BEARING = {
     2392: 25,
     2395: 300,
@@ -195,7 +193,7 @@ def get_park_info(venue_id):
     return pf_tuple, coords, cf
 
 
-# -- main ---------------------------------------------------------------------
+# -- main -------------------------------------------------------------
 
 def main():
     print("Starting HR Oracle model run...")
@@ -233,8 +231,8 @@ def main():
         if not game_pk:
             continue
 
-        # -- venue / park info -----------------------------------------------
-        venue_id   = game.get("venue", {}).get("id", 0)
+        # -- venue / park info ----------------------------------------
+        venue_id = game.get("venue", {}).get("id", 0)
         pf_tuple, coords, cf_bearing = get_park_info(venue_id)
         pf_overall, pf_lhf, pf_rhf = pf_tuple
 
@@ -244,7 +242,7 @@ def main():
             if weather:
                 weather["cf_bearing"] = cf_bearing
 
-        # -- probable pitchers -----------------------------------------------
+        # -- probable pitchers ----------------------------------------
         teams_sched = game.get("teams", {})
         away_pitcher_id = (
             teams_sched.get("away", {}).get("probablePitcher", {}).get("id")
@@ -257,7 +255,7 @@ def main():
         away_pit_stat, away_pit_l3, away_pit_throws, away_pit_ip = get_pitcher(home_pitcher_id)
         home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip = get_pitcher(away_pitcher_id)
 
-        # -- boxscore for lineup ---------------------------------------------
+        # -- boxscore for lineup --------------------------------------
         boxscore_url = f"{MLB_API}/game/{game_pk}/boxscore"
         box = fetch_json(boxscore_url)
         if not box:
@@ -277,8 +275,8 @@ def main():
                 pit_stat, pit_l3, pit_throws, pit_ip = home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip
                 opp_pitcher_id = away_pitcher_id
 
-            team_abbr  = team_data.get("team", {}).get("abbreviation", "")
-            opp_abbr   = opp_data.get("team",  {}).get("abbreviation", "")
+            team_abbr = team_data.get("team", {}).get("abbreviation", "")
+            opp_abbr  = opp_data.get("team",  {}).get("abbreviation", "")
 
             pitcher_name = ""
             if opp_pitcher_id:
@@ -286,7 +284,6 @@ def main():
                 if pd and pd.get("people"):
                     pitcher_name = pd["people"][0].get("fullName", "")
 
-            # Validate pitcher data before processing batters.
             if pit_stat is None:
                 print(
                     f"[WARN] {side.upper()} batters vs game {game_pk}: "
@@ -296,7 +293,6 @@ def main():
             batters = team_data.get("batters", [])
             batter_order_map = {bid: idx + 1 for idx, bid in enumerate(batters)}
 
-            # Estimate season_day (1-180)
             season_start = date(season, 3, 28)
             season_day   = max(1, (date.today() - season_start).days)
 
@@ -308,7 +304,6 @@ def main():
                 person       = batter_stats.get("person", {})
                 season_stats = batter_stats.get("seasonStats", {}).get("batting", {})
 
-                # Map MLB API camelCase batting stats to the field names factors.py expects.
                 batter_stat = {
                     "pa":  _safe_int(season_stats,   "plateAppearances"),
                     "ab":  _safe_int(season_stats,   "atBats"),
@@ -359,7 +354,7 @@ def main():
 
     predictions.sort(key=lambda x: x["gameProb"], reverse=True)
 
-    # -- validation summary --------------------------------------------------
+    # -- validation summary -------------------------------------------
     missing_pitcher = sum(1 for p in predictions if not p.get("pitcher"))
     if missing_pitcher:
         print(f"[WARN] {missing_pitcher}/{len(predictions)} predictions have no pitcher name.")
