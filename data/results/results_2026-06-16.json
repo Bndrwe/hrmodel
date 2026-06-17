@@ -1,0 +1,3932 @@
+{
+  "date": "2026-06-16",
+  "collected_at": "2026-06-17T23:21:02.786700",
+  "total_players": 436,
+  "total_hrs": 35,
+  "results": [
+    {
+      "date": "2026-06-16",
+      "player_id": 669364,
+      "player_name": "Xavier Edwards",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672640,
+      "player_name": "Otto Lopez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 689414,
+      "player_name": "Liam Hicks",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681715,
+      "player_name": "Heriberto Hern\u00e1ndez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691594,
+      "player_name": "Javier Sanoja",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677870,
+      "player_name": "Leo Jim\u00e9nez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665923,
+      "player_name": "Esteury Ruiz",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805300,
+      "player_name": "Jakob Marsee",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681393,
+      "player_name": "Connor Norby",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663969,
+      "player_name": "Tyler Phillips",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669199,
+      "player_name": "Lake Bachar",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 690978,
+      "player_name": "Dax Fulton",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 667463,
+      "player_name": "John King",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669016,
+      "player_name": "Brandon Marsh",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656941,
+      "player_name": "Kyle Schwarber",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 547180,
+      "player_name": "Bryce Harper",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664761,
+      "player_name": "Alec Bohm",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681082,
+      "player_name": "Bryson Stott",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592663,
+      "player_name": "J.T. Realmuto",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687282,
+      "player_name": "Gabriel Rincones Jr.",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656537,
+      "player_name": "Derek Hill",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 702222,
+      "player_name": "Justin Crawford",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 624641,
+      "player_name": "Edmundo Sosa",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666200,
+      "player_name": "Jes\u00fas Luzardo",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 621383,
+      "player_name": "Tanner Banks",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676661,
+      "player_name": "Max Lazar",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823451
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657041,
+      "player_name": "Lane Thomas",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677951,
+      "player_name": "Bobby Witt Jr.",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695506,
+      "player_name": "Jac Caglianone",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672580,
+      "player_name": "Maikel Garcia",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686555,
+      "player_name": "Isaac Collins",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 516782,
+      "player_name": "Starling Marte",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 521692,
+      "player_name": "Salvador Perez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 679845,
+      "player_name": "Nick Loftin",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686475,
+      "player_name": "Tyler Tolbert",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686681,
+      "player_name": "Michael Massey",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670224,
+      "player_name": "Kameron Misner",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 608379,
+      "player_name": "Michael Wacha",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663738,
+      "player_name": "Daniel Lynch IV",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657756,
+      "player_name": "Connor Seabold",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695578,
+      "player_name": "James Wood",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671277,
+      "player_name": "Luis Garc\u00eda Jr.",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665953,
+      "player_name": "Andr\u00e9s Chaparro",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677588,
+      "player_name": "Jos\u00e9 Tena",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678391,
+      "player_name": "Jorbit Vivas",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678554,
+      "player_name": "Curtis Mead",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682928,
+      "player_name": "CJ Abrams",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686611,
+      "player_name": "Dylan Crews",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695734,
+      "player_name": "Daylen Lile",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 696285,
+      "player_name": "Jacob Young",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686452,
+      "player_name": "Drew Millas",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683083,
+      "player_name": "Nasim Nu\u00f1ez",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 2,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656492,
+      "player_name": "Foster Griffin",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687377,
+      "player_name": "Orlando Ribalta",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663992,
+      "player_name": "Richard Lovelady",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687606,
+      "player_name": "Paxton Schultz",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681402,
+      "player_name": "Gus Varland",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822723
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 543807,
+      "player_name": "George Springer",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676391,
+      "player_name": "Ernie Clement",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 5,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665489,
+      "player_name": "Vladimir Guerrero Jr.",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672386,
+      "player_name": "Alejandro Kirk",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672960,
+      "player_name": "Kazuma Okamoto",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664770,
+      "player_name": "Nathan Lukes",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676914,
+      "player_name": "Davis Schneider",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665926,
+      "player_name": "Andr\u00e9s Gim\u00e9nez",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664702,
+      "player_name": "Myles Straw",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656302,
+      "player_name": "Dylan Cease",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656546,
+      "player_name": "Jeff Hoffman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643511,
+      "player_name": "Tyler Rogers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 667297,
+      "player_name": "Tommy Nance",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686973,
+      "player_name": "Louis Varland",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 807799,
+      "player_name": "Masataka Yoshida",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678882,
+      "player_name": "Ceddanne Rafaela",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677800,
+      "player_name": "Wilyer Abreu",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 575929,
+      "player_name": "Willson Contreras",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680776,
+      "player_name": "Jarren Duran",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 702332,
+      "player_name": "Caleb Durbin",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643396,
+      "player_name": "Isiah Kiner-Falefa",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691785,
+      "player_name": "Marcelo Mayer",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657136,
+      "player_name": "Connor Wong",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 2,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681508,
+      "player_name": "Mickey Gasper",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 801139,
+      "player_name": "Payton Tolle",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592454,
+      "player_name": "Tommy Kahnle",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669711,
+      "player_name": "Greg Weissert",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670245,
+      "player_name": "Ryan Watson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824750
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 803011,
+      "player_name": "Sam Antonacci",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678246,
+      "player_name": "Miguel Vargas",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677592,
+      "player_name": "Everson Pereira",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643217,
+      "player_name": "Andrew Benintendi",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 545341,
+      "player_name": "Randal Grichuk",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 700337,
+      "player_name": "Edgar Quero",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695657,
+      "player_name": "Colson Montgomery",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682668,
+      "player_name": "Luisangel Acu\u00f1a",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695731,
+      "player_name": "Braden Montgomery",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805367,
+      "player_name": "Chase Meidroth",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694378,
+      "player_name": "Jacob Gonzalez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671976,
+      "player_name": "Tristan Peters",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691011,
+      "player_name": "Drew Romo",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663436,
+      "player_name": "Davis Martin",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669684,
+      "player_name": "Chris Murphy",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 697812,
+      "player_name": "Joe Rock",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 700250,
+      "player_name": "Ben Rice",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641355,
+      "player_name": "Cody Bellinger",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680474,
+      "player_name": "Max Schuemann",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 502671,
+      "player_name": "Paul Goldschmidt",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665862,
+      "player_name": "Jazz Chisholm Jr.",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682987,
+      "player_name": "Spencer Jones",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676609,
+      "player_name": "Jos\u00e9 Caballero",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641857,
+      "player_name": "Ryan McMahon",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641555,
+      "player_name": "J.C. Escarra",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683011,
+      "player_name": "Anthony Volpe",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 5,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 543037,
+      "player_name": "Gerrit Cole",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642232,
+      "player_name": "Ryan Yarbrough",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823535
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701807,
+      "player_name": "Carson Benge",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 5,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666182,
+      "player_name": "Bo Bichette",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665742,
+      "player_name": "Juan Soto",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676724,
+      "player_name": "Jared Young",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676572,
+      "player_name": "Eric Wagaman",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805999,
+      "player_name": "A.J. Ewing",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 543760,
+      "player_name": "Marcus Semien",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683146,
+      "player_name": "Brett Baty",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669004,
+      "player_name": "MJ Melendez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668901,
+      "player_name": "Mark Vientos",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682626,
+      "player_name": "Francisco Alvarez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673540,
+      "player_name": "Kodai Senga",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672335,
+      "player_name": "Cionel P\u00e9rez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681810,
+      "player_name": "Austin Warren",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 623211,
+      "player_name": "Huascar Brazob\u00e1n",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 596133,
+      "player_name": "Luke Weaver",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694362,
+      "player_name": "Blake Dunn",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668709,
+      "player_name": "JJ Bleday",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701398,
+      "player_name": "Sal Stewart",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663993,
+      "player_name": "Nathaniel Lowe",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 667472,
+      "player_name": "Dane Myers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 553993,
+      "player_name": "Eugenio Su\u00e1rez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668715,
+      "player_name": "Spencer Steer",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663886,
+      "player_name": "Tyler Stephenson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680574,
+      "player_name": "Matt McLain",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695490,
+      "player_name": "Edwin Arroyo",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663903,
+      "player_name": "Brady Singer",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 594580,
+      "player_name": "Sam Moll",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656271,
+      "player_name": "Brock Burke",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 622088,
+      "player_name": "Tejay Antone",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663574,
+      "player_name": "Tony Santillan",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824504
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 650333,
+      "player_name": "Luis Arraez",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 5,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805811,
+      "player_name": "Bryce Eldridge",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656305,
+      "player_name": "Matt Chapman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 646240,
+      "player_name": "Rafael Devers",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 808982,
+      "player_name": "Jung Hoo Lee",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642715,
+      "player_name": "Willy Adames",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669477,
+      "player_name": "Casey Schmitt",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 813841,
+      "player_name": "Jonah Cox",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687551,
+      "player_name": "Drew Gilbert",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691740,
+      "player_name": "Daniel Susac",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 605288,
+      "player_name": "Adrian Houser",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592662,
+      "player_name": "Robbie Ray",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681916,
+      "player_name": "Dylan Smith",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668873,
+      "player_name": "Caleb Kilian",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686948,
+      "player_name": "Drake Baldwin",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671739,
+      "player_name": "Michael Harris II",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 1,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642201,
+      "player_name": "Eli White",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 621566,
+      "player_name": "Matt Olson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 645277,
+      "player_name": "Ozzie Albies",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642086,
+      "player_name": "Dominic Smith",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643289,
+      "player_name": "Mauricio Dub\u00f3n",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663586,
+      "player_name": "Austin Riley",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 573262,
+      "player_name": "Mike Yastrzemski",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673490,
+      "player_name": "Ha-Seong Kim",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656550,
+      "player_name": "Grant Holmes",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 675916,
+      "player_name": "James Karinchak",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 689266,
+      "player_name": "Dylan Dodd",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 625643,
+      "player_name": "Reynaldo L\u00f3pez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683627,
+      "player_name": "Anthony Molina",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824912
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683953,
+      "player_name": "Travis Bazzana",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677587,
+      "player_name": "Brayan Rocchio",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656555,
+      "player_name": "Rhys Hoskins",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681807,
+      "player_name": "David Fry",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682177,
+      "player_name": "Daniel Schneemann",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 700932,
+      "player_name": "Kyle Manzardo",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656413,
+      "player_name": "Stuart Fairchild",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 690984,
+      "player_name": "Petey Halpin",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680757,
+      "player_name": "Steven Kwan",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672356,
+      "player_name": "Gabriel Arias",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 595978,
+      "player_name": "Austin Hedges",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677944,
+      "player_name": "Slade Cecconi",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670059,
+      "player_name": "Colin Holderman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683769,
+      "player_name": "Hunter Gaddis",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670036,
+      "player_name": "Matt Festa",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592885,
+      "player_name": "Christian Yelich",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694192,
+      "player_name": "Jackson Chourio",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668930,
+      "player_name": "Brice Turang",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 661388,
+      "player_name": "William Contreras",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641343,
+      "player_name": "Jake Bauers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683734,
+      "player_name": "Andrew Vaughn",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686217,
+      "player_name": "Sal Frelick",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669003,
+      "player_name": "Garrett Mitchell",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 806198,
+      "player_name": "Cooper Pratt",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666152,
+      "player_name": "David Hamilton",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 688107,
+      "player_name": "Robert Gasser",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669270,
+      "player_name": "Joel Kuhnel",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676879,
+      "player_name": "Aaron Ashby",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682842,
+      "player_name": "Abner Uribe",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656730,
+      "player_name": "Trevor Megill",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823775
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665487,
+      "player_name": "Fernando Tatis Jr.",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701538,
+      "player_name": "Jackson Merrill",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592518,
+      "player_name": "Manny Machado",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687749,
+      "player_name": "Jase Bowen",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 593428,
+      "player_name": "Xander Bogaerts",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657757,
+      "player_name": "Gavin Sheets",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669392,
+      "player_name": "Samad Taylor",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664034,
+      "player_name": "Ty France",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695238,
+      "player_name": "Will Wagner",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 660710,
+      "player_name": "Rodolfo Dur\u00e1n",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 650633,
+      "player_name": "Michael King",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673513,
+      "player_name": "Yuki Matsui",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676760,
+      "player_name": "Ron Marinaccio",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 593974,
+      "player_name": "Wandy Peralta",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 802139,
+      "player_name": "JJ Wetherholt",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671056,
+      "player_name": "Iv\u00e1n Herrera",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676475,
+      "player_name": "Alec Burleson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691023,
+      "player_name": "Jordan Walker",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663457,
+      "player_name": "Lars Nootbaar",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691026,
+      "player_name": "Masyn Winn",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 699625,
+      "player_name": "Jimmy Crooks",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691458,
+      "player_name": "Blaze Jordan",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701675,
+      "player_name": "Nathan Church",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669467,
+      "player_name": "Andre Pallante",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592773,
+      "player_name": "Ryne Stanek",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676617,
+      "player_name": "Riley O'Brien",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823045
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664983,
+      "player_name": "Jake McCarthy",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 5,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 650489,
+      "player_name": "Willi Castro",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681198,
+      "player_name": "TJ Rumfield",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 696100,
+      "player_name": "Hunter Goodman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687859,
+      "player_name": "Troy Johnston",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691720,
+      "player_name": "Kyle Karros",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694249,
+      "player_name": "Cole Carrigg",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664954,
+      "player_name": "Brett Sullivan",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678662,
+      "player_name": "Ezequiel Tovar",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666397,
+      "player_name": "Edouard Julien",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671289,
+      "player_name": "Tyler Freeman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663372,
+      "player_name": "Ryan Feltner",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680604,
+      "player_name": "Blas Casta\u00f1o",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657514,
+      "player_name": "Brennan Bernardino",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680767,
+      "player_name": "Victor Vodnik",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677955,
+      "player_name": "Jaden Hill",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691718,
+      "player_name": "Pete Crow-Armstrong",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 608324,
+      "player_name": "Alex Bregman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683737,
+      "player_name": "Michael Busch",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673548,
+      "player_name": "Seiya Suzuki",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664023,
+      "player_name": "Ian Happ",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663538,
+      "player_name": "Nico Hoerner",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 807713,
+      "player_name": "Matt Shaw",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 624424,
+      "player_name": "Michael Conforto",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665804,
+      "player_name": "Miguel Amaya",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694208,
+      "player_name": "Mois\u00e9s Ballesteros",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 621020,
+      "player_name": "Dansby Swanson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 699393,
+      "player_name": "Pedro Ram\u00edrez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665795,
+      "player_name": "Edward Cabrera",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669020,
+      "player_name": "Ryan Rolison",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664208,
+      "player_name": "Phil Maton",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663423,
+      "player_name": "Trent Thornton",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668970,
+      "player_name": "Gavin Hollowell",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824667
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663616,
+      "player_name": "Trevor Larnach",
+      "home_runs": 1,
+      "hits": 4,
+      "at_bats": 6,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 621439,
+      "player_name": "Byron Buxton",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 693459,
+      "player_name": "Kyler Fedko",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665019,
+      "player_name": "Kody Clemens",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668952,
+      "player_name": "Ryan Kreidler",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668904,
+      "player_name": "Royce Lewis",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 605137,
+      "player_name": "Josh Bell",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686797,
+      "player_name": "Brooks Lee",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 807712,
+      "player_name": "Luke Keaschall",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656484,
+      "player_name": "Tristan Gray",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 5,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656577,
+      "player_name": "Alex Jackson",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 5,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805673,
+      "player_name": "Zebby Matthews",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701519,
+      "player_name": "Travis Adams",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 689520,
+      "player_name": "Cody Laweryson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592626,
+      "player_name": "Joc Pederson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673962,
+      "player_name": "Josh Jung",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 679822,
+      "player_name": "Justin Foscue",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694671,
+      "player_name": "Wyatt Langford",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683227,
+      "player_name": "Cody Freeman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 607043,
+      "player_name": "Brandon Nimmo",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670032,
+      "player_name": "Nicky Lopez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677649,
+      "player_name": "Ezequiel Duran",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669394,
+      "player_name": "Jake Burger",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669701,
+      "player_name": "Josh Smith",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 696030,
+      "player_name": "Alejandro Osuna",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 553869,
+      "player_name": "Elias D\u00edaz",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677958,
+      "player_name": "Kumar Rocker",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 615698,
+      "player_name": "Cal Quantrill",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641302,
+      "player_name": "Tyler Alexander",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 605452,
+      "player_name": "Joe Ross",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 543309,
+      "player_name": "Kyle Higashioka",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 822888
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805808,
+      "player_name": "Kevin McGonigle",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 693307,
+      "player_name": "Dillon Dingler",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681481,
+      "player_name": "Kerry Carpenter",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663330,
+      "player_name": "Jahmai Jones",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682985,
+      "player_name": "Riley Greene",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 679529,
+      "player_name": "Spencer Torkelson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672761,
+      "player_name": "Wenceel P\u00e9rez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656716,
+      "player_name": "Zach McKinstry",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668670,
+      "player_name": "Jake Rogers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701678,
+      "player_name": "Hao-Yu  Lee",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681546,
+      "player_name": "James Outman",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663837,
+      "player_name": "Matt Vierling",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664285,
+      "player_name": "Framber Valdez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672456,
+      "player_name": "Keider Montero",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676684,
+      "player_name": "Will Vest",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805427,
+      "player_name": "Drew Sommers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665161,
+      "player_name": "Jeremy Pe\u00f1a",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670541,
+      "player_name": "Yordan Alvarez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666211,
+      "player_name": "Taylor Trammell",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 572233,
+      "player_name": "Christian Walker",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670623,
+      "player_name": "Isaac Paredes",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 514888,
+      "player_name": "Jose Altuve",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 673237,
+      "player_name": "Yainer Diaz",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701358,
+      "player_name": "Cam Smith",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694728,
+      "player_name": "Brice Matthews",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694388,
+      "player_name": "Joey Loperfido",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 676694,
+      "player_name": "Jake Meyers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669384,
+      "player_name": "Raynel Delgado",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686613,
+      "player_name": "Hunter Brown",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 595345,
+      "player_name": "Steven Okert",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 660853,
+      "player_name": "Enyel De Los Santos",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687911,
+      "player_name": "Bryan King",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 623352,
+      "player_name": "Josh Hader",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824182
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687263,
+      "player_name": "Zach Neto",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 545361,
+      "player_name": "Mike Trout",
+      "home_runs": 1,
+      "hits": 2,
+      "at_bats": 5,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694384,
+      "player_name": "Nolan Schanuel",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666176,
+      "player_name": "Jo Adell",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663611,
+      "player_name": "Nick Madrigal",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 5,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 685133,
+      "player_name": "Wade Meckler",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642350,
+      "player_name": "Jose Siri",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694203,
+      "player_name": "Denzer Guzman",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681351,
+      "player_name": "Logan O'Hoppe",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 622268,
+      "player_name": "Donovan Walton",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672282,
+      "player_name": "Reid Detmers",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 489446,
+      "player_name": "Kirby Yates",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681217,
+      "player_name": "Chase Silseth",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 606466,
+      "player_name": "Ketel Marte",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 672695,
+      "player_name": "Geraldo Perdomo",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682998,
+      "player_name": "Corbin Carroll",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666971,
+      "player_name": "Lourdes Gurriel Jr.",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 571448,
+      "player_name": "Nolan Arenado",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 545121,
+      "player_name": "Ildemaro Vargas",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691783,
+      "player_name": "Jordan Lawlar",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680728,
+      "player_name": "Adrian Del Castillo",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694410,
+      "player_name": "LuJames Groover",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656976,
+      "player_name": "Pavin Smith",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 518876,
+      "player_name": "Merrill Kelly",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 657044,
+      "player_name": "Ryan Thompson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805299,
+      "player_name": "Brandyn Garcia",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686753,
+      "player_name": "Drey Jameson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 825070
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687462,
+      "player_name": "Spencer Horwitz",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664040,
+      "player_name": "Brandon Lowe",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668804,
+      "player_name": "Bryan Reynolds",
+      "home_runs": 2,
+      "hits": 4,
+      "at_bats": 5,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656811,
+      "player_name": "Ryan O'Hearn",
+      "home_runs": 0,
+      "hits": 3,
+      "at_bats": 5,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 693304,
+      "player_name": "Nick Gonzales",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682848,
+      "player_name": "Endy Rodr\u00edguez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682997,
+      "player_name": "Tyler Callihan",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 695257,
+      "player_name": "Billy Cook",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663968,
+      "player_name": "Jake Mangum",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669707,
+      "player_name": "Jared Triolo",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656605,
+      "player_name": "Mitch Keller",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681895,
+      "player_name": "Evan Sisk",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670990,
+      "player_name": "Yohan Ram\u00edrez",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 682254,
+      "player_name": "Mason Montgomery",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642397,
+      "player_name": "Gregory Soto",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 701762,
+      "player_name": "Nick Kurtz",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669127,
+      "player_name": "Shea Langeliers",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 5,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691016,
+      "player_name": "Tyler Soderstrom",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 805779,
+      "player_name": "Jacob Wilson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666126,
+      "player_name": "Carlos Cortes",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691777,
+      "player_name": "Max Muncy",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680869,
+      "player_name": "Zack Gelof",
+      "home_runs": 1,
+      "hits": 3,
+      "at_bats": 3,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 671732,
+      "player_name": "Lawrence Butler",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687515,
+      "player_name": "Colby Thomas",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 703607,
+      "player_name": "Henry Bolte",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643446,
+      "player_name": "Jeff McNeil",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 675961,
+      "player_name": "Alika Williams",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 678022,
+      "player_name": "Jack Perkins",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686993,
+      "player_name": "Justin Sterner",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663687,
+      "player_name": "Hogan Harris",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 643410,
+      "player_name": "Mark Leiter Jr.",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665660,
+      "player_name": "Elvis Alvarado",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 824991
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 621493,
+      "player_name": "Taylor Ward",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 683002,
+      "player_name": "Gunnar Henderson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668939,
+      "player_name": "Adley Rutschman",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669236,
+      "player_name": "Jeremiah Jackson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 624413,
+      "player_name": "Pete Alonso",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694212,
+      "player_name": "Samuel Basallo",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 665750,
+      "player_name": "Leody Taveras",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681297,
+      "player_name": "Colton Cowser",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677942,
+      "player_name": "Blaze Alexander",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 702616,
+      "player_name": "Jackson Holliday",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 687064,
+      "player_name": "Brandon Young",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 664991,
+      "player_name": "Grant Wolfram",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 552640,
+      "player_name": "Andrew Kittredge",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669211,
+      "player_name": "Keegan Akin",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 641487,
+      "player_name": "J.P. Crawford",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 2,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663728,
+      "player_name": "Cal Raleigh",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 677594,
+      "player_name": "Julio Rodr\u00edguez",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 686527,
+      "player_name": "Dominic Canzone",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 608701,
+      "player_name": "Rob Refsnyder",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 702284,
+      "player_name": "Cole Young",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 645302,
+      "player_name": "Victor Robles",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 806068,
+      "player_name": "Colt Emerson",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670156,
+      "player_name": "Miles Mastrobuoni",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 1,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669302,
+      "player_name": "Logan Gilbert",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 660825,
+      "player_name": "Eduard Bazardo",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 662253,
+      "player_name": "Andr\u00e9s Mu\u00f1oz",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823128
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 650490,
+      "player_name": "Yandy D\u00edaz",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 596103,
+      "player_name": "Austin Slater",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 666018,
+      "player_name": "Jonathan Aranda",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 4,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 691406,
+      "player_name": "Junior Caminero",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 2,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 668723,
+      "player_name": "Ryan Vilade",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 810938,
+      "player_name": "Ben Williamson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 802415,
+      "player_name": "Chandler Simpson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663743,
+      "player_name": "Nick Fortes",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 670764,
+      "player_name": "Taylor Walls",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656876,
+      "player_name": "Drew Rasmussen",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 592155,
+      "player_name": "Cam Booser",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 660271,
+      "player_name": "Shohei Ohtani",
+      "home_runs": 1,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 681624,
+      "player_name": "Andy Pages",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 4,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 518692,
+      "player_name": "Freddie Freeman",
+      "home_runs": 0,
+      "hits": 2,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 605141,
+      "player_name": "Mookie Betts",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 571970,
+      "player_name": "Max Muncy",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 663656,
+      "player_name": "Kyle Tucker",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669899,
+      "player_name": "Ryan Ward",
+      "home_runs": 0,
+      "hits": 1,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669743,
+      "player_name": "Alex Call",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 690976,
+      "player_name": "Alex Freeland",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 642020,
+      "player_name": "Chuckie Robinson",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 3,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 680736,
+      "player_name": "Justin Wrobleski",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 694361,
+      "player_name": "Will Klein",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 669165,
+      "player_name": "Kyle Hurt",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    },
+    {
+      "date": "2026-06-16",
+      "player_id": 656945,
+      "player_name": "Tanner Scott",
+      "home_runs": 0,
+      "hits": 0,
+      "at_bats": 0,
+      "game_pk": 823939
+    }
+  ]
+}
