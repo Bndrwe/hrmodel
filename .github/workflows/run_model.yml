@@ -46,6 +46,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Run game-line predictions (moneyline/spread/total)
+        run: python backend/game_model.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Update precision tracking
         run: python backend/precision_k.py
 
@@ -56,6 +61,7 @@ jobs:
           # Stage generated data files (|| true so the step never fails
           # when a path glob matches nothing).
           git add data/predictions.json || true
+          git add data/game_predictions.json || true
           git add "data/history/*.json" || true
           # Only commit when there are actual changes.
           if git diff-index --quiet HEAD; then

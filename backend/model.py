@@ -1,14 +1,20 @@
 """HR Oracle - main prediction pipeline.
 
-Pitcher data is fetched from the MLB Stats API and passed through to
-compute_model().  Previously every pitcher field was hard-coded to None
-or 'R', which meant platoon splits, K/BB matchup adjustments, and the
-pitcher-fatigue factor were always bypassed.
+Fetches real season stats, recent form, platoon splits, head-to-head
+history, and pitcher stats from the MLB Stats API for every batter in
+today's slate, then feeds them all into compute_model().  Earlier
+versions of this pipeline fetched pitcher stats but never actually used
+them (pitcher_hr_mult/pitcher_k_mult were hard-coded to 1.0), never
+computed ISO (so iso_mult was always exactly 1.0), never fetched batter
+recent-form/splits/H2H (always None), and only had park factors for 5 of
+30 stadiums -- which is why predicted probabilities barely varied
+between players.
 """
 import requests
 import json
 from datetime import datetime, date
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -16,6 +22,7 @@ from factors import compute_model
 
 MLB_API = "https://statsapi.mlb.com/api/v1"
 WEATHER_API = "https://api.open-meteo.com/v1/forecast"
+BATTER_FETCH_WORKERS = 8
 
 # -- helpers ----------------------------------------------------------
 
@@ -51,13 +58,14 @@ def _safe_int(d, key, default=0):
 def fetch_pitcher_data(pitcher_id, season):
     """Fetch season pitching stats and last-3-game log for *pitcher_id*.
 
-    Returns (pitcher_stat_dict, pitcher_l3_list, pitcher_throws_str, ip_season_float).
-    All values fall back to safe defaults if the API call fails so that
-    the rest of the pipeline always receives well-typed inputs.
+    Returns (pitcher_stat_dict, pitcher_l3_list, pitcher_throws_str,
+    ip_season_float, full_name_str). All values fall back to safe
+    defaults if the API call fails so the rest of the pipeline always
+    receives well-typed inputs.
     """
     if not pitcher_id:
         print("[WARN] No pitcher_id supplied - using league-average pitcher stats.")
-        return None, None, "R", None
+        return None, None, "R", None, ""
 
     # Season totals
     stats_url = (
@@ -77,25 +85,36 @@ def fetch_pitcher_data(pitcher_id, season):
         if splits:
             raw = splits[0].get("stat", {})
             ip_season = _safe_float(raw, "inningsPitched")
+            bf = _safe_int(raw, "battersFaced")
+            k = _safe_int(raw, "strikeOuts")
+            bb = _safe_int(raw, "baseOnBalls")
+            # groundOutsToAirouts is a GB:FB-ish ratio; lower ratio means more
+            # fly balls, which correlates with more home runs allowed.
+            gb_ratio = _safe_float(raw, "groundOutsToAirouts", 1.0) or 1.0
+            fb_pct = max(0.30, min(0.72, 0.42 + 0.12 * (1 / max(gb_ratio, 0.5))))
             pitcher_stat = {
                 "hr9":   _safe_float(raw, "homeRunsPer9"),
-                "kPct":  _safe_float(raw, "strikeoutsPer9") / 27.0,
-                "bbPct": _safe_float(raw, "walksPer9")    / 27.0,
-                "fbPct": 0.38,   # not in basic API; use league average
+                "kPct":  (k / bf) if bf > 0 else _safe_float(raw, "strikeoutsPer9") / 27.0,
+                "bbPct": (bb / bf) if bf > 0 else _safe_float(raw, "walksPer9") / 27.0,
+                "fbPct": fb_pct,
                 "era":   _safe_float(raw, "era"),
+                "whip":  _safe_float(raw, "whip", 1.30) or 1.30,
+                "bf":    bf,
                 "ip":    ip_season,
             }
             if pitcher_stat["hr9"] == 0.0 and pitcher_stat["era"] == 0.0:
                 print(f"[WARN] Pitcher {pitcher_id}: all-zero stat block - using None.")
                 pitcher_stat = None
 
-    # Handedness from people endpoint
+    # Handedness + full name from people endpoint
     people_url = f"{MLB_API}/people/{pitcher_id}"
     people_data = fetch_json(people_url)
+    full_name = ""
     if people_data:
         people_list = people_data.get("people", [])
         if people_list:
             throws = people_list[0].get("pitchHand", {}).get("code", "R") or "R"
+            full_name = people_list[0].get("fullName", "")
 
     # Last-3-game log
     log_url = (
@@ -131,7 +150,127 @@ def fetch_pitcher_data(pitcher_id, season):
     else:
         print(f"[WARN] Pitcher {pitcher_id}: stat fetch failed - model will use league averages.")
 
-    return pitcher_stat, pitcher_l3, throws, ip_season
+    return pitcher_stat, pitcher_l3, throws, ip_season, full_name
+
+
+def fetch_team_bullpen_hr9(team_id, season):
+    """Team-level season pitching HR/9 -- used as a proxy for the quality of
+    the pitching staff the batter's team will face over the whole game
+    (there is no free, simple bullpen-only endpoint, so the team total,
+    which includes the probable starter, is the best available signal)."""
+    if not team_id:
+        return None
+    url = (
+        f"{MLB_API}/teams/{team_id}/stats"
+        f"?stats=season&group=pitching&season={season}&sportId=1"
+    )
+    data = fetch_json(url)
+    if not data:
+        return None
+    splits = data.get("stats", [{}])[0].get("splits", []) if data.get("stats") else []
+    if not splits:
+        return None
+    raw = splits[0].get("stat", {})
+    ip = _safe_float(raw, "inningsPitched")
+    hr = _safe_int(raw, "homeRuns")
+    if ip <= 0:
+        return None
+    return hr / ip * 9
+
+
+# -- batter enrichment fetching ----------------------------------------
+
+def fetch_batter_recent(batter_id, season, limit):
+    """Aggregate the last *limit* games of hitting for a batter."""
+    url = (
+        f"{MLB_API}/people/{batter_id}/stats?stats=lastXGames&group=hitting"
+        f"&season={season}&gameType=R&limit={limit}"
+    )
+    data = fetch_json(url)
+    if not data:
+        return None
+    splits = data.get("stats", [{}])[0].get("splits", []) if data.get("stats") else []
+    if not splits:
+        return None
+    agg = {"pa": 0, "hr": 0, "k": 0, "bb": 0, "ab": 0, "h": 0, "dbl": 0, "trp": 0}
+    for s in splits:
+        st = s.get("stat", {}) or {}
+        agg["pa"]  += _safe_int(st, "plateAppearances")
+        agg["hr"]  += _safe_int(st, "homeRuns")
+        agg["k"]   += _safe_int(st, "strikeOuts")
+        agg["bb"]  += _safe_int(st, "baseOnBalls")
+        agg["ab"]  += _safe_int(st, "atBats")
+        agg["h"]   += _safe_int(st, "hits")
+        agg["dbl"] += _safe_int(st, "doubles")
+        agg["trp"] += _safe_int(st, "triples")
+    singles = max(agg["h"] - agg["dbl"] - agg["trp"] - agg["hr"], 0)
+    total_bases = singles + 2 * agg["dbl"] + 3 * agg["trp"] + 4 * agg["hr"]
+    agg["slg"] = round(total_bases / agg["ab"], 3) if agg["ab"] > 0 else None
+    return agg
+
+
+def fetch_batter_split(batter_id, season, opp_pitcher_hand):
+    """Season stats vs LHP or vs RHP -- whichever hand today's actual
+    starter throws, so this reflects the real matchup rather than a
+    generic 'vs opposite hand' guess."""
+    code = "vl" if opp_pitcher_hand == "L" else "vr"
+    url = (
+        f"{MLB_API}/people/{batter_id}/stats?stats=statSplits&group=hitting"
+        f"&season={season}&gameType=R&sitCodes={code}"
+    )
+    data = fetch_json(url)
+    if not data:
+        return None
+    splits = data.get("stats", [{}])[0].get("splits", []) if data.get("stats") else []
+    for sp in splits:
+        if sp.get("split", {}).get("code") == code:
+            st = sp.get("stat", {}) or {}
+            pa = _safe_int(st, "plateAppearances") or _safe_int(st, "atBats")
+            return {"pa": pa, "hr": _safe_int(st, "homeRuns")}
+    return None
+
+
+def fetch_h2h(batter_id, pitcher_id):
+    """Career at-bats for this batter against this specific pitcher."""
+    if not batter_id or not pitcher_id:
+        return None
+    url = (
+        f"{MLB_API}/people/{batter_id}/stats?stats=vsPlayer&group=hitting"
+        f"&opposingPlayerId={pitcher_id}"
+    )
+    data = fetch_json(url)
+    if not data:
+        return None
+    splits = data.get("stats", [{}])[0].get("splits", []) if data.get("stats") else []
+    if not splits:
+        return None
+    st = splits[0].get("stat", {}) or {}
+    pa = _safe_int(st, "plateAppearances") or _safe_int(st, "atBats")
+    return {"pa": pa, "hr": _safe_int(st, "homeRuns")}
+
+
+def fetch_batter_person(batter_id):
+    data = fetch_json(f"{MLB_API}/people/{batter_id}")
+    if not data or not data.get("people"):
+        return None
+    p = data["people"][0]
+    return {
+        "fullName": p.get("fullName", ""),
+        "bats": p.get("batSide", {}).get("code", "R") or "R",
+    }
+
+
+def fetch_batter_extra(batter_id, opp_pitcher_id, opp_pitcher_hand, season):
+    """Everything needed for the recent-form/splits/H2H factors, bundled so
+    it can be dispatched to a thread pool (this is the O(hundreds) fetch
+    stage of the run)."""
+    return {
+        "person":  fetch_batter_person(batter_id),
+        "l7":      fetch_batter_recent(batter_id, season, 7),
+        "l14":     fetch_batter_recent(batter_id, season, 14),
+        "vs_hand": fetch_batter_split(batter_id, season, opp_pitcher_hand),
+        "h2h":     fetch_h2h(batter_id, opp_pitcher_id),
+    }
 
 
 # -- weather ----------------------------------------------------------
@@ -139,7 +278,8 @@ def fetch_pitcher_data(pitcher_id, season):
 def fetch_weather(lat, lon):
     url = (
         f"{WEATHER_API}?latitude={lat}&longitude={lon}"
-        "&hourly=wind_speed_10m,wind_direction_10m,temperature_2m"
+        "&hourly=wind_speed_10m,wind_direction_10m,temperature_2m,precipitation_probability"
+        "&temperature_unit=fahrenheit&wind_speed_unit=mph"
         "&forecast_days=1&timezone=auto"
     )
     data = fetch_json(url)
@@ -147,50 +287,68 @@ def fetch_weather(lat, lon):
         return None
     try:
         hourly = data["hourly"]
-        idx = 13  # 1 PM local
+        idx = 19  # ~7 PM local, typical first pitch window
         return {
-            "wind_speed": hourly["wind_speed_10m"][idx],
-            "wind_dir":   hourly["wind_direction_10m"][idx],
-            "temp_c":     hourly["temperature_2m"][idx],
+            "windSpeed": hourly["wind_speed_10m"][idx],
+            "windDir":   hourly["wind_direction_10m"][idx],
+            "temp":      hourly["temperature_2m"][idx],
+            "precipProb": hourly.get("precipitation_probability", [0] * (idx + 1))[idx],
         }
     except (KeyError, IndexError):
         return None
 
 
-# -- venue helpers ----------------------------------------------------
+# -- venue / park helpers ----------------------------------------------
 
-# Minimal park factor table (neutral = 1.0).  Extend as needed.
+# Real park factors, hand-specific factors, coordinates, CF bearing and
+# altitude for every MLB stadium, keyed by the *home team's* team id (the
+# same real, verified numbers already used by the client-side model in
+# index.html -- kept as a single source of truth instead of the previous
+# 5-stadium table that left 25 teams defaulting to a flat neutral factor
+# and no weather data at all).
 PARK_FACTORS = {
-    # park_id: (overall, lhf, rhf)
-    2392: (1.05, 1.07, 1.03),  # Coors Field
-    2395: (0.94, 0.93, 0.95),  # Petco Park
-    2394: (1.02, 1.02, 1.02),  # Chase Field
-    2680: (0.96, 0.96, 0.96),  # T-Mobile Park
-    15:   (1.01, 1.01, 1.01),  # Fenway Park
+    108: {"name": "Angel Stadium",        "factor": 0.96, "lhf": 0.93, "rhf": 0.99, "lat": 33.800, "lon": -117.883, "cfBearing": 5,   "alt": 150},
+    109: {"name": "Chase Field",          "factor": 1.08, "lhf": 1.10, "rhf": 1.06, "lat": 33.446, "lon": -112.067, "cfBearing": 355, "alt": 1100, "retractable": True},
+    110: {"name": "Camden Yards",         "factor": 1.10, "lhf": 1.12, "rhf": 1.08, "lat": 39.284, "lon": -76.622,  "cfBearing": 340, "alt": 20},
+    111: {"name": "Fenway Park",          "factor": 1.04, "lhf": 1.06, "rhf": 1.02, "lat": 42.347, "lon": -71.097,  "cfBearing": 330, "alt": 20},
+    112: {"name": "Wrigley Field",        "factor": 1.02, "lhf": 1.04, "rhf": 1.00, "lat": 41.948, "lon": -87.655,  "cfBearing": 20,  "alt": 595},
+    113: {"name": "Great American BP",    "factor": 1.16, "lhf": 1.18, "rhf": 1.14, "lat": 39.098, "lon": -84.507,  "cfBearing": 10,  "alt": 490},
+    114: {"name": "Progressive Field",    "factor": 0.93, "lhf": 0.91, "rhf": 0.95, "lat": 41.496, "lon": -81.685,  "cfBearing": 15,  "alt": 660},
+    115: {"name": "Coors Field",          "factor": 1.38, "lhf": 1.40, "rhf": 1.36, "lat": 39.756, "lon": -104.994, "cfBearing": 5,   "alt": 5280},
+    116: {"name": "Comerica Park",        "factor": 0.94, "lhf": 0.92, "rhf": 0.96, "lat": 42.339, "lon": -83.049,  "cfBearing": 355, "alt": 583},
+    117: {"name": "Minute Maid Park",     "factor": 1.09, "lhf": 1.12, "rhf": 1.06, "lat": 29.757, "lon": -95.355,  "cfBearing": 355, "alt": 22,  "retractable": True},
+    118: {"name": "Kauffman Stadium",     "factor": 0.95, "lhf": 0.93, "rhf": 0.97, "lat": 39.051, "lon": -94.480,  "cfBearing": 5,   "alt": 750},
+    119: {"name": "Dodger Stadium",       "factor": 0.95, "lhf": 0.93, "rhf": 0.97, "lat": 34.074, "lon": -118.240, "cfBearing": 20,  "alt": 515},
+    120: {"name": "Nationals Park",       "factor": 1.03, "lhf": 1.04, "rhf": 1.02, "lat": 38.873, "lon": -77.008,  "cfBearing": 5,   "alt": 25},
+    121: {"name": "Citi Field",           "factor": 0.95, "lhf": 0.93, "rhf": 0.97, "lat": 40.757, "lon": -73.846,  "cfBearing": 15,  "alt": 20},
+    133: {"name": "Sutter Health Park",   "factor": 0.94, "lhf": 0.92, "rhf": 0.96, "lat": 38.576, "lon": -121.508, "cfBearing": 340, "alt": 30},
+    134: {"name": "PNC Park",             "factor": 0.96, "lhf": 0.94, "rhf": 0.98, "lat": 40.447, "lon": -80.006,  "cfBearing": 330, "alt": 730},
+    135: {"name": "Petco Park",           "factor": 0.89, "lhf": 0.87, "rhf": 0.91, "lat": 32.707, "lon": -117.157, "cfBearing": 20,  "alt": 62},
+    136: {"name": "T-Mobile Park",        "factor": 0.91, "lhf": 0.89, "rhf": 0.93, "lat": 47.591, "lon": -122.332, "cfBearing": 350, "alt": 13,  "retractable": True},
+    137: {"name": "Oracle Park",          "factor": 0.87, "lhf": 0.85, "rhf": 0.89, "lat": 37.778, "lon": -122.389, "cfBearing": 65,  "alt": 10},
+    138: {"name": "Busch Stadium",        "factor": 0.96, "lhf": 0.94, "rhf": 0.98, "lat": 38.623, "lon": -90.193,  "cfBearing": 350, "alt": 465},
+    139: {"name": "Tropicana Field",      "factor": 0.96, "lhf": 0.94, "rhf": 0.98, "lat": 27.768, "lon": -82.653,  "cfBearing": 5,   "alt": 10,  "dome": True},
+    140: {"name": "Globe Life Field",     "factor": 1.04, "lhf": 1.06, "rhf": 1.02, "lat": 32.747, "lon": -97.082,  "cfBearing": 25,  "alt": 551, "retractable": True},
+    141: {"name": "Rogers Centre",        "factor": 1.03, "lhf": 1.04, "rhf": 1.02, "lat": 43.641, "lon": -79.389,  "cfBearing": 350, "alt": 287, "retractable": True},
+    142: {"name": "Target Field",         "factor": 0.97, "lhf": 0.96, "rhf": 0.98, "lat": 44.982, "lon": -93.278,  "cfBearing": 350, "alt": 840},
+    143: {"name": "Citizens Bank Park",   "factor": 1.11, "lhf": 1.13, "rhf": 1.09, "lat": 39.906, "lon": -75.166,  "cfBearing": 5,   "alt": 20},
+    144: {"name": "Truist Park",          "factor": 1.03, "lhf": 1.04, "rhf": 1.02, "lat": 33.891, "lon": -84.468,  "cfBearing": 355, "alt": 1050},
+    145: {"name": "Guaranteed Rate Field","factor": 1.07, "lhf": 1.09, "rhf": 1.05, "lat": 41.830, "lon": -87.634,  "cfBearing": 10,  "alt": 595},
+    146: {"name": "loanDepot Park",       "factor": 0.95, "lhf": 0.94, "rhf": 0.96, "lat": 25.778, "lon": -80.220,  "cfBearing": 10,  "alt": 6,   "retractable": True},
+    147: {"name": "Yankee Stadium",       "factor": 1.15, "lhf": 1.22, "rhf": 1.08, "lat": 40.829, "lon": -73.926,  "cfBearing": 45,  "alt": 55},
+    158: {"name": "American Family Field","factor": 1.05, "lhf": 1.07, "rhf": 1.03, "lat": 43.028, "lon": -87.971,  "cfBearing": 5,   "alt": 635, "retractable": True},
 }
 
-PARK_COORDS = {
-    2392: (39.7559, -104.9942),
-    2395: (32.7073, -117.1566),
-    2394: (33.4453, -112.0667),
-    2680: (47.5914, -122.3325),
-    15:   (42.3467, -71.0972),
-}
 
-PARK_CF_BEARING = {
-    2392: 25,
-    2395: 300,
-    2394: 30,
-    2680: 15,
-    15:   55,
-}
-
-
-def get_park_info(venue_id):
-    pf_tuple = PARK_FACTORS.get(venue_id, (1.0, 1.0, 1.0))
-    coords    = PARK_COORDS.get(venue_id)
-    cf        = PARK_CF_BEARING.get(venue_id, 0)
-    return pf_tuple, coords, cf
+def get_park_info(team_id):
+    """Returns (park_factor_dict, (lat, lon) | None, cf_bearing, enclosed)."""
+    p = PARK_FACTORS.get(team_id)
+    if not p:
+        return {"lhf": 1.0, "rhf": 1.0, "cfBearing": 0}, None, 0, False
+    park_factor = {"lhf": p["lhf"], "rhf": p["rhf"], "cfBearing": p["cfBearing"]}
+    coords = (p["lat"], p["lon"])
+    enclosed = bool(p.get("dome") or p.get("retractable"))
+    return park_factor, coords, p["cfBearing"], enclosed
 
 
 # -- main -------------------------------------------------------------
@@ -200,7 +358,7 @@ def main():
     today  = date.today().isoformat()
     season = date.today().year
 
-    schedule_url = f"{MLB_API}/schedule?sportId=1&date={today}&hydrate=probablePitcher,venue"
+    schedule_url = f"{MLB_API}/schedule?sportId=1&date={today}&hydrate=probablePitcher,venue,team"
     schedule_data = fetch_json(schedule_url)
     if not schedule_data or not schedule_data.get("dates"):
         print("No games today or API error")
@@ -224,36 +382,48 @@ def main():
             _pitcher_cache[pid] = fetch_pitcher_data(pid, season)
         return _pitcher_cache[pid]
 
-    predictions = []
+    _bullpen_cache = {}
+
+    def get_bullpen(team_id):
+        if team_id not in _bullpen_cache:
+            _bullpen_cache[team_id] = fetch_team_bullpen_hr9(team_id, season)
+        return _bullpen_cache[team_id]
+
+    # -- Pass 1: walk every game/side/batter and build a prediction context.
+    # Recent-form, splits and H2H are deferred to a concurrent fetch stage
+    # below since that's O(hundreds of batters) and would be far too slow
+    # fetched one at a time.
+    contexts = []
+    weather_cache = {}
 
     for game in games:
         game_pk = game.get("gamePk")
         if not game_pk:
             continue
 
-        # -- venue / park info ----------------------------------------
-        venue_id = game.get("venue", {}).get("id", 0)
-        pf_tuple, coords, cf_bearing = get_park_info(venue_id)
-        pf_overall, pf_lhf, pf_rhf = pf_tuple
+        teams_sched = game.get("teams", {})
+        home_team_id = teams_sched.get("home", {}).get("team", {}).get("id")
+        away_team_id = teams_sched.get("away", {}).get("team", {}).get("id")
+
+        # -- venue / park info (keyed by home team, covers all 30 parks) --
+        park_factor, coords, cf_bearing, enclosed = get_park_info(home_team_id)
 
         weather = None
-        if coords:
-            weather = fetch_weather(*coords)
-            if weather:
-                weather["cf_bearing"] = cf_bearing
+        if coords and not enclosed:
+            if coords not in weather_cache:
+                weather_cache[coords] = fetch_weather(*coords)
+            weather = weather_cache[coords]
 
         # -- probable pitchers ----------------------------------------
-        teams_sched = game.get("teams", {})
-        away_pitcher_id = (
-            teams_sched.get("away", {}).get("probablePitcher", {}).get("id")
-        )
-        home_pitcher_id = (
-            teams_sched.get("home", {}).get("probablePitcher", {}).get("id")
-        )
+        away_pitcher_id = teams_sched.get("away", {}).get("probablePitcher", {}).get("id")
+        home_pitcher_id = teams_sched.get("home", {}).get("probablePitcher", {}).get("id")
 
         # Pitcher seen by away batters = home team's starter, and vice-versa.
-        away_pit_stat, away_pit_l3, away_pit_throws, away_pit_ip = get_pitcher(home_pitcher_id)
-        home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip = get_pitcher(away_pitcher_id)
+        away_pit_stat, away_pit_l3, away_pit_throws, away_pit_ip, away_pit_name = get_pitcher(home_pitcher_id)
+        home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip, home_pit_name = get_pitcher(away_pitcher_id)
+
+        away_bullpen_hr9 = get_bullpen(home_team_id)
+        home_bullpen_hr9 = get_bullpen(away_team_id)
 
         # -- boxscore for lineup --------------------------------------
         boxscore_url = f"{MLB_API}/game/{game_pk}/boxscore"
@@ -269,20 +439,16 @@ def main():
             opp_data  = teams.get(opp_side, {})
 
             if side == "away":
-                pit_stat, pit_l3, pit_throws, pit_ip = away_pit_stat, away_pit_l3, away_pit_throws, away_pit_ip
+                pit_stat, pit_l3, pit_throws, pit_ip, pit_name = away_pit_stat, away_pit_l3, away_pit_throws, away_pit_ip, away_pit_name
                 opp_pitcher_id = home_pitcher_id
+                bullpen_hr9 = away_bullpen_hr9
             else:
-                pit_stat, pit_l3, pit_throws, pit_ip = home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip
+                pit_stat, pit_l3, pit_throws, pit_ip, pit_name = home_pit_stat, home_pit_l3, home_pit_throws, home_pit_ip, home_pit_name
                 opp_pitcher_id = away_pitcher_id
+                bullpen_hr9 = home_bullpen_hr9
 
             team_abbr = team_data.get("team", {}).get("abbreviation", "")
             opp_abbr  = opp_data.get("team",  {}).get("abbreviation", "")
-
-            pitcher_name = ""
-            if opp_pitcher_id:
-                pd = fetch_json(f"{MLB_API}/people/{opp_pitcher_id}")
-                if pd and pd.get("people"):
-                    pitcher_name = pd["people"][0].get("fullName", "")
 
             if pit_stat is None:
                 print(
@@ -304,8 +470,14 @@ def main():
                 person       = batter_stats.get("person", {})
                 season_stats = batter_stats.get("seasonStats", {}).get("batting", {})
 
+                pa = _safe_int(season_stats, "plateAppearances")
+                if pa < 40:
+                    continue  # compute_model requires >=40 PA; skip the extra fetches
+
+                slg = _safe_float(season_stats, "slg")
+                avg = _safe_float(season_stats, "avg")
                 batter_stat = {
-                    "pa":  _safe_int(season_stats,   "plateAppearances"),
+                    "pa":  pa,
                     "ab":  _safe_int(season_stats,   "atBats"),
                     "hr":  _safe_int(season_stats,   "homeRuns"),
                     "bb":  _safe_int(season_stats,   "baseOnBalls"),
@@ -313,10 +485,11 @@ def main():
                     "sb":  _safe_int(season_stats,   "stolenBases"),
                     "dbl": _safe_int(season_stats,   "doubles"),
                     "trp": _safe_int(season_stats,   "triples"),
-                    "avg": _safe_float(season_stats, "avg"),
+                    "avg": avg,
                     "obp": _safe_float(season_stats, "obp"),
-                    "slg": _safe_float(season_stats, "slg"),
+                    "slg": slg,
                     "ops": _safe_float(season_stats, "ops"),
+                    "iso": round(max(0.02, min(0.45, slg - avg)), 3),
                 }
 
                 batting_order = batter_order_map.get(batter_id, 5)
@@ -328,36 +501,93 @@ def main():
                     "pitThrows": pit_throws,
                     "order":     batting_order,
                     "dayNight":  game.get("dayNight", "night"),
-                    "pitcher":   pitcher_name,
-                    "park_lhf":  pf_lhf,
-                    "park_rhf":  pf_rhf,
+                    "pitcher":   pit_name,
                 }
 
-                result = compute_model(
-                    batter=person,
-                    batter_stat=batter_stat,
-                    batter_l7=None,
-                    batter_l14=None,
-                    vs_hand=None,
-                    h2h=None,
-                    pitcher_stat=pit_stat,
-                    pitcher_l3=pit_l3,
-                    game=game_ctx,
-                    weather=weather,
-                    park_factor=pf_overall,
-                    season_day=season_day,
-                    pitcher_ip_season=pit_ip,
-                )
+                contexts.append({
+                    "batter_id": batter_id,
+                    "person": person,
+                    "batter_stat": batter_stat,
+                    "game_ctx": game_ctx,
+                    "pitcher_stat": pit_stat,
+                    "pitcher_l3": pit_l3,
+                    "weather": weather,
+                    "park_factor": park_factor,
+                    "season_day": season_day,
+                    "bullpen_hr9": bullpen_hr9,
+                    "pitcher_ip": pit_ip,
+                    "opp_pitcher_id": opp_pitcher_id,
+                    "opp_pitcher_hand": pit_throws,
+                })
 
-                if result:
-                    predictions.append(result)
+    if not contexts:
+        print("No batters met the minimum PA threshold")
+        return
+
+    # -- Pass 2: concurrently fetch recent-form/splits/H2H for every unique
+    # batter (deduping so a batter appearing more than once is only fetched
+    # once).
+    unique_batters = {}
+    for ctx in contexts:
+        unique_batters.setdefault(
+            ctx["batter_id"], (ctx["opp_pitcher_id"], ctx["opp_pitcher_hand"])
+        )
+
+    print(f"Fetching recent form/splits/H2H for {len(unique_batters)} batters...")
+    batter_extra = {}
+    with ThreadPoolExecutor(max_workers=BATTER_FETCH_WORKERS) as ex:
+        futures = {
+            ex.submit(fetch_batter_extra, bid, opp_pid, opp_hand, season): bid
+            for bid, (opp_pid, opp_hand) in unique_batters.items()
+        }
+        for fut in as_completed(futures):
+            bid = futures[fut]
+            try:
+                batter_extra[bid] = fut.result()
+            except Exception as e:
+                print(f"[WARN] Batter {bid} enrichment fetch failed: {e}")
+                batter_extra[bid] = {}
+
+    # -- Pass 3: compute predictions with the full, real dataset ----------
+    predictions = []
+    for ctx in contexts:
+        extra = batter_extra.get(ctx["batter_id"], {})
+        person_full = extra.get("person") or {}
+        batter = dict(ctx["person"])
+        if person_full.get("fullName"):
+            batter["fullName"] = person_full["fullName"]
+        if person_full.get("bats"):
+            batter["bats"] = person_full["bats"]
+
+        result = compute_model(
+            batter=batter,
+            batter_stat=ctx["batter_stat"],
+            batter_l7=extra.get("l7"),
+            batter_l14=extra.get("l14"),
+            vs_hand=extra.get("vs_hand"),
+            h2h=extra.get("h2h"),
+            pitcher_stat=ctx["pitcher_stat"],
+            pitcher_l3=ctx["pitcher_l3"],
+            game=ctx["game_ctx"],
+            weather=ctx["weather"],
+            park_factor=ctx["park_factor"],
+            season_day=ctx["season_day"],
+            bullpen_hr9=ctx["bullpen_hr9"],
+            pitcher_ip_season=ctx["pitcher_ip"],
+        )
+
+        if result:
+            predictions.append(result)
 
     predictions.sort(key=lambda x: x["gameProb"], reverse=True)
 
     # -- validation summary -------------------------------------------
-    missing_pitcher = sum(1 for p in predictions if not p.get("pitcher"))
+    missing_pitcher = sum(1 for p in predictions if not p.get("pitcherName"))
     if missing_pitcher:
         print(f"[WARN] {missing_pitcher}/{len(predictions)} predictions have no pitcher name.")
+    missing_name = sum(1 for p in predictions if not p.get("name"))
+    if missing_name:
+        print(f"[WARN] {missing_name}/{len(predictions)} predictions have no batter name.")
 
     output = {
         "updatedAt": today,
