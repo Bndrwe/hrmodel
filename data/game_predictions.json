@@ -625,34 +625,34 @@
       "homePitcher": "Casey Mize",
       "awayPitcher": "Cristopher S\u00e1nchez",
       "expectedRuns": {
-        "home": 2.82,
-        "away": 3.04
+        "home": 2.84,
+        "away": 2.95
       },
       "moneyline": {
-        "homeProb": 0.4648,
-        "awayProb": 0.5352,
-        "homeOdds": 115,
-        "awayOdds": -115
+        "homeProb": 0.4816,
+        "awayProb": 0.5184,
+        "homeOdds": 108,
+        "awayOdds": -108
       },
       "runLine": {
         "standard": {
           "homeLine": -1.5,
           "awayLine": 1.5,
-          "homeCoverProb": 0.3474,
-          "awayCoverProb": 0.6526
+          "homeCoverProb": 0.3567,
+          "awayCoverProb": 0.6433
         },
         "alternates": [
           {
             "homeLine": -1.0,
             "awayLine": 1.0,
-            "homeCoverProb": 0.3903,
-            "awayCoverProb": 0.6097
+            "homeCoverProb": 0.3998,
+            "awayCoverProb": 0.6002
           },
           {
             "homeLine": -2.5,
             "awayLine": 2.5,
-            "homeCoverProb": 0.2678,
-            "awayCoverProb": 0.7322
+            "homeCoverProb": 0.276,
+            "awayCoverProb": 0.724
           }
         ]
       },
@@ -661,23 +661,23 @@
         "lines": [
           {
             "line": 4.5,
-            "overProb": 0.6165,
-            "underProb": 0.3835
+            "overProb": 0.6103,
+            "underProb": 0.3897
           },
           {
             "line": 5.5,
-            "overProb": 0.5314,
-            "underProb": 0.4686
+            "overProb": 0.525,
+            "underProb": 0.475
           },
           {
             "line": 6.5,
-            "overProb": 0.4449,
-            "underProb": 0.5551
+            "overProb": 0.4385,
+            "underProb": 0.5615
           },
           {
             "line": 7.5,
-            "overProb": 0.3609,
-            "underProb": 0.6391
+            "overProb": 0.3549,
+            "underProb": 0.6451
           }
         ]
       }
@@ -693,34 +693,34 @@
       "homePitcher": "Kyle Bradish",
       "awayPitcher": "Noah Cameron",
       "expectedRuns": {
-        "home": 5.42,
-        "away": 3.99
+        "home": 5.5,
+        "away": 4.06
       },
       "moneyline": {
-        "homeProb": 0.6371,
-        "awayProb": 0.3629,
-        "homeOdds": -176,
-        "awayOdds": 176
+        "homeProb": 0.6358,
+        "awayProb": 0.3642,
+        "homeOdds": -175,
+        "awayOdds": 175
       },
       "runLine": {
         "standard": {
           "homeLine": -1.5,
           "awayLine": 1.5,
-          "homeCoverProb": 0.4942,
-          "awayCoverProb": 0.5058
+          "homeCoverProb": 0.4949,
+          "awayCoverProb": 0.5051
         },
         "alternates": [
           {
             "homeLine": -1.0,
             "awayLine": 1.0,
-            "homeCoverProb": 0.5395,
-            "awayCoverProb": 0.4605
+            "homeCoverProb": 0.5402,
+            "awayCoverProb": 0.4598
           },
           {
             "homeLine": -2.5,
             "awayLine": 2.5,
-            "homeCoverProb": 0.4045,
-            "awayCoverProb": 0.5955
+            "homeCoverProb": 0.4052,
+            "awayCoverProb": 0.5948
           }
         ]
       },
@@ -729,23 +729,23 @@
         "lines": [
           {
             "line": 8.0,
-            "overProb": 0.6206,
-            "underProb": 0.3794
+            "overProb": 0.6326,
+            "underProb": 0.3674
           },
           {
             "line": 9.0,
-            "overProb": 0.5357,
-            "underProb": 0.4643
+            "overProb": 0.5483,
+            "underProb": 0.4517
           },
           {
             "line": 10.0,
-            "overProb": 0.4492,
-            "underProb": 0.5508
+            "overProb": 0.4618,
+            "underProb": 0.5382
           },
           {
             "line": 11.0,
-            "overProb": 0.365,
-            "underProb": 0.635
+            "overProb": 0.377,
+            "underProb": 0.623
           }
         ]
       }
@@ -761,34 +761,34 @@
       "homePitcher": "Kumar Rocker",
       "awayPitcher": "Peter Lambert",
       "expectedRuns": {
-        "home": 3.49,
-        "away": 4.47
+        "home": 3.53,
+        "away": 4.34
       },
       "moneyline": {
-        "homeProb": 0.3893,
-        "awayProb": 0.6107,
-        "homeOdds": 157,
-        "awayOdds": -157
+        "homeProb": 0.4062,
+        "awayProb": 0.5938,
+        "homeOdds": 146,
+        "awayOdds": -146
       },
       "runLine": {
         "standard": {
           "homeLine": -1.5,
           "awayLine": 1.5,
-          "homeCoverProb": 0.287,
-          "awayCoverProb": 0.713
+          "homeCoverProb": 0.2995,
+          "awayCoverProb": 0.7005
         },
         "alternates": [
           {
             "homeLine": -1.0,
             "awayLine": 1.0,
-            "homeCoverProb": 0.3269,
-            "awayCoverProb": 0.6731
+            "homeCoverProb": 0.3401,
+            "awayCoverProb": 0.6599
           },
           {
             "homeLine": -2.5,
             "awayLine": 2.5,
-            "homeCoverProb": 0.2149,
-            "awayCoverProb": 0.7851
+            "homeCoverProb": 0.2257,
+            "awayCoverProb": 0.7743
           }
         ]
       },
@@ -797,23 +797,23 @@
         "lines": [
           {
             "line": 6.5,
-            "overProb": 0.6244,
-            "underProb": 0.3756
+            "overProb": 0.6174,
+            "underProb": 0.3826
           },
           {
             "line": 7.5,
-            "overProb": 0.5397,
-            "underProb": 0.4603
+            "overProb": 0.5324,
+            "underProb": 0.4676
           },
           {
             "line": 8.5,
-            "overProb": 0.4532,
-            "underProb": 0.5468
+            "overProb": 0.4458,
+            "underProb": 0.5542
           },
           {
             "line": 9.5,
-            "overProb": 0.3688,
-            "underProb": 0.6312
+            "overProb": 0.3618,
+            "underProb": 0.6382
           }
         ]
       }
@@ -829,34 +829,34 @@
       "homePitcher": "Nick Lodolo",
       "awayPitcher": "Javier Assad",
       "expectedRuns": {
-        "home": 4.55,
-        "away": 5.73
+        "home": 4.6,
+        "away": 5.88
       },
       "moneyline": {
-        "homeProb": 0.3957,
-        "awayProb": 0.6043,
-        "homeOdds": 153,
-        "awayOdds": -153
+        "homeProb": 0.3892,
+        "awayProb": 0.6108,
+        "homeOdds": 157,
+        "awayOdds": -157
       },
       "runLine": {
         "standard": {
           "homeLine": -1.5,
           "awayLine": 1.5,
-          "homeCoverProb": 0.2709,
-          "awayCoverProb": 0.7291
+          "homeCoverProb": 0.2635,
+          "awayCoverProb": 0.7365
         },
         "alternates": [
           {
             "homeLine": -1.0,
             "awayLine": 1.0,
-            "homeCoverProb": 0.3098,
-            "awayCoverProb": 0.6902
+            "homeCoverProb": 0.3019,
+            "awayCoverProb": 0.6981
           },
           {
             "homeLine": -2.5,
             "awayLine": 2.5,
-            "homeCoverProb": 0.2012,
-            "awayCoverProb": 0.7988
+            "homeCoverProb": 0.195,
+            "awayCoverProb": 0.805
           }
         ]
       },
@@ -865,23 +865,23 @@
         "lines": [
           {
             "line": 9.0,
-            "overProb": 0.6094,
-            "underProb": 0.3906
+            "overProb": 0.6258,
+            "underProb": 0.3742
           },
           {
             "line": 10.0,
-            "overProb": 0.5241,
-            "underProb": 0.4759
+            "overProb": 0.5411,
+            "underProb": 0.4589
           },
           {
             "line": 11.0,
-            "overProb": 0.4376,
-            "underProb": 0.5624
+            "overProb": 0.4546,
+            "underProb": 0.5454
           },
           {
             "line": 12.0,
-            "overProb": 0.3541,
-            "underProb": 0.6459
+            "overProb": 0.3701,
+            "underProb": 0.6299
           }
         ]
       }
