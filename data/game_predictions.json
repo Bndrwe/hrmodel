@@ -1,0 +1,1094 @@
+{
+  "updatedAt": "2026-07-11",
+  "season": 2026,
+  "games": [
+    {
+      "gamePk": 823357,
+      "gameDate": "2026-07-11T16:05:00Z",
+      "venue": "PNC Park",
+      "homeTeam": "PIT",
+      "awayTeam": "MIL",
+      "homeTeamId": 134,
+      "awayTeamId": 158,
+      "homePitcher": "Braxton Ashcraft",
+      "awayPitcher": "Brandon Sproat",
+      "expectedRuns": {
+        "home": 6.31,
+        "away": 4.23
+      },
+      "moneyline": {
+        "homeProb": 0.675,
+        "awayProb": 0.325,
+        "homeOdds": -208,
+        "awayOdds": 208
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.5522,
+          "awayCoverProb": 0.4478
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.5967,
+            "awayCoverProb": 0.4033
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.4617,
+            "awayCoverProb": 0.5383
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 10.5,
+        "lines": [
+          {
+            "line": 9.0,
+            "overProb": 0.6311,
+            "underProb": 0.3689
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.5467,
+            "underProb": 0.4533
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.4602,
+            "underProb": 0.5398
+          },
+          {
+            "line": 12.0,
+            "overProb": 0.3755,
+            "underProb": 0.6245
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823356,
+      "gameDate": "2026-07-11T20:05:00Z",
+      "venue": "PNC Park",
+      "homeTeam": "PIT",
+      "awayTeam": "MIL",
+      "homeTeamId": 134,
+      "awayTeamId": 158,
+      "homePitcher": "Bubba Chandler",
+      "awayPitcher": "Shane Drohan",
+      "expectedRuns": {
+        "home": 4.09,
+        "away": 5.51
+      },
+      "moneyline": {
+        "homeProb": 0.3668,
+        "awayProb": 0.6332,
+        "homeOdds": 173,
+        "awayOdds": -173
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.2533,
+          "awayCoverProb": 0.7467
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.291,
+            "awayCoverProb": 0.709
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.1864,
+            "awayCoverProb": 0.8136
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 9.5,
+        "lines": [
+          {
+            "line": 8.0,
+            "overProb": 0.6366,
+            "underProb": 0.3634
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.5525,
+            "underProb": 0.4475
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.4659,
+            "underProb": 0.5341
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.381,
+            "underProb": 0.619
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823682,
+      "gameDate": "2026-07-11T18:10:00Z",
+      "venue": "Target Field",
+      "homeTeam": "MIN",
+      "awayTeam": "LAA",
+      "homeTeamId": 142,
+      "awayTeamId": 108,
+      "homePitcher": "Joe Ryan",
+      "awayPitcher": "Ryan Johnson",
+      "expectedRuns": {
+        "home": 6.41,
+        "away": 3.16
+      },
+      "moneyline": {
+        "homeProb": 0.785,
+        "awayProb": 0.215,
+        "homeOdds": -365,
+        "awayOdds": 365
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.6546,
+          "awayCoverProb": 0.3454
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.6955,
+            "awayCoverProb": 0.3045
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.5677,
+            "awayCoverProb": 0.4323
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 9.5,
+        "lines": [
+          {
+            "line": 8.0,
+            "overProb": 0.6332,
+            "underProb": 0.3668
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.549,
+            "underProb": 0.451
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.4624,
+            "underProb": 0.5376
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.3776,
+            "underProb": 0.6224
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 824576,
+      "gameDate": "2026-07-11T18:10:00Z",
+      "venue": "Rate Field",
+      "homeTeam": "CWS",
+      "awayTeam": "ATH",
+      "homeTeamId": 145,
+      "awayTeamId": 133,
+      "homePitcher": "Bryan Hudson",
+      "awayPitcher": "Gage Jump",
+      "expectedRuns": {
+        "home": 4.47,
+        "away": 3.27
+      },
+      "moneyline": {
+        "homeProb": 0.6396,
+        "awayProb": 0.3604,
+        "homeOdds": -177,
+        "awayOdds": 177
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4732,
+          "awayCoverProb": 0.5268
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.5185,
+            "awayCoverProb": 0.4815
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.3841,
+            "awayCoverProb": 0.6159
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.5,
+        "lines": [
+          {
+            "line": 6.0,
+            "overProb": 0.6477,
+            "underProb": 0.3523
+          },
+          {
+            "line": 7.0,
+            "overProb": 0.5642,
+            "underProb": 0.4358
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.4778,
+            "underProb": 0.5222
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.3924,
+            "underProb": 0.6076
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823198,
+      "gameDate": "2026-07-11T20:05:00Z",
+      "venue": "Oracle Park",
+      "homeTeam": "SF",
+      "awayTeam": "COL",
+      "homeTeamId": 137,
+      "awayTeamId": 115,
+      "homePitcher": "Tyler Mahle",
+      "awayPitcher": "Kyle Freeland",
+      "expectedRuns": {
+        "home": 6.52,
+        "away": 5.44
+      },
+      "moneyline": {
+        "homeProb": 0.5826,
+        "awayProb": 0.4174,
+        "homeOdds": -140,
+        "awayOdds": 140
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4626,
+          "awayCoverProb": 0.5374
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.5078,
+            "awayCoverProb": 0.4922
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.374,
+            "awayCoverProb": 0.626
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 12.0,
+        "lines": [
+          {
+            "line": 10.5,
+            "overProb": 0.6244,
+            "underProb": 0.3756
+          },
+          {
+            "line": 11.5,
+            "overProb": 0.5397,
+            "underProb": 0.4603
+          },
+          {
+            "line": 12.5,
+            "overProb": 0.4532,
+            "underProb": 0.5468
+          },
+          {
+            "line": 13.5,
+            "overProb": 0.3688,
+            "underProb": 0.6312
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 822711,
+      "gameDate": "2026-07-11T20:05:00Z",
+      "venue": "Nationals Park",
+      "homeTeam": "WSH",
+      "awayTeam": "NYY",
+      "homeTeamId": 120,
+      "awayTeamId": 147,
+      "homePitcher": "PJ Poulin",
+      "awayPitcher": "Cam Schlittler",
+      "expectedRuns": {
+        "home": 3.15,
+        "away": 3.93
+      },
+      "moneyline": {
+        "homeProb": 0.4003,
+        "awayProb": 0.5997,
+        "homeOdds": 150,
+        "awayOdds": -150
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.3022,
+          "awayCoverProb": 0.6978
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3429,
+            "awayCoverProb": 0.6571
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.228,
+            "awayCoverProb": 0.772
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.0,
+        "lines": [
+          {
+            "line": 5.5,
+            "overProb": 0.6348,
+            "underProb": 0.3652
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.5506,
+            "underProb": 0.4494
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.4641,
+            "underProb": 0.5359
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.3792,
+            "underProb": 0.6208
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823603,
+      "gameDate": "2026-07-11T20:10:00Z",
+      "venue": "Citi Field",
+      "homeTeam": "NYM",
+      "awayTeam": "BOS",
+      "homeTeamId": 121,
+      "awayTeamId": 111,
+      "homePitcher": "Freddy Peralta",
+      "awayPitcher": "Eduardo Rivera",
+      "expectedRuns": {
+        "home": 4.1,
+        "away": 4.33
+      },
+      "moneyline": {
+        "homeProb": 0.4748,
+        "awayProb": 0.5252,
+        "homeOdds": 111,
+        "awayOdds": -111
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.3469,
+          "awayCoverProb": 0.6531
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3897,
+            "awayCoverProb": 0.6103
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.2673,
+            "awayCoverProb": 0.7327
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 8.5,
+        "lines": [
+          {
+            "line": 7.0,
+            "overProb": 0.6226,
+            "underProb": 0.3774
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.5378,
+            "underProb": 0.4622
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.4513,
+            "underProb": 0.5487
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.367,
+            "underProb": 0.633
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 822953,
+      "gameDate": "2026-07-11T20:10:00Z",
+      "venue": "Tropicana Field",
+      "homeTeam": "TB",
+      "awayTeam": "SEA",
+      "homeTeamId": 139,
+      "awayTeamId": 136,
+      "homePitcher": "Griffin Jax",
+      "awayPitcher": "Logan Gilbert",
+      "expectedRuns": {
+        "home": 3.77,
+        "away": 3.31
+      },
+      "moneyline": {
+        "homeProb": 0.5602,
+        "awayProb": 0.4398,
+        "homeOdds": -127,
+        "awayOdds": 127
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4072,
+          "awayCoverProb": 0.5928
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.4518,
+            "awayCoverProb": 0.5482
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.322,
+            "awayCoverProb": 0.678
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.0,
+        "lines": [
+          {
+            "line": 5.5,
+            "overProb": 0.6344,
+            "underProb": 0.3656
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.5502,
+            "underProb": 0.4498
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.4636,
+            "underProb": 0.5364
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.3788,
+            "underProb": 0.6212
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823844,
+      "gameDate": "2026-07-11T20:10:00Z",
+      "venue": "loanDepot park",
+      "homeTeam": "MIA",
+      "awayTeam": "CLE",
+      "homeTeamId": 146,
+      "awayTeamId": 114,
+      "homePitcher": "Eury P\u00e9rez",
+      "awayPitcher": "Tanner Bibee",
+      "expectedRuns": {
+        "home": 4.3,
+        "away": 3.5
+      },
+      "moneyline": {
+        "homeProb": 0.5932,
+        "awayProb": 0.4068,
+        "homeOdds": -146,
+        "awayOdds": 146
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4368,
+          "awayCoverProb": 0.5632
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.4818,
+            "awayCoverProb": 0.5182
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.3496,
+            "awayCoverProb": 0.6504
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 8.0,
+        "lines": [
+          {
+            "line": 6.5,
+            "overProb": 0.6105,
+            "underProb": 0.3895
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.5252,
+            "underProb": 0.4748
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.4387,
+            "underProb": 0.5613
+          },
+          {
+            "line": 9.5,
+            "overProb": 0.3551,
+            "underProb": 0.6449
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 824249,
+      "gameDate": "2026-07-11T22:10:00Z",
+      "venue": "Comerica Park",
+      "homeTeam": "DET",
+      "awayTeam": "PHI",
+      "homeTeamId": 116,
+      "awayTeamId": 143,
+      "homePitcher": "Casey Mize",
+      "awayPitcher": "Cristopher S\u00e1nchez",
+      "expectedRuns": {
+        "home": 2.82,
+        "away": 3.04
+      },
+      "moneyline": {
+        "homeProb": 0.4648,
+        "awayProb": 0.5352,
+        "homeOdds": 115,
+        "awayOdds": -115
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.3474,
+          "awayCoverProb": 0.6526
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3903,
+            "awayCoverProb": 0.6097
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.2678,
+            "awayCoverProb": 0.7322
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 6.0,
+        "lines": [
+          {
+            "line": 4.5,
+            "overProb": 0.6165,
+            "underProb": 0.3835
+          },
+          {
+            "line": 5.5,
+            "overProb": 0.5314,
+            "underProb": 0.4686
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.4449,
+            "underProb": 0.5551
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.3609,
+            "underProb": 0.6391
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 824813,
+      "gameDate": "2026-07-11T23:05:00Z",
+      "venue": "Oriole Park at Camden Yards",
+      "homeTeam": "BAL",
+      "awayTeam": "KC",
+      "homeTeamId": 110,
+      "awayTeamId": 118,
+      "homePitcher": "Kyle Bradish",
+      "awayPitcher": "Noah Cameron",
+      "expectedRuns": {
+        "home": 5.42,
+        "away": 3.99
+      },
+      "moneyline": {
+        "homeProb": 0.6371,
+        "awayProb": 0.3629,
+        "homeOdds": -176,
+        "awayOdds": 176
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4942,
+          "awayCoverProb": 0.5058
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.5395,
+            "awayCoverProb": 0.4605
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.4045,
+            "awayCoverProb": 0.5955
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 9.5,
+        "lines": [
+          {
+            "line": 8.0,
+            "overProb": 0.6206,
+            "underProb": 0.3794
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.5357,
+            "underProb": 0.4643
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.4492,
+            "underProb": 0.5508
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.365,
+            "underProb": 0.635
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 822875,
+      "gameDate": "2026-07-11T23:05:00Z",
+      "venue": "Globe Life Field",
+      "homeTeam": "TEX",
+      "awayTeam": "HOU",
+      "homeTeamId": 140,
+      "awayTeamId": 117,
+      "homePitcher": "Kumar Rocker",
+      "awayPitcher": "Peter Lambert",
+      "expectedRuns": {
+        "home": 3.49,
+        "away": 4.47
+      },
+      "moneyline": {
+        "homeProb": 0.3893,
+        "awayProb": 0.6107,
+        "homeOdds": 157,
+        "awayOdds": -157
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.287,
+          "awayCoverProb": 0.713
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3269,
+            "awayCoverProb": 0.6731
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.2149,
+            "awayCoverProb": 0.7851
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 8.0,
+        "lines": [
+          {
+            "line": 6.5,
+            "overProb": 0.6244,
+            "underProb": 0.3756
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.5397,
+            "underProb": 0.4603
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.4532,
+            "underProb": 0.5468
+          },
+          {
+            "line": 9.5,
+            "overProb": 0.3688,
+            "underProb": 0.6312
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 824492,
+      "gameDate": "2026-07-11T23:10:00Z",
+      "venue": "Great American Ball Park",
+      "homeTeam": "CIN",
+      "awayTeam": "CHC",
+      "homeTeamId": 113,
+      "awayTeamId": 112,
+      "homePitcher": "Nick Lodolo",
+      "awayPitcher": "Javier Assad",
+      "expectedRuns": {
+        "home": 4.55,
+        "away": 5.73
+      },
+      "moneyline": {
+        "homeProb": 0.3957,
+        "awayProb": 0.6043,
+        "homeOdds": 153,
+        "awayOdds": -153
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.2709,
+          "awayCoverProb": 0.7291
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3098,
+            "awayCoverProb": 0.6902
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.2012,
+            "awayCoverProb": 0.7988
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 10.5,
+        "lines": [
+          {
+            "line": 9.0,
+            "overProb": 0.6094,
+            "underProb": 0.3906
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.5241,
+            "underProb": 0.4759
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.4376,
+            "underProb": 0.5624
+          },
+          {
+            "line": 12.0,
+            "overProb": 0.3541,
+            "underProb": 0.6459
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823030,
+      "gameDate": "2026-07-11T23:15:00Z",
+      "venue": "Busch Stadium",
+      "homeTeam": "STL",
+      "awayTeam": "ATL",
+      "homeTeamId": 138,
+      "awayTeamId": 144,
+      "homePitcher": "Matthew Liberatore",
+      "awayPitcher": "Reynaldo L\u00f3pez",
+      "expectedRuns": {
+        "home": 3.69,
+        "away": 5.84
+      },
+      "moneyline": {
+        "homeProb": 0.3014,
+        "awayProb": 0.6986,
+        "homeOdds": 232,
+        "awayOdds": -232
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.2032,
+          "awayCoverProb": 0.7968
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.2368,
+            "awayCoverProb": 0.7632
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.1452,
+            "awayCoverProb": 0.8548
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 9.5,
+        "lines": [
+          {
+            "line": 8.0,
+            "overProb": 0.6307,
+            "underProb": 0.3693
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.5463,
+            "underProb": 0.4537
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.4598,
+            "underProb": 0.5402
+          },
+          {
+            "line": 11.0,
+            "overProb": 0.3751,
+            "underProb": 0.6249
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823276,
+      "gameDate": "2026-07-12T00:40:00Z",
+      "venue": "Petco Park",
+      "homeTeam": "SD",
+      "awayTeam": "TOR",
+      "homeTeamId": 135,
+      "awayTeamId": 141,
+      "homePitcher": "Walker Buehler",
+      "awayPitcher": "Trey Yesavage",
+      "expectedRuns": {
+        "home": 3.11,
+        "away": 4.46
+      },
+      "moneyline": {
+        "homeProb": 0.3404,
+        "awayProb": 0.6596,
+        "homeOdds": 194,
+        "awayOdds": -194
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.2583,
+          "awayCoverProb": 0.7417
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.2964,
+            "awayCoverProb": 0.7036
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.1906,
+            "awayCoverProb": 0.8094
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.5,
+        "lines": [
+          {
+            "line": 6.0,
+            "overProb": 0.6334,
+            "underProb": 0.3666
+          },
+          {
+            "line": 7.0,
+            "overProb": 0.5492,
+            "underProb": 0.4508
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.4626,
+            "underProb": 0.5374
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.3778,
+            "underProb": 0.6222
+          }
+        ]
+      }
+    },
+    {
+      "gamePk": 823926,
+      "gameDate": "2026-07-12T01:10:00Z",
+      "venue": "UNIQLO Field at Dodger Stadium",
+      "homeTeam": "LAD",
+      "awayTeam": "AZ",
+      "homeTeamId": 119,
+      "awayTeamId": 109,
+      "homePitcher": "Yoshinobu Yamamoto",
+      "awayPitcher": "Brandon Pfaadt",
+      "expectedRuns": {
+        "home": 5.85,
+        "away": 2.7
+      },
+      "moneyline": {
+        "homeProb": 0.805,
+        "awayProb": 0.195,
+        "homeOdds": -413,
+        "awayOdds": 413
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.6466,
+          "awayCoverProb": 0.3534
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.6879,
+            "awayCoverProb": 0.3121
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.5592,
+            "awayCoverProb": 0.4408
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 8.5,
+        "lines": [
+          {
+            "line": 7.0,
+            "overProb": 0.6319,
+            "underProb": 0.3681
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.5475,
+            "underProb": 0.4525
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.461,
+            "underProb": 0.539
+          },
+          {
+            "line": 10.0,
+            "overProb": 0.3762,
+            "underProb": 0.6238
+          }
+        ]
+      }
+    }
+  ]
+}
