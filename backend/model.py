@@ -226,7 +226,15 @@ def fetch_batter_split(batter_id, season, opp_pitcher_hand):
         if sp.get("split", {}).get("code") == code:
             st = sp.get("stat", {}) or {}
             pa = _safe_int(st, "plateAppearances") or _safe_int(st, "atBats")
-            return {"pa": pa, "hr": _safe_int(st, "homeRuns")}
+            return {
+                "pa": pa,
+                "hr": _safe_int(st, "homeRuns"),
+                # obp/slg are unused by the HR model's vs_mult factor but are
+                # reused by game_model.py to build a lineup-level OPS-vs-hand
+                # signal for the moneyline model, so both share one fetch.
+                "obp": _safe_float(st, "obp"),
+                "slg": _safe_float(st, "slg"),
+            }
     return None
 
 

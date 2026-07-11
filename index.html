@@ -74,6 +74,13 @@ main{max-width:1520px;margin:0 auto;padding:18px 20px;display:flex;flex-directio
 .sec-title{font-family:'Bebas Neue';font-size:15px;color:var(--text2);letter-spacing:2px;display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
 
+/* ── MAIN TABS ── */
+.main-tabs{display:flex;gap:6px;}
+.main-tab{display:flex;flex-direction:column;gap:16px;}
+.main-tab-btn{font-family:'Bebas Neue';font-size:15px;letter-spacing:1px;padding:9px 20px;background:var(--surface);border:1px solid var(--border);border-bottom:2px solid var(--border);border-radius:8px 8px 0 0;color:var(--text2);cursor:pointer;transition:all .15s;}
+.main-tab-btn:hover{color:var(--text);border-color:var(--bord2);}
+.main-tab-btn.active{background:var(--bg2);color:var(--green);border-color:var(--border);border-bottom-color:var(--green);}
+
 /* ── TOP PICKS CARDS ── */
 .picks-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
 .pcard{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;cursor:pointer;transition:border-color .2s,transform .15s;position:relative;overflow:hidden;animation:slideUp .4s ease both;}
@@ -595,12 +602,21 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
 </div></div>
 
 <main>
+  <div class="main-tabs" id="mainTabs">
+    <button class="main-tab-btn active" onclick="switchMainTab('player-props',this)">🔥 PLAYER PROPS</button>
+    <button class="main-tab-btn" onclick="switchMainTab('game-lines',this)">🏟️ GAME LINES</button>
+    <button class="main-tab-btn" onclick="switchMainTab('accuracy',this)">📊 MODEL ACCURACY</button>
+  </div>
+
+  <div class="main-tab tab-player-props">
   <div>
     <div class="sec-title">🔥 TOP 5 TONIGHT</div>
     <div class="picks-row" id="picksRow"></div>
   </div>
+  </div>
 
   <!-- GAME LINES: MONEYLINE / RUN LINE / TOTAL -->
+  <div class="main-tab tab-game-lines" style="display:none">
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
       🏟️ GAME LINES — MONEYLINE &middot; RUN LINE &middot; TOTAL
@@ -611,21 +627,26 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
         <thead>
           <tr>
             <th>MATCHUP</th>
-            <th>PROBABLE PITCHERS</th>
+            <th>PROBABLE PITCHERS (ERA / PEN)</th>
             <th>MONEYLINE</th>
             <th>RUN LINE (&plusmn;1.5)</th>
             <th>ALT SPREADS</th>
             <th>TOTAL (O/U)</th>
+            <th>F5</th>
+            <th>NRFI</th>
+            <th>TEAM HITS (O/U)</th>
           </tr>
         </thead>
         <tbody id="gameLinesBody">
-          <tr><td colspan="6" class="empty">Loading game lines...</td></tr>
+          <tr><td colspan="9" class="empty">Loading game lines...</td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  </div>
 
   <!-- ACCURACY DASHBOARD -->
+  <div class="main-tab tab-accuracy" style="display:none">
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
       📊 MODEL ACCURACY &amp; SELF-CALIBRATION
@@ -684,7 +705,9 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       </div>
     </div>
   </div>
+  </div>
 
+  <div class="main-tab tab-player-props">
   <!-- PARLAY BUILDER -->
   <div>
     <div class="sec-title">🎲 PARLAY BUILDER</div>
@@ -797,6 +820,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
         </tbody>
       </table>
     </div>
+  </div>
   </div>
 </main>
 
@@ -2472,6 +2496,16 @@ function setTableProp(prop, btn){
   applyFilters();
 }
 
+// ═══════════════════════════════════════
+// MAIN TABS — Player Props / Game Lines / Model Accuracy
+// ═══════════════════════════════════════
+function switchMainTab(tab, btn){
+  document.querySelectorAll('.main-tab').forEach(d=>d.style.display='none');
+  document.querySelectorAll('.tab-'+tab).forEach(d=>d.style.display='');
+  document.querySelectorAll('.main-tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+}
+
 function renderTable(preds){
   const tbody=document.getElementById('tableBody');
   const prop=CURR_TABLE_PROP||'hr';
@@ -3129,7 +3163,7 @@ async function loadGameLines(){
   let data=null;
   try{ data=await fetchJ('data/game_predictions.json'); }catch(e){ data=null; }
   if(!data||!data.games||!data.games.length){
-    tbody.innerHTML=`<tr><td colspan="6" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    tbody.innerHTML=`<tr><td colspan="9" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
     return;
   }
   const updEl=document.getElementById('glUpdated');
@@ -3142,9 +3176,21 @@ async function loadGameLines(){
     const altTxt=alts.map(a=>`${a.homeLine>0?'+':''}${a.homeLine} <span style="color:var(--text3)">(${fmt1(a.homeCoverProb*100)}%)</span>`).join(' &middot; ');
     const tot=g.total||{lines:[]};
     const totTxt=(tot.lines||[]).map(l=>`${l.line}: O ${fmt1(l.overProb*100)}%`).join(' &middot; ');
+    const pq=g.pitchingQuality||{};
+    const lm=g.lineupMatchup||{};
+    const f5=g.f5||{moneyline:{},runLine:{},total:{}};
+    const f5ml=f5.moneyline||{};
+    const f5HomeFav=(f5ml.homeProb||0)>=(f5ml.awayProb||0);
+    const nrfi=g.nrfi||{};
+    const hits=g.teamHits||{};
+    const hitsCell=(h,label)=>h?`<div>${label} ${h.modelLine}: O ${fmt1((h.overProb||0)*100)}%/U ${fmt1((h.underProb||0)*100)}%</div>`:'';
     return `<tr>
       <td><div class="pname">${g.awayTeam} @ ${g.homeTeam}</div><div class="pteam">${g.venue||''}</div></td>
-      <td style="font-family:'Space Mono';font-size:9px;color:var(--text2);">${g.awayPitcher||'TBD'} vs ${g.homePitcher||'TBD'}</td>
+      <td style="font-family:'Space Mono';font-size:9px;color:var(--text2);">
+        <div>${g.awayPitcher||'TBD'} (${fmt1(pq.awayStarter)}${pq.awayPen!=null?' / '+fmt1(pq.awayPen):''})</div>
+        <div>${g.homePitcher||'TBD'} (${fmt1(pq.homeStarter)}${pq.homePen!=null?' / '+fmt1(pq.homePen):''})</div>
+        <div style="color:var(--text3);font-size:7px;margin-top:2px;" title="Batter-vs-pitcher-hand lineup matchup multiplier">MATCHUP: ${g.awayTeam} ${fmt1((lm.away?.mult||1)*100)}% &middot; ${g.homeTeam} ${fmt1((lm.home?.mult||1)*100)}%</div>
+      </td>
       <td style="font-family:'Space Mono';font-size:10px;">
         <div class="${!homeFav?'g-clr':''}">${g.awayTeam} ${fmtOdds(ml.awayOdds)} <span style="color:var(--text3)">(${fmt1((ml.awayProb||0)*100)}%)</span></div>
         <div class="${homeFav?'g-clr':''}">${g.homeTeam} ${fmtOdds(ml.homeOdds)} <span style="color:var(--text3)">(${fmt1((ml.homeProb||0)*100)}%)</span></div>
@@ -3157,6 +3203,19 @@ async function loadGameLines(){
       <td style="font-family:'Space Mono';font-size:9px;">
         <div>MODEL TOTAL: <b style="color:var(--white)">${tot.modelTotal!=null?tot.modelTotal:'—'}</b></div>
         <div style="color:var(--text3);font-size:8px;">${totTxt}</div>
+      </td>
+      <td style="font-family:'Space Mono';font-size:9px;">
+        <div class="${!f5HomeFav?'g-clr':''}">${g.awayTeam} ${fmtOdds(f5ml.awayOdds)}</div>
+        <div class="${f5HomeFav?'g-clr':''}">${g.homeTeam} ${fmtOdds(f5ml.homeOdds)}</div>
+        <div style="color:var(--text3);font-size:8px;">O/U ${f5.total?.modelTotal!=null?f5.total.modelTotal:'—'}: O ${fmt1((f5.total?.overProb||0)*100)}%</div>
+      </td>
+      <td style="font-family:'Space Mono';font-size:9px;">
+        <div style="color:var(--green)">NRFI ${fmt1((nrfi.nrfiProb||0)*100)}%</div>
+        <div style="color:var(--text3)">YRFI ${fmt1((nrfi.yrfiProb||0)*100)}%</div>
+      </td>
+      <td style="font-family:'Space Mono';font-size:8px;color:var(--text2);">
+        ${hitsCell(hits.away,g.awayTeam)}
+        ${hitsCell(hits.home,g.homeTeam)}
       </td>
     </tr>`;
   }).join('');
