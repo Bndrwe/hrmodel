@@ -116,7 +116,12 @@ main{max-width:1520px;margin:0 auto;padding:18px 20px;display:flex;flex-directio
 .pcard-bs-btn.in-slip{border-color:var(--amber);color:var(--amber);background:rgba(245,158,11,.1);}
 
 /* ── TABLE ── */
-.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow-x:auto;overflow-y:hidden;}
+.model-pick{display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;padding:4px 8px;border-radius:4px;border:1px solid rgba(0,232,135,.4);background:rgba(0,232,135,.08);}
+.model-pick-lbl{font-family:'Bebas Neue';font-size:13px;color:var(--green);letter-spacing:.5px;}
+.model-pick-sub{font-family:'Space Mono';font-size:7px;color:var(--text2);}
+.mc-prob{font-family:'Bebas Neue';font-size:16px;line-height:1;}
+.mc-odds{font-family:'Space Mono';font-size:8px;color:var(--text3);}
 .table-ctrls{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
 .t-label{font-family:'Space Mono';font-size:8px;color:var(--text3);display:block;margin-bottom:3px;}
 select,input[type=text]{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:4px 8px;border-radius:4px;font-family:'Space Mono';font-size:9px;cursor:pointer;}
@@ -622,6 +627,9 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       🏟️ GAME LINES — MONEYLINE &middot; RUN LINE &middot; TOTAL
       <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="glUpdated">MODEL FAIR LINES — NO SPORTSBOOK FEED</span>
     </div>
+    <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-bottom:8px;">
+      All probabilities below are the model's own 10,000-simulation estimate (Monte Carlo over each team's projected run distribution) — not a sportsbook line. Bold % = model probability; odds in parens are the fair-value price implied by that probability. <b style="color:var(--green)">MODEL PICK</b> flags the single strongest edge across every market for that game.
+    </div>
     <div class="table-wrap">
       <table class="dtable">
         <thead>
@@ -635,10 +643,11 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
             <th>F5</th>
             <th>NRFI</th>
             <th>TEAM HITS (O/U)</th>
+            <th>MODEL PICK</th>
           </tr>
         </thead>
         <tbody id="gameLinesBody">
-          <tr><td colspan="9" class="empty">Loading game lines...</td></tr>
+          <tr><td colspan="10" class="empty">Loading game lines...</td></tr>
         </tbody>
       </table>
     </div>
@@ -995,6 +1004,36 @@ async function fetchPitcherRecentStarts(pid,n=4){
   const d=await fetchJ(`${MLB}/people/${pid}/stats?stats=gameLog&group=pitching&season=${YR}&gameType=R`);
   if(!d?.stats?.[0]?.splits)return null;
   return d.stats[0].splits.slice(0,n).reverse(); // oldest→newest so trend direction is clear
+}
+// Standard Statcast pitch-type family groupings, used to bucket a
+// pitcher's real arsenal into fastball / offspeed / breaking.
+const PITCH_FAMILY={
+  FF:'fb',SI:'fb',FT:'fb',FC:'fb',FA:'fb',
+  CH:'off',FS:'off',FO:'off',SC:'off',
+  SL:'brk',CU:'brk',KC:'brk',CS:'brk',SV:'brk',ST:'brk',KN:'brk',EP:'brk',
+};
+async function fetchPitcherArsenal(pid){
+  // Real per-pitcher pitch-type usage (MLB Stats API pitchArsenal stat),
+  // replacing the old hand/K%/GB-rate heuristic that only ever produced a
+  // handful of generic combinations regardless of who was actually pitching.
+  if(!pid)return null;
+  const d=await fetchJ(`${MLB}/people/${pid}/stats?stats=pitchArsenal&season=${YR}&sportId=1`);
+  const splits=d?.stats?.[0]?.splits;
+  if(!splits?.length)return null;
+  const totals={fb:0,off:0,brk:0};
+  let anyUsage=false;
+  for(const s of splits){
+    const code=s.stat?.pitchType?.code;
+    const usage=parseFloat(s.stat?.usage ?? s.stat?.percentage ?? 0);
+    if(!code||!usage)continue;
+    anyUsage=true;
+    const fam=PITCH_FAMILY[code]||'off';
+    totals[fam]+=usage;
+  }
+  if(!anyUsage)return null;
+  const sum=totals.fb+totals.off+totals.brk;
+  if(sum<=0)return null;
+  return{fb:totals.fb/sum,off:totals.off/sum,brk:totals.brk/sum,source:'real'};
 }
 async function fetchH2H(batterId,pitcherId){
   if(!batterId||!pitcherId)return null;
@@ -1720,10 +1759,12 @@ function runMC(perPAprob,raw,pitcherFBPct,expPA,nSims=10000){
 }
 
 function estimatePitchMix(hand,era,gbPct,kPct){
+  // Fallback only -- used when a pitcher has no pitchArsenal data yet
+  // (e.g. a brand-new call-up with no MLB innings logged).
   const isPowerArm=kPct>0.26;
   const isGroundBall=(gbPct||1.0)>1.3;
-  if(hand==='L'){return{fb:isGroundBall?0.48:0.58,off:isPowerArm?0.26:0.32,brk:0.10+(isGroundBall?0.04:0)};}
-  return{fb:isGroundBall?0.42:0.52,off:isPowerArm?0.22:0.26,brk:isPowerArm?0.26:0.22};
+  if(hand==='L'){return{fb:isGroundBall?0.48:0.58,off:isPowerArm?0.26:0.32,brk:0.10+(isGroundBall?0.04:0),source:'est'};}
+  return{fb:isGroundBall?0.42:0.52,off:isPowerArm?0.22:0.26,brk:isPowerArm?0.26:0.22,source:'est'};
 }
 
 // ═══════════════════════════════════════
@@ -1802,10 +1843,10 @@ async function buildPredictions(){
   }
 
   setProgress(20,'FETCHING PITCHER STATS + TRENDS...');
-  const pitcherMap={},pitcherPersonMap={},pitcherRecentMap={};
+  const pitcherMap={},pitcherPersonMap={},pitcherRecentMap={},pitcherArsenalMap={};
   await Promise.all([...pitcherIds].map(async pid=>{
-    const[stats,person,recentStarts]=await Promise.all([fetchPitcherSeason(pid),fetchPerson(pid),fetchPitcherRecentStarts(pid)]);
-    pitcherMap[pid]=stats;pitcherPersonMap[pid]=person;pitcherRecentMap[pid]=recentStarts;
+    const[stats,person,recentStarts,arsenal]=await Promise.all([fetchPitcherSeason(pid),fetchPerson(pid),fetchPitcherRecentStarts(pid),fetchPitcherArsenal(pid)]);
+    pitcherMap[pid]=stats;pitcherPersonMap[pid]=person;pitcherRecentMap[pid]=recentStarts;pitcherArsenalMap[pid]=arsenal;
   }));
 
   setProgress(28,'FETCHING WEATHER...');
@@ -1869,7 +1910,10 @@ async function buildPredictions(){
     if(!model)continue;
     const gameProb=clamp(1-Math.pow(1-model.perPA,model.expPA),0,0.85);
     const mc=runMC(model.perPA,model.raw,pitcher?.gbPct,model.expPA);
-    const pitchMix=estimatePitchMix(pitcherHand,pitcher?.era,pitcher?.gbPct,pitcher?.kPct);
+    // Prefer the pitcher's real, individual arsenal mix (MLB Stats API);
+    // only fall back to the hand/K%/GB-rate estimate when a pitcher's
+    // pitchArsenal data isn't available (e.g. brand-new call-up).
+    const pitchMix=pitcherArsenalMap[b.pitcherId]||estimatePitchMix(pitcherHand,pitcher?.era,pitcher?.gbPct,pitcher?.kPct);
     preds.push({
       pid:b.pid,name:b.name,batterHand,
       team:b.homeAbbr||'—',park:b.park,parkName:b.park?.name||'—',
@@ -2796,7 +2840,7 @@ function renderPitchMix(p){
   const pm=p.pitchMix;
   const pitcherHR9=fmt(p.pitcher?.hr9||LG.pitHR9,2);
   const kPct=fmt((p.pitcher?.kPct||LG.pitKPct)*100,0)+'%';
-  document.getElementById('throwsTitle').textContent=`${(p.pitcherName||'PITCHER').split(' ').pop().toUpperCase()} THROWS`;
+  document.getElementById('throwsTitle').textContent=`${(p.pitcherName||'PITCHER').split(' ').pop().toUpperCase()} THROWS${pm.source==='real'?' · ACTUAL ARSENAL':' · EST'}`;
   document.getElementById('pitchMix').innerHTML=`
     <div class="pm-pill fb active"><div><span class="pm-dot fb"></span>FB</div><div class="pm-pct" style="color:var(--blue)">${fmt(pm.fb*100,0)}%</div><div class="pm-lbl">FASTBALL</div></div>
     <div class="pm-pill off active"><div><span class="pm-dot off"></span>OFF</div><div class="pm-pct" style="color:var(--purple)">${fmt(pm.off*100,0)}%</div><div class="pm-lbl">OFFSPEED</div></div>
@@ -3149,13 +3193,135 @@ function showHistory(){
 }
 
 // ═══════════════════════════════════════
-// GAME LINES — moneyline / run line / total
-// (published daily by backend/game_model.py via GitHub Actions; this is a
-// separate, independent data source from the live client-side HR engine
-// above, so it loads on its own and never blocks player predictions)
+// GAME LINES — moneyline / run line / total / F5 / NRFI / hits
+// (backend/game_model.py publishes the real inputs -- each team's expected
+// runs, first-inning run rate, and expected hits, all derived from real
+// season stats, starter+bullpen quality, and batter-vs-pitcher-hand lineup
+// matchups. Every probability shown here, though, comes from a 10,000-trial
+// Monte Carlo simulation run right here in the browser, matching the same
+// approach already used for player HR props above, rather than the
+// backend's closed-form Normal/Poisson approximation.)
 // ═══════════════════════════════════════
 function fmt1(n){return n!=null&&!isNaN(n)?Number(n).toFixed(1):'—';}
 function fmtOdds(o){return o==null?'—':(o>0?'+'+o:''+o);}
+function probToAmericanOdds(p){
+  p=clamp(p,0.01,0.99);
+  return p>=0.5?Math.round(-100*p/(1-p)):Math.round(100*(1-p)/p);
+}
+
+// Negative-binomial-ish run simulator (Gamma-Poisson mixture): captures
+// MLB's real per-team run over-dispersion (variance running well above the
+// mean) far better than a plain Poisson or Normal approximation.
+function gmcGaussian(){
+  let u=0,v=0;
+  while(u===0)u=Math.random();
+  while(v===0)v=Math.random();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+}
+function gmcPoisson(lambda){
+  if(lambda<=0)return 0;
+  if(lambda>30){const v=lambda+Math.sqrt(lambda)*gmcGaussian();return Math.max(0,Math.round(v));}
+  const L=Math.exp(-lambda);
+  let k=0,p=1;
+  do{k++;p*=Math.random();}while(p>L);
+  return k-1;
+}
+function gmcGamma(shape){
+  if(shape<1){const u=Math.random();return gmcGamma(shape+1)*Math.pow(u,1/shape);}
+  const d=shape-1/3,c=1/Math.sqrt(9*d);
+  while(true){
+    let x,v;
+    do{x=gmcGaussian();v=1+c*x;}while(v<=0);
+    v=v*v*v;
+    const u=Math.random();
+    if(u<1-0.0331*x*x*x*x)return d*v;
+    if(Math.log(u)<0.5*x*x+d*(1-v+Math.log(v)))return d*v;
+  }
+}
+const GMC_DISPERSION=4; // tuned so single-game team-runs variance ≈ real MLB (~2x the mean)
+function gmcTeamRuns(meanRuns,k=GMC_DISPERSION){
+  return gmcPoisson(gmcGamma(k)*(meanRuns/k));
+}
+function gmcBinomial(n,p){let c=0;for(let i=0;i<n;i++){if(Math.random()<p)c++;}return c;}
+
+// Runs the full 10K-sim game simulation from the backend's real expected
+// runs / first-inning-runs / expected-hits inputs, returning empirical
+// probabilities for every market shown in the table.
+function runGameMC(g,nSims=10000){
+  const er=g.expectedRuns||{};
+  const meanHome=er.home||4.5,meanAway=er.away||4.5;
+  const fi=(g.nrfi||{}).expectedFirstInningRuns||{};
+  const lamHome1=fi.home||meanHome/9,lamAway1=fi.away||meanAway/9;
+  const hits=g.teamHits||{};
+  const meanHitsHome=(hits.home||{}).expectedHits||8.5,meanHitsAway=(hits.away||{}).expectedHits||8.5;
+  const hitsHomeLine=(hits.home||{}).modelLine,hitsAwayLine=(hits.away||{}).modelLine;
+  const rl=(g.runLine||{}).standard||{homeLine:-1.5};
+  const alts=(g.runLine||{}).alternates||[];
+  const allLines=[...new Set([rl.homeLine,...alts.map(a=>a.homeLine)])];
+  const rlCounts={};allLines.forEach(l=>rlCounts[l]=0);
+  const totalLines=(g.total?.lines||[]).map(l=>l.line);
+  const totalCounts={};totalLines.forEach(l=>totalCounts[l]=0);
+  const f5TotalLine=(g.f5||{}).total?.modelTotal;
+
+  let mlHome=0,mlAway=0,mlTie=0;
+  let f5Home=0,f5Away=0,f5Tie=0,f5Over=0;
+  let nrfi=0,hitsHomeOver=0,hitsAwayOver=0;
+
+  for(let i=0;i<nSims;i++){
+    const homeRuns=gmcTeamRuns(meanHome),awayRuns=gmcTeamRuns(meanAway);
+    if(homeRuns>awayRuns)mlHome++;else if(awayRuns>homeRuns)mlAway++;else mlTie++;
+    const margin=homeRuns-awayRuns;
+    allLines.forEach(l=>{if(margin>-l)rlCounts[l]++;});
+    const total=homeRuns+awayRuns;
+    totalLines.forEach(l=>{if(total>l)totalCounts[l]++;});
+
+    // F5: thin the full game's simulated runs binomially by the innings
+    // share so a sim's F5 score stays consistent with its full-game score.
+    const home5=gmcBinomial(homeRuns,5/9),away5=gmcBinomial(awayRuns,5/9);
+    if(home5>away5)f5Home++;else if(away5>home5)f5Away++;else f5Tie++;
+    if(f5TotalLine!=null&&(home5+away5)>f5TotalLine)f5Over++;
+
+    if(gmcPoisson(lamHome1)===0&&gmcPoisson(lamAway1)===0)nrfi++;
+
+    if(hitsHomeLine!=null&&gmcTeamRuns(meanHitsHome,8)>hitsHomeLine)hitsHomeOver++;
+    if(hitsAwayLine!=null&&gmcTeamRuns(meanHitsAway,8)>hitsAwayLine)hitsAwayOver++;
+  }
+
+  // Ties can't stand in the real game (extra innings), so split them evenly
+  // between the two teams for the moneyline; F5 genuinely can push, so its
+  // tie probability is reported rather than redistributed.
+  const out={
+    moneyline:{homeProb:(mlHome+mlTie*0.5)/nSims,awayProb:(mlAway+mlTie*0.5)/nSims},
+    runLine:{},total:{},
+    f5:{homeProb:f5Home/nSims,awayProb:f5Away/nSims,pushProb:f5Tie/nSims,
+        overProb:f5TotalLine!=null?f5Over/nSims:null,underProb:f5TotalLine!=null?1-f5Over/nSims-f5Tie/nSims:null},
+    nrfiProb:nrfi/nSims,
+    teamHits:{home:hitsHomeLine!=null?hitsHomeOver/nSims:null,away:hitsAwayLine!=null?hitsAwayOver/nSims:null},
+  };
+  allLines.forEach(l=>{out.runLine[l]={homeCover:rlCounts[l]/nSims,awayCover:1-rlCounts[l]/nSims};});
+  totalLines.forEach(l=>{out.total[l]={over:totalCounts[l]/nSims,under:1-totalCounts[l]/nSims};});
+  return out;
+}
+
+// Scans every market for this game and surfaces whichever side has the
+// single strongest edge over a coin flip -- the point being to answer
+// "what would the model actually bet here?" at a glance.
+function pickBestLean(g,mc){
+  const rl=(g.runLine||{}).standard||{homeLine:-1.5};
+  const totLine=(g.total?.lines||[]).find(l=>l.line===g.total?.modelTotal)||(g.total?.lines||[])[Math.floor((g.total?.lines?.length||1)/2)];
+  const candidates=[];
+  candidates.push({label:`${mc.moneyline.homeProb>=mc.moneyline.awayProb?g.homeTeam:g.awayTeam} ML`,prob:Math.max(mc.moneyline.homeProb,mc.moneyline.awayProb),sub:'MONEYLINE'});
+  const rlm=mc.runLine[rl.homeLine];
+  if(rlm)candidates.push({label:rlm.homeCover>=0.5?`${g.homeTeam} ${rl.homeLine}`:`${g.awayTeam} +${Math.abs(rl.homeLine)}`,prob:Math.max(rlm.homeCover,rlm.awayCover),sub:'RUN LINE'});
+  if(totLine){
+    const tm=mc.total[totLine.line];
+    if(tm)candidates.push({label:`${tm.over>=0.5?'OVER':'UNDER'} ${totLine.line}`,prob:Math.max(tm.over,tm.under),sub:'TOTAL'});
+  }
+  candidates.push({label:`${mc.f5.homeProb>=mc.f5.awayProb?g.homeTeam:g.awayTeam} F5`,prob:Math.max(mc.f5.homeProb,mc.f5.awayProb),sub:'FIRST 5'});
+  candidates.push({label:mc.nrfiProb>=0.5?'NRFI':'YRFI',prob:Math.max(mc.nrfiProb,1-mc.nrfiProb),sub:'1ST INNING'});
+  candidates.sort((a,b)=>b.prob-a.prob);
+  return candidates[0];
+}
 
 async function loadGameLines(){
   const tbody=document.getElementById('gameLinesBody');
@@ -3163,27 +3329,33 @@ async function loadGameLines(){
   let data=null;
   try{ data=await fetchJ('data/game_predictions.json'); }catch(e){ data=null; }
   if(!data||!data.games||!data.games.length){
-    tbody.innerHTML=`<tr><td colspan="9" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    tbody.innerHTML=`<tr><td colspan="10" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
     return;
   }
   const updEl=document.getElementById('glUpdated');
-  if(updEl)updEl.textContent=`UPDATED ${data.updatedAt}`;
+  if(updEl)updEl.textContent=`UPDATED ${data.updatedAt} · 10K-SIM MONTE CARLO`;
   tbody.innerHTML=data.games.map(g=>{
-    const ml=g.moneyline||{};
-    const homeFav=(ml.homeProb||0)>=(ml.awayProb||0);
+    const mc=runGameMC(g,10000);
+    const homeFav=mc.moneyline.homeProb>=mc.moneyline.awayProb;
+    const mlHomeOdds=probToAmericanOdds(mc.moneyline.homeProb),mlAwayOdds=probToAmericanOdds(mc.moneyline.awayProb);
     const rl=(g.runLine||{}).standard||{};
+    const rlm=mc.runLine[rl.homeLine]||{homeCover:0.5,awayCover:0.5};
     const alts=(g.runLine||{}).alternates||[];
-    const altTxt=alts.map(a=>`${a.homeLine>0?'+':''}${a.homeLine} <span style="color:var(--text3)">(${fmt1(a.homeCoverProb*100)}%)</span>`).join(' &middot; ');
-    const tot=g.total||{lines:[]};
-    const totTxt=(tot.lines||[]).map(l=>`${l.line}: O ${fmt1(l.overProb*100)}%`).join(' &middot; ');
+    const altTxt=alts.map(a=>{
+      const m=mc.runLine[a.homeLine]||{homeCover:0.5};
+      return `${a.homeLine>0?'+':''}${a.homeLine} <span style="color:var(--text3)">(${fmt1(m.homeCover*100)}%)</span>`;
+    }).join(' &middot; ');
+    const totTxt=(g.total?.lines||[]).map(l=>{
+      const m=mc.total[l.line]||{over:0.5};
+      return `${l.line}: O ${fmt1(m.over*100)}%`;
+    }).join(' &middot; ');
     const pq=g.pitchingQuality||{};
     const lm=g.lineupMatchup||{};
-    const f5=g.f5||{moneyline:{},runLine:{},total:{}};
-    const f5ml=f5.moneyline||{};
-    const f5HomeFav=(f5ml.homeProb||0)>=(f5ml.awayProb||0);
-    const nrfi=g.nrfi||{};
+    const f5HomeFav=mc.f5.homeProb>=mc.f5.awayProb;
+    const f5HomeOdds=probToAmericanOdds(mc.f5.homeProb),f5AwayOdds=probToAmericanOdds(mc.f5.awayProb);
     const hits=g.teamHits||{};
-    const hitsCell=(h,label)=>h?`<div>${label} ${h.modelLine}: O ${fmt1((h.overProb||0)*100)}%/U ${fmt1((h.underProb||0)*100)}%</div>`:'';
+    const hitsCell=(h,label,mcProb)=>h&&mcProb!=null?`<div>${label} ${h.modelLine}: O ${fmt1(mcProb*100)}%/U ${fmt1((1-mcProb)*100)}%</div>`:'';
+    const pick=pickBestLean(g,mc);
     return `<tr>
       <td><div class="pname">${g.awayTeam} @ ${g.homeTeam}</div><div class="pteam">${g.venue||''}</div></td>
       <td style="font-family:'Space Mono';font-size:9px;color:var(--text2);">
@@ -3191,31 +3363,37 @@ async function loadGameLines(){
         <div>${g.homePitcher||'TBD'} (${fmt1(pq.homeStarter)}${pq.homePen!=null?' / '+fmt1(pq.homePen):''})</div>
         <div style="color:var(--text3);font-size:7px;margin-top:2px;" title="Batter-vs-pitcher-hand lineup matchup multiplier">MATCHUP: ${g.awayTeam} ${fmt1((lm.away?.mult||1)*100)}% &middot; ${g.homeTeam} ${fmt1((lm.home?.mult||1)*100)}%</div>
       </td>
-      <td style="font-family:'Space Mono';font-size:10px;">
-        <div class="${!homeFav?'g-clr':''}">${g.awayTeam} ${fmtOdds(ml.awayOdds)} <span style="color:var(--text3)">(${fmt1((ml.awayProb||0)*100)}%)</span></div>
-        <div class="${homeFav?'g-clr':''}">${g.homeTeam} ${fmtOdds(ml.homeOdds)} <span style="color:var(--text3)">(${fmt1((ml.homeProb||0)*100)}%)</span></div>
+      <td>
+        <div class="${!homeFav?'g-clr':''}"><span class="mc-prob">${fmt1(mc.moneyline.awayProb*100)}%</span> ${g.awayTeam} <span class="mc-odds">(${fmtOdds(mlAwayOdds)})</span></div>
+        <div class="${homeFav?'g-clr':''}"><span class="mc-prob">${fmt1(mc.moneyline.homeProb*100)}%</span> ${g.homeTeam} <span class="mc-odds">(${fmtOdds(mlHomeOdds)})</span></div>
       </td>
       <td style="font-family:'Space Mono';font-size:9px;">
-        <div>${g.homeTeam} ${rl.homeLine} — ${fmt1((rl.homeCoverProb||0)*100)}%</div>
-        <div>${g.awayTeam} ${rl.awayLine>0?'+':''}${rl.awayLine} — ${fmt1((rl.awayCoverProb||0)*100)}%</div>
+        <div>${g.homeTeam} ${rl.homeLine} — <b>${fmt1(rlm.homeCover*100)}%</b></div>
+        <div>${g.awayTeam} ${rl.awayLine>0?'+':''}${rl.awayLine} — <b>${fmt1(rlm.awayCover*100)}%</b></div>
       </td>
       <td style="font-family:'Space Mono';font-size:8px;color:var(--text2);">${altTxt||'—'}</td>
       <td style="font-family:'Space Mono';font-size:9px;">
-        <div>MODEL TOTAL: <b style="color:var(--white)">${tot.modelTotal!=null?tot.modelTotal:'—'}</b></div>
+        <div>MODEL TOTAL: <b style="color:var(--white)">${g.total?.modelTotal!=null?g.total.modelTotal:'—'}</b></div>
         <div style="color:var(--text3);font-size:8px;">${totTxt}</div>
       </td>
       <td style="font-family:'Space Mono';font-size:9px;">
-        <div class="${!f5HomeFav?'g-clr':''}">${g.awayTeam} ${fmtOdds(f5ml.awayOdds)}</div>
-        <div class="${f5HomeFav?'g-clr':''}">${g.homeTeam} ${fmtOdds(f5ml.homeOdds)}</div>
-        <div style="color:var(--text3);font-size:8px;">O/U ${f5.total?.modelTotal!=null?f5.total.modelTotal:'—'}: O ${fmt1((f5.total?.overProb||0)*100)}%</div>
+        <div class="${!f5HomeFav?'g-clr':''}"><b>${fmt1(mc.f5.awayProb*100)}%</b> ${g.awayTeam} <span class="mc-odds">(${fmtOdds(f5AwayOdds)})</span></div>
+        <div class="${f5HomeFav?'g-clr':''}"><b>${fmt1(mc.f5.homeProb*100)}%</b> ${g.homeTeam} <span class="mc-odds">(${fmtOdds(f5HomeOdds)})</span></div>
+        <div style="color:var(--text3);font-size:8px;">O/U ${g.f5?.total?.modelTotal!=null?g.f5.total.modelTotal:'—'}: O ${mc.f5.overProb!=null?fmt1(mc.f5.overProb*100):'—'}%</div>
       </td>
       <td style="font-family:'Space Mono';font-size:9px;">
-        <div style="color:var(--green)">NRFI ${fmt1((nrfi.nrfiProb||0)*100)}%</div>
-        <div style="color:var(--text3)">YRFI ${fmt1((nrfi.yrfiProb||0)*100)}%</div>
+        <div style="color:var(--green)"><b>${fmt1(mc.nrfiProb*100)}%</b> NRFI</div>
+        <div style="color:var(--text3)">${fmt1((1-mc.nrfiProb)*100)}% YRFI</div>
       </td>
       <td style="font-family:'Space Mono';font-size:8px;color:var(--text2);">
-        ${hitsCell(hits.away,g.awayTeam)}
-        ${hitsCell(hits.home,g.homeTeam)}
+        ${hitsCell(hits.away,g.awayTeam,mc.teamHits.away)}
+        ${hitsCell(hits.home,g.homeTeam,mc.teamHits.home)}
+      </td>
+      <td>
+        <div class="model-pick">
+          <span class="model-pick-lbl">${pick.label}</span>
+          <span class="model-pick-sub">${pick.sub} · ${fmt1(pick.prob*100)}%</span>
+        </div>
       </td>
     </tr>`;
   }).join('');
