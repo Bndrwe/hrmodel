@@ -1,0 +1,54 @@
+{
+  "tierCalibration": [
+    {
+      "lo": 0.05,
+      "hi": 0.1,
+      "total": 327,
+      "hits": 48,
+      "sumExpected": 20.481100000000012
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.15,
+      "total": 9,
+      "hits": 2,
+      "sumExpected": 0.9937999999999999
+    },
+    {
+      "lo": 0.15,
+      "hi": 0.2,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.25,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.25,
+      "hi": 0.3,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.3,
+      "hi": 0.4,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.4,
+      "hi": 1.01,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    }
+  ],
+  "last_updated": "2026-07-11T23:00:00.382355"
+}

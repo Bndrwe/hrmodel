@@ -600,6 +600,31 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
     <div class="picks-row" id="picksRow"></div>
   </div>
 
+  <!-- GAME LINES: MONEYLINE / RUN LINE / TOTAL -->
+  <div>
+    <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+      🏟️ GAME LINES — MONEYLINE &middot; RUN LINE &middot; TOTAL
+      <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="glUpdated">MODEL FAIR LINES — NO SPORTSBOOK FEED</span>
+    </div>
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr>
+            <th>MATCHUP</th>
+            <th>PROBABLE PITCHERS</th>
+            <th>MONEYLINE</th>
+            <th>RUN LINE (&plusmn;1.5)</th>
+            <th>ALT SPREADS</th>
+            <th>TOTAL (O/U)</th>
+          </tr>
+        </thead>
+        <tbody id="gameLinesBody">
+          <tr><td colspan="6" class="empty">Loading game lines...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- ACCURACY DASHBOARD -->
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
@@ -892,10 +917,18 @@ async function fetchBatterRecent(pid,limit=14){
   if(!pid)return null;
   const d=await fetchJ(`${MLB}/people/${pid}/stats?stats=lastXGames&group=hitting&season=${YR}&gameType=R&limit=${limit}`);
   if(!d?.stats?.[0]?.splits?.length)return null;
-  return d.stats[0].splits.reduce((a,s)=>{
-    ['homeRuns','plateAppearances','hits','strikeOuts','baseOnBalls'].forEach(k=>a[k]=(a[k]||0)+(s.stat[k]||0));
+  const agg=d.stats[0].splits.reduce((a,s)=>{
+    ['homeRuns','plateAppearances','hits','strikeOuts','baseOnBalls','atBats','doubles','triples'].forEach(k=>a[k]=(a[k]||0)+(s.stat[k]||0));
     return a;
   },{});
+  // sluggingPct is never returned by lastXGames splits directly (only raw
+  // counting stats are), so slugTrendMult was silently dead code — always
+  // falling back to the same base SLG for both L7 and L14. Compute it here
+  // from total bases so the L7-vs-L14 SLG momentum factor actually varies.
+  const singles=Math.max((agg.hits||0)-(agg.doubles||0)-(agg.triples||0)-(agg.homeRuns||0),0);
+  const totalBases=singles+2*(agg.doubles||0)+3*(agg.triples||0)+4*(agg.homeRuns||0);
+  agg.sluggingPct=agg.atBats>0?totalBases/agg.atBats:undefined;
+  return agg;
 }
 async function fetchGameLog(pid){
   if(!pid)return[];
@@ -1020,7 +1053,7 @@ function pitcherTrendMult(recentStarts){
   const priorHR9=priorHR/priorIP*9;
   // If pitcher trending worse (more HRs recently), boost batter; if better, reduce
   const trend=recentHR9-priorHR9;
-  return clamp(1.0+trend*0.04,-0.15,0.18)+1.0-1.0; // keep as multiplier
+  return clamp(1.0+trend*0.04,0.85,1.15);
 }
 
 // New: H2H regression — blend career H2H rate with season rate
@@ -1797,7 +1830,11 @@ async function buildPredictions(){
     const batterPerson=personMap[b.pid];
     const batterHand=batterPerson?.batSide?.code||'R';
     const weather=venueWeather[b.venueId];
-    const splitCode=batterHand==='L'?'vr':'vl'; // vs opposite hand pitcher
+    // vl/vr split codes are keyed by the PITCHER's hand ("vs LHP"/"vs RHP"),
+    // not the batter's — this must reflect today's actual starter, otherwise
+    // a batter facing a same-handed pitcher still gets pulled toward their
+    // opposite-hand (platoon-advantage) split, which is the wrong matchup.
+    const splitCode=pitcherHand==='L'?'vl':'vr';
     const relevantSplit=splitsMap[b.pid]?.[splitCode]||null;
     const pitcherRecent=pitcherRecentMap[b.pitcherId]||null;
     const model=computeModel(
@@ -3078,6 +3115,54 @@ function showHistory(){
 }
 
 // ═══════════════════════════════════════
+// GAME LINES — moneyline / run line / total
+// (published daily by backend/game_model.py via GitHub Actions; this is a
+// separate, independent data source from the live client-side HR engine
+// above, so it loads on its own and never blocks player predictions)
+// ═══════════════════════════════════════
+function fmt1(n){return n!=null&&!isNaN(n)?Number(n).toFixed(1):'—';}
+function fmtOdds(o){return o==null?'—':(o>0?'+'+o:''+o);}
+
+async function loadGameLines(){
+  const tbody=document.getElementById('gameLinesBody');
+  if(!tbody)return;
+  let data=null;
+  try{ data=await fetchJ('data/game_predictions.json'); }catch(e){ data=null; }
+  if(!data||!data.games||!data.games.length){
+    tbody.innerHTML=`<tr><td colspan="6" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    return;
+  }
+  const updEl=document.getElementById('glUpdated');
+  if(updEl)updEl.textContent=`UPDATED ${data.updatedAt}`;
+  tbody.innerHTML=data.games.map(g=>{
+    const ml=g.moneyline||{};
+    const homeFav=(ml.homeProb||0)>=(ml.awayProb||0);
+    const rl=(g.runLine||{}).standard||{};
+    const alts=(g.runLine||{}).alternates||[];
+    const altTxt=alts.map(a=>`${a.homeLine>0?'+':''}${a.homeLine} <span style="color:var(--text3)">(${fmt1(a.homeCoverProb*100)}%)</span>`).join(' &middot; ');
+    const tot=g.total||{lines:[]};
+    const totTxt=(tot.lines||[]).map(l=>`${l.line}: O ${fmt1(l.overProb*100)}%`).join(' &middot; ');
+    return `<tr>
+      <td><div class="pname">${g.awayTeam} @ ${g.homeTeam}</div><div class="pteam">${g.venue||''}</div></td>
+      <td style="font-family:'Space Mono';font-size:9px;color:var(--text2);">${g.awayPitcher||'TBD'} vs ${g.homePitcher||'TBD'}</td>
+      <td style="font-family:'Space Mono';font-size:10px;">
+        <div class="${!homeFav?'g-clr':''}">${g.awayTeam} ${fmtOdds(ml.awayOdds)} <span style="color:var(--text3)">(${fmt1((ml.awayProb||0)*100)}%)</span></div>
+        <div class="${homeFav?'g-clr':''}">${g.homeTeam} ${fmtOdds(ml.homeOdds)} <span style="color:var(--text3)">(${fmt1((ml.homeProb||0)*100)}%)</span></div>
+      </td>
+      <td style="font-family:'Space Mono';font-size:9px;">
+        <div>${g.homeTeam} ${rl.homeLine} — ${fmt1((rl.homeCoverProb||0)*100)}%</div>
+        <div>${g.awayTeam} ${rl.awayLine>0?'+':''}${rl.awayLine} — ${fmt1((rl.awayCoverProb||0)*100)}%</div>
+      </td>
+      <td style="font-family:'Space Mono';font-size:8px;color:var(--text2);">${altTxt||'—'}</td>
+      <td style="font-family:'Space Mono';font-size:9px;">
+        <div>MODEL TOTAL: <b style="color:var(--white)">${tot.modelTotal!=null?tot.modelTotal:'—'}</b></div>
+        <div style="color:var(--text3);font-size:8px;">${totTxt}</div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════
 window.addEventListener('load',async()=>{
@@ -3088,6 +3173,7 @@ window.addEventListener('load',async()=>{
   renderAccuracyPanel(); // show history immediately on load
   document.getElementById('dateDisp').textContent=today();
   setProgress(2,'STARTING...');
+  loadGameLines(); // independent of the HR engine below; don't block on it
   await buildPredictions();
   scheduleAutoRefresh();
 });
@@ -3142,7 +3228,7 @@ async function analyzeParlay() {
         messages: [
           {
             role: 'system',
-            content: You are an expert baseball analyst working with HR Oracle, a predictive model. The user is viewing today's home run predictions from the model which includes probability percentages for each player. When analyzing parlays, reference the model's data and predictions that are currently displayed on the page. Provide insights on the combined probability, risk assessment, value analysis, and whether the parlay makes sense based on the model's predictions.
+            content: `You are an expert baseball analyst working with HR Oracle, a predictive model. The user is viewing today's home run predictions from the model which includes probability percentages for each player. When analyzing parlays, reference the model's data and predictions that are currently displayed on the page. Provide insights on the combined probability, risk assessment, value analysis, and whether the parlay makes sense based on the model's predictions.`
           },
           {
             role: 'user',
