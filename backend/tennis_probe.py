@@ -89,5 +89,29 @@ def main():
                 print(f"/rankings/type/{rtype} FAILED: {type(ex).__name__}: {ex}")
 
 
+def probe_alternates():
+    candidates = [
+        ("tennis-data.co.uk 2026 xlsx", "https://www.tennis-data.co.uk/2026/2026.xlsx"),
+        ("tennis-data.co.uk alldata page", "http://www.tennis-data.co.uk/alldata.php"),
+        ("api-tennis.com root", "https://api.api-tennis.com/tennis/"),
+        ("ultimatetennisstatistics ping", "https://www.ultimatetennisstatistics.com/api/ranking/ATP?date=2026-07-06"),
+        ("atptour.com rankings ajax", "https://www.atptour.com/en/-/www/rankings/singles?rankRange=1-20"),
+        ("flashscore tennis", "https://www.flashscore.com/x/feed/proxy-tennis"),
+        ("tennisexplorer schedule", "https://www.tennisexplorer.com/matches/?type=all"),
+    ]
+    for label, url in candidates:
+        req = urllib.request.Request(url, headers=HEADERS)
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                body = resp.read()
+                print(f"{label} -> HTTP {resp.status}, {len(body)} bytes")
+                print(body[:300])
+        except Exception as ex:
+            print(f"{label} -> FAILED: {type(ex).__name__}: {ex}")
+        print()
+
+
 if __name__ == "__main__":
     main()
+    print("\n\n=== ALTERNATE SOURCE REACHABILITY ===")
+    probe_alternates()
