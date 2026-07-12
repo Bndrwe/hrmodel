@@ -630,6 +630,10 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
     <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-bottom:8px;">
       All probabilities below are the model's own 10,000-simulation estimate (Monte Carlo over each team's projected run distribution) — not a sportsbook line. Bold % = model probability; odds in parens are the fair-value price implied by that probability. <b style="color:var(--green)">MODEL PICK</b> flags the single strongest edge across every market for that game.
     </div>
+    <div style="margin-bottom:12px;">
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:6px;">🎯 TOP PICKS OF THE DAY — HIGHEST-CONFIDENCE BETS ACROSS EVERY GAME &amp; MARKET</div>
+      <div id="topPicksOfDay" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
+    </div>
     <div class="table-wrap">
       <table class="dtable">
         <thead>
@@ -731,7 +735,13 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
         <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 MONEYLINE CONFIDENCE-TIER CALIBRATION</div>
         <div id="glCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
       </div>
-      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📋 YESTERDAY'S REPORT CARD — DID IT HIT?</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;">📋 REPORT CARD — DID IT HIT?</div>
+        <div>
+          <label class="t-label" style="display:inline;margin-right:6px;">VIEW DAY</label>
+          <select id="glHistorySel" onchange="renderGlReportCard(this.value)"></select>
+        </div>
+      </div>
       <div class="table-wrap">
         <table class="dtable">
           <thead>
@@ -3355,6 +3365,18 @@ function pickBestLean(g,mc){
   return candidates[0];
 }
 
+function renderTopPicksOfDay(allPicks){
+  const el=document.getElementById('topPicksOfDay');
+  if(!el)return;
+  if(!allPicks.length){el.innerHTML='';return;}
+  const top=[...allPicks].sort((a,b)=>b.prob-a.prob).slice(0,5);
+  el.innerHTML=top.map((p,i)=>`
+    <div class="model-pick" style="min-width:150px;">
+      <span class="model-pick-lbl">#${i+1} ${p.label}</span>
+      <span class="model-pick-sub">${p.matchup} · ${p.sub} · ${fmt1(p.prob*100)}%</span>
+    </div>`).join('');
+}
+
 async function loadGameLines(){
   const tbody=document.getElementById('gameLinesBody');
   if(!tbody)return;
@@ -3362,10 +3384,12 @@ async function loadGameLines(){
   try{ data=await fetchJ('data/game_predictions.json'); }catch(e){ data=null; }
   if(!data||!data.games||!data.games.length){
     tbody.innerHTML=`<tr><td colspan="10" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    renderTopPicksOfDay([]);
     return;
   }
   const updEl=document.getElementById('glUpdated');
   if(updEl)updEl.textContent=`UPDATED ${data.updatedAt} · 10K-SIM MONTE CARLO`;
+  const allPicks=[];
   tbody.innerHTML=data.games.map(g=>{
     const mc=runGameMC(g,10000);
     const homeFav=mc.moneyline.homeProb>=mc.moneyline.awayProb;
@@ -3374,20 +3398,26 @@ async function loadGameLines(){
     const rlm=mc.runLine[rl.homeLine]||{homeCover:0.5,awayCover:0.5};
     const alts=(g.runLine||{}).alternates||[];
     const altTxt=alts.map(a=>{
-      const m=mc.runLine[a.homeLine]||{homeCover:0.5};
-      return `${a.homeLine>0?'+':''}${a.homeLine} <span style="color:var(--text3)">(${fmt1(m.homeCover*100)}%)</span>`;
+      const m=mc.runLine[a.homeLine]||{homeCover:0.5,awayCover:0.5};
+      const homeFavored=m.homeCover>=0.5;
+      const pickTeam=homeFavored?g.homeTeam:g.awayTeam;
+      const pickLine=homeFavored?a.homeLine:-a.homeLine;
+      const pickProb=homeFavored?m.homeCover:m.awayCover;
+      return `<b>${pickTeam} ${pickLine>0?'+':''}${pickLine}</b> <span style="color:var(--text3)">(${fmt1(pickProb*100)}%)</span>`;
     }).join(' &middot; ');
     const totTxt=(g.total?.lines||[]).map(l=>{
-      const m=mc.total[l.line]||{over:0.5};
-      return `${l.line}: O ${fmt1(m.over*100)}%`;
+      const m=mc.total[l.line]||{over:0.5,under:0.5};
+      const overFavored=m.over>=0.5;
+      return `<b>${overFavored?'OVER':'UNDER'} ${l.line}</b> <span style="color:var(--text3)">(${fmt1((overFavored?m.over:m.under)*100)}%)</span>`;
     }).join(' &middot; ');
     const pq=g.pitchingQuality||{};
     const lm=g.lineupMatchup||{};
     const f5HomeFav=mc.f5.homeProb>=mc.f5.awayProb;
     const f5HomeOdds=probToAmericanOdds(mc.f5.homeProb),f5AwayOdds=probToAmericanOdds(mc.f5.awayProb);
     const hits=g.teamHits||{};
-    const hitsCell=(h,label,mcProb)=>h&&mcProb!=null?`<div>${label} ${h.modelLine}: O ${fmt1(mcProb*100)}%/U ${fmt1((1-mcProb)*100)}%</div>`:'';
+    const hitsCell=(h,label,mcProb)=>h&&mcProb!=null?`<div>${label} <b>${mcProb>=0.5?'OVER':'UNDER'} ${h.modelLine}</b> (${fmt1((mcProb>=0.5?mcProb:1-mcProb)*100)}%)</div>`:'';
     const pick=pickBestLean(g,mc);
+    allPicks.push({...pick,matchup:`${g.awayTeam} @ ${g.homeTeam}`});
     return `<tr>
       <td><div class="pname">${g.awayTeam} @ ${g.homeTeam}</div><div class="pteam">${g.venue||''}</div></td>
       <td style="font-family:'Space Mono';font-size:9px;color:var(--text2);">
@@ -3400,8 +3430,8 @@ async function loadGameLines(){
         <div class="${homeFav?'g-clr':''}"><span class="mc-prob">${fmt1(mc.moneyline.homeProb*100)}%</span> ${g.homeTeam} <span class="mc-odds">(${fmtOdds(mlHomeOdds)})</span></div>
       </td>
       <td style="font-family:'Space Mono';font-size:9px;">
-        <div>${g.homeTeam} ${rl.homeLine} — <b>${fmt1(rlm.homeCover*100)}%</b></div>
-        <div>${g.awayTeam} ${rl.awayLine>0?'+':''}${rl.awayLine} — <b>${fmt1(rlm.awayCover*100)}%</b></div>
+        <div class="${rlm.homeCover>=0.5?'g-clr':''}">${rlm.homeCover>=0.5?'<b>':''}${g.homeTeam} ${rl.homeLine}${rlm.homeCover>=0.5?'</b>':''} — ${fmt1(rlm.homeCover*100)}%</div>
+        <div class="${rlm.awayCover>=0.5?'g-clr':''}">${rlm.awayCover>=0.5?'<b>':''}${g.awayTeam} ${rl.awayLine>0?'+':''}${rl.awayLine}${rlm.awayCover>=0.5?'</b>':''} — ${fmt1(rlm.awayCover*100)}%</div>
       </td>
       <td style="font-family:'Space Mono';font-size:8px;color:var(--text2);">${altTxt||'—'}</td>
       <td style="font-family:'Space Mono';font-size:9px;">
@@ -3411,7 +3441,7 @@ async function loadGameLines(){
       <td style="font-family:'Space Mono';font-size:9px;">
         <div class="${!f5HomeFav?'g-clr':''}"><b>${fmt1(mc.f5.awayProb*100)}%</b> ${g.awayTeam} <span class="mc-odds">(${fmtOdds(f5AwayOdds)})</span></div>
         <div class="${f5HomeFav?'g-clr':''}"><b>${fmt1(mc.f5.homeProb*100)}%</b> ${g.homeTeam} <span class="mc-odds">(${fmtOdds(f5HomeOdds)})</span></div>
-        <div style="color:var(--text3);font-size:8px;">O/U ${g.f5?.total?.modelTotal!=null?g.f5.total.modelTotal:'—'}: O ${mc.f5.overProb!=null?fmt1(mc.f5.overProb*100):'—'}%</div>
+        <div style="color:var(--text3);font-size:8px;">${mc.f5.overProb!=null?`<b>${mc.f5.overProb>=0.5?'OVER':'UNDER'} ${g.f5.total.modelTotal}</b> (${fmt1((mc.f5.overProb>=0.5?mc.f5.overProb:1-mc.f5.overProb)*100)}%)`:'O/U —'}</div>
       </td>
       <td style="font-family:'Space Mono';font-size:9px;">
         <div style="color:var(--green)"><b>${fmt1(mc.nrfiProb*100)}%</b> NRFI</div>
@@ -3429,6 +3459,7 @@ async function loadGameLines(){
       </td>
     </tr>`;
   }).join('');
+  renderTopPicksOfDay(allPicks);
 }
 
 // ═══════════════════════════════════════
@@ -3442,6 +3473,31 @@ function glResultBadge(hit){
   if(hit===true)return'<span class="result-correct">&#10003; HIT</span>';
   if(hit===false)return'<span class="result-miss">&#10005; MISS</span>';
   return'<span class="result-pending">— PUSH</span>';
+}
+
+let GL_ACCURACY_SESSIONS=[];
+
+function renderGlReportCard(dateStr){
+  const reportCard=document.getElementById('glReportCard');
+  if(!reportCard)return;
+  const session=GL_ACCURACY_SESSIONS.find(s=>s.date===dateStr)||GL_ACCURACY_SESSIONS[GL_ACCURACY_SESSIONS.length-1];
+  if(!session){
+    reportCard.innerHTML='<tr><td colspan="8" class="empty">No graded games yet.</td></tr>';
+    return;
+  }
+  reportCard.innerHTML=(session.detail||[]).length?session.detail.map(g=>{
+    const hitsTxt=Object.entries(g.teamHits||{}).map(([side,h])=>`${side.toUpperCase()} ${glResultBadge(h.hit)}`).join('<br>');
+    return `<tr>
+      <td class="pname">${g.matchup}</td>
+      <td style="font-family:'Space Mono';font-size:11px;color:var(--white);">${g.actualScore}</td>
+      <td>${glResultBadge(g.moneyline?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.moneyline?.pick||'').toUpperCase()} ${g.moneyline?.prob!=null?(g.moneyline.prob*100).toFixed(0)+'%':''}</div></td>
+      <td>${glResultBadge(g.runLine?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.runLine?.pick||'').toUpperCase()} ${g.runLine?.line??''}</div></td>
+      <td>${glResultBadge(g.total?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.total?.pick||'—').toUpperCase()} ${g.total?.line??''}</div></td>
+      <td>${glResultBadge(g.f5?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.f5?.pick||'—').toUpperCase()}</div></td>
+      <td>${glResultBadge(g.nrfi?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.nrfi?.pick||'').toUpperCase()}</div></td>
+      <td style="font-size:8px;">${hitsTxt||'—'}</td>
+    </tr>`;
+  }).join(''):`<tr><td colspan="8" class="empty">No games graded for ${session.date}.</td></tr>`;
 }
 
 async function loadGameAccuracy(){
@@ -3513,21 +3569,15 @@ async function loadGameAccuracy(){
       : `${totalTracked} moneyline picks tracked so far — each confidence tier needs 20+ picks before it starts self-correcting.`;
   }
 
-  // Yesterday's report card
-  const latest=sessions[sessions.length-1];
-  reportCard.innerHTML=(latest.detail||[]).length?latest.detail.map(g=>{
-    const hitsTxt=Object.entries(g.teamHits||{}).map(([side,h])=>`${side.toUpperCase()} ${glResultBadge(h.hit)}`).join('<br>');
-    return `<tr>
-      <td class="pname">${g.matchup}</td>
-      <td style="font-family:'Space Mono';font-size:11px;color:var(--white);">${g.actualScore}</td>
-      <td>${glResultBadge(g.moneyline?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.moneyline?.pick||'').toUpperCase()} ${g.moneyline?.prob!=null?(g.moneyline.prob*100).toFixed(0)+'%':''}</div></td>
-      <td>${glResultBadge(g.runLine?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.runLine?.pick||'').toUpperCase()} ${g.runLine?.line??''}</div></td>
-      <td>${glResultBadge(g.total?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.total?.pick||'—').toUpperCase()} ${g.total?.line??''}</div></td>
-      <td>${glResultBadge(g.f5?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.f5?.pick||'—').toUpperCase()}</div></td>
-      <td>${glResultBadge(g.nrfi?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.nrfi?.pick||'').toUpperCase()}</div></td>
-      <td style="font-size:8px;">${hitsTxt||'—'}</td>
-    </tr>`;
-  }).join(''):'<tr><td colspan="8" class="empty">No games graded for the most recent tracked day.</td></tr>';
+  // History browser: newest-first date list, defaulting to the latest day
+  GL_ACCURACY_SESSIONS=sessions;
+  const histSel=document.getElementById('glHistorySel');
+  if(histSel){
+    histSel.innerHTML=[...sessions].reverse().map((s,i)=>
+      `<option value="${s.date}"${i===0?' selected':''}>${s.date} (${s.gamesGraded} games)</option>`
+    ).join('');
+  }
+  renderGlReportCard(sessions[sessions.length-1].date);
 }
 
 // ═══════════════════════════════════════
