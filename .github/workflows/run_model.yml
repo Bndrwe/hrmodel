@@ -64,6 +64,14 @@ jobs:
       - name: Update precision tracking
         run: python backend/precision_k.py
 
+      - name: Run tennis predictions (ATP/WTA)
+        run: python backend/tennis_model.py
+        # tennisexplorer.com is an unofficial, undocumented source (see
+        # backend/tennis_model.py docstring for why -- there is no free
+        # official ATP/WTA API). continue-on-error so a scraping breakage
+        # never blocks the MLB predictions above from committing.
+        continue-on-error: true
+
       - name: Commit predictions
         run: |
           git config user.name  "github-actions[bot]"
@@ -72,6 +80,7 @@ jobs:
           # when a path glob matches nothing).
           git add data/predictions.json || true
           git add data/game_predictions.json || true
+          git add data/tennis_predictions.json || true
           git add "data/history/*.json" || true
           # Only commit when there are actual changes.
           if git diff-index --quiet HEAD; then
@@ -136,6 +145,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Collect tennis results (ATP/WTA)
+        run: python backend/collect_tennis_results.py
+        continue-on-error: true
+
+      - name: Grade tennis predictions and update calibration
+        run: python backend/grade_tennis_predictions.py
+        continue-on-error: true
+
       - name: Archive old season data
         run: python backend/archive_season.py
 
@@ -149,6 +166,9 @@ jobs:
           git add "data/game_results/*.json"  || true
           git add data/game_accuracy_log.json || true
           git add data/game_model_weights.json || true
+          git add "data/tennis_results/*.json" || true
+          git add data/tennis_accuracy_log.json || true
+          git add data/tennis_model_weights.json || true
           if git diff-index --quiet HEAD; then
             echo "No changes to commit - skipping push."
           else
