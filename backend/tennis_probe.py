@@ -111,22 +111,34 @@ def probe_alternates():
         print()
 
 
-def dump_page(label, url, chars=6000):
+def dump_page(label, url, markers=("<table", "result", "ranking-table"), window=3000):
     req = urllib.request.Request(url, headers=HEADERS)
-    print(f"\n=== FULL DUMP: {label} ({url}) ===")
+    print(f"\n=== STRUCTURE DUMP: {label} ({url}) ===")
     try:
         with urllib.request.urlopen(req, timeout=20) as resp:
             body = resp.read().decode("utf-8", errors="replace")
-            print(f"HTTP {resp.status}, {len(body)} chars total, showing first {chars}")
-            print(body[:chars])
+            print(f"HTTP {resp.status}, {len(body)} chars total")
+            seen = set()
+            for m in markers:
+                idx = body.find(m)
+                if idx == -1:
+                    print(f"-- marker {m!r} not found --")
+                    continue
+                if idx in seen:
+                    continue
+                seen.add(idx)
+                print(f"-- window around first {m!r} at offset {idx} --")
+                print(body[max(0, idx - 200):idx + window])
+                print("-- end window --\n")
     except Exception as ex:
         print(f"FAILED: {type(ex).__name__}: {ex}")
 
 
 def probe_tennisexplorer_deep():
-    dump_page("today's matches (all levels)", "https://www.tennisexplorer.com/matches/?type=all")
-    dump_page("ATP ranking", "https://www.tennisexplorer.com/ranking/atp-men/")
-    dump_page("WTA ranking", "https://www.tennisexplorer.com/ranking/wta-women/")
+    dump_page("today's matches (all levels)", "https://www.tennisexplorer.com/matches/?type=all",
+              markers=("<table", "class=\"result", "id=\"quick"))
+    dump_page("ATP ranking", "https://www.tennisexplorer.com/ranking/atp-men/",
+              markers=("<table", "flag", "class=\"t-name"))
 
 
 if __name__ == "__main__":
