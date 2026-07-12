@@ -789,137 +789,6 @@
       }
     },
     {
-      "gamePk": 823842,
-      "gameDate": "2026-07-12T17:40:00Z",
-      "venue": "loanDepot park",
-      "homeTeam": "MIA",
-      "awayTeam": "CLE",
-      "homeTeamId": 146,
-      "awayTeamId": 114,
-      "homePitcher": "Tyler Phillips",
-      "awayPitcher": "Joey Cantillo",
-      "expectedRuns": {
-        "home": 4.11,
-        "away": 3.41
-      },
-      "pitchingQuality": {
-        "homeStarter": 3.79,
-        "awayStarter": 3.91,
-        "homePen": 3.81,
-        "awayPen": 3.62
-      },
-      "lineupMatchup": {
-        "home": {
-          "mult": 1.007,
-          "source": "teamSplit"
-        },
-        "away": {
-          "mult": 0.968,
-          "source": "teamSplit"
-        }
-      },
-      "moneyline": {
-        "homeProb": 0.5854,
-        "awayProb": 0.4146,
-        "homeOdds": -141,
-        "awayOdds": 141
-      },
-      "runLine": {
-        "standard": {
-          "homeLine": -1.5,
-          "awayLine": 1.5,
-          "homeCoverProb": 0.4285,
-          "awayCoverProb": 0.5715
-        },
-        "alternates": [
-          {
-            "homeLine": -1.0,
-            "awayLine": 1.0,
-            "homeCoverProb": 0.4734,
-            "awayCoverProb": 0.5266
-          },
-          {
-            "homeLine": -2.5,
-            "awayLine": 2.5,
-            "homeCoverProb": 0.3418,
-            "awayCoverProb": 0.6582
-          }
-        ]
-      },
-      "total": {
-        "modelTotal": 7.5,
-        "lines": [
-          {
-            "line": 6.0,
-            "overProb": 0.6297,
-            "underProb": 0.3703
-          },
-          {
-            "line": 7.0,
-            "overProb": 0.5453,
-            "underProb": 0.4547
-          },
-          {
-            "line": 8.0,
-            "overProb": 0.4587,
-            "underProb": 0.5413
-          },
-          {
-            "line": 9.0,
-            "overProb": 0.3741,
-            "underProb": 0.6259
-          }
-        ]
-      },
-      "f5": {
-        "expectedRuns": {
-          "home": 2.29,
-          "away": 1.89
-        },
-        "moneyline": {
-          "homeProb": 0.5854,
-          "awayProb": 0.4146,
-          "homeOdds": -141,
-          "awayOdds": 141
-        },
-        "runLine": {
-          "homeLine": -0.5,
-          "awayLine": 0.5,
-          "homeCoverProb": 0.5477,
-          "awayCoverProb": 0.4523
-        },
-        "total": {
-          "modelTotal": 4.0,
-          "overProb": 0.5209,
-          "underProb": 0.4791
-        }
-      },
-      "nrfi": {
-        "expectedFirstInningRuns": {
-          "home": 0.48,
-          "away": 0.398
-        },
-        "nrfiProb": 0.4157,
-        "yrfiProb": 0.5843
-      },
-      "teamHits": {
-        "home": {
-          "team": "MIA",
-          "expectedHits": 7.42,
-          "modelLine": 7.5,
-          "overProb": 0.4892,
-          "underProb": 0.5108
-        },
-        "away": {
-          "team": "CLE",
-          "expectedHits": 6.81,
-          "modelLine": 7.0,
-          "overProb": 0.4752,
-          "underProb": 0.5248
-        }
-      }
-    },
-    {
       "gamePk": 823602,
       "gameDate": "2026-07-12T17:40:00Z",
       "venue": "Citi Field",
@@ -1047,6 +916,137 @@
           "modelLine": 8.0,
           "overProb": 0.5202,
           "underProb": 0.4798
+        }
+      }
+    },
+    {
+      "gamePk": 823842,
+      "gameDate": "2026-07-12T17:40:00Z",
+      "venue": "loanDepot park",
+      "homeTeam": "MIA",
+      "awayTeam": "CLE",
+      "homeTeamId": 146,
+      "awayTeamId": 114,
+      "homePitcher": "Tyler Phillips",
+      "awayPitcher": "Joey Cantillo",
+      "expectedRuns": {
+        "home": 4.11,
+        "away": 3.41
+      },
+      "pitchingQuality": {
+        "homeStarter": 3.79,
+        "awayStarter": 3.91,
+        "homePen": 3.81,
+        "awayPen": 3.62
+      },
+      "lineupMatchup": {
+        "home": {
+          "mult": 1.007,
+          "source": "teamSplit"
+        },
+        "away": {
+          "mult": 0.968,
+          "source": "teamSplit"
+        }
+      },
+      "moneyline": {
+        "homeProb": 0.5854,
+        "awayProb": 0.4146,
+        "homeOdds": -141,
+        "awayOdds": 141
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4285,
+          "awayCoverProb": 0.5715
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.4734,
+            "awayCoverProb": 0.5266
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.3418,
+            "awayCoverProb": 0.6582
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.5,
+        "lines": [
+          {
+            "line": 6.0,
+            "overProb": 0.6297,
+            "underProb": 0.3703
+          },
+          {
+            "line": 7.0,
+            "overProb": 0.5453,
+            "underProb": 0.4547
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.4587,
+            "underProb": 0.5413
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.3741,
+            "underProb": 0.6259
+          }
+        ]
+      },
+      "f5": {
+        "expectedRuns": {
+          "home": 2.29,
+          "away": 1.89
+        },
+        "moneyline": {
+          "homeProb": 0.5854,
+          "awayProb": 0.4146,
+          "homeOdds": -141,
+          "awayOdds": 141
+        },
+        "runLine": {
+          "homeLine": -0.5,
+          "awayLine": 0.5,
+          "homeCoverProb": 0.5477,
+          "awayCoverProb": 0.4523
+        },
+        "total": {
+          "modelTotal": 4.0,
+          "overProb": 0.5209,
+          "underProb": 0.4791
+        }
+      },
+      "nrfi": {
+        "expectedFirstInningRuns": {
+          "home": 0.48,
+          "away": 0.398
+        },
+        "nrfiProb": 0.4157,
+        "yrfiProb": 0.5843
+      },
+      "teamHits": {
+        "home": {
+          "team": "MIA",
+          "expectedHits": 7.42,
+          "modelLine": 7.5,
+          "overProb": 0.4892,
+          "underProb": 0.5108
+        },
+        "away": {
+          "team": "CLE",
+          "expectedHits": 6.81,
+          "modelLine": 7.0,
+          "overProb": 0.4752,
+          "underProb": 0.5248
         }
       }
     },
