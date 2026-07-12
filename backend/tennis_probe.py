@@ -111,7 +111,27 @@ def probe_alternates():
         print()
 
 
+def dump_page(label, url, chars=6000):
+    req = urllib.request.Request(url, headers=HEADERS)
+    print(f"\n=== FULL DUMP: {label} ({url}) ===")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            body = resp.read().decode("utf-8", errors="replace")
+            print(f"HTTP {resp.status}, {len(body)} chars total, showing first {chars}")
+            print(body[:chars])
+    except Exception as ex:
+        print(f"FAILED: {type(ex).__name__}: {ex}")
+
+
+def probe_tennisexplorer_deep():
+    dump_page("today's matches (all levels)", "https://www.tennisexplorer.com/matches/?type=all")
+    dump_page("ATP ranking", "https://www.tennisexplorer.com/ranking/atp-men/")
+    dump_page("WTA ranking", "https://www.tennisexplorer.com/ranking/wta-women/")
+
+
 if __name__ == "__main__":
     main()
     print("\n\n=== ALTERNATE SOURCE REACHABILITY ===")
     probe_alternates()
+    print("\n\n=== TENNISEXPLORER DEEP DUMP ===")
+    probe_tennisexplorer_deep()
