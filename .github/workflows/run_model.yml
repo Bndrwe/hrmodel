@@ -74,7 +74,7 @@ jobs:
           fi
 
   collect-results:
-    if: github.event.schedule == '0 22 * * *'
+    if: github.event.schedule == '0 22 * * *' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:

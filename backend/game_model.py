@@ -94,6 +94,25 @@ def calibrate_moneyline(p_home):
     return fav_prob if p_home >= 0.5 else 1 - fav_prob
 
 
+def calibrate_lean(prob, market_key, min_sample=30, max_shrink=0.5):
+    """Symmetric counterpart to calibrate_moneyline() for markets that are
+    naturally centered on a coin flip (total, NRFI): if grade_game_predictions.py's
+    tracked accuracy for this market has historically hit *worse* than a
+    coin flip, shrink today's lean back toward 50/50 rather than let a
+    small, possibly noisy edge stand. If it's hit at or above 50%, the
+    lean is left alone -- this only guards against a demonstrated bias,
+    it doesn't try to manufacture extra confidence."""
+    summary = _GAME_MODEL_WEIGHTS.get("accuracySummary", {}).get(market_key, {})
+    total = summary.get("total", 0)
+    if total < min_sample:
+        return prob
+    observed = summary.get("hits", 0) / total
+    if observed >= 0.50:
+        return prob
+    shrink = clamp((0.50 - observed) * 2, 0, max_shrink)
+    return prob + (0.5 - prob) * shrink
+
+
 def norm_cdf(x, mean, std):
     return 0.5 * (1 + math.erf((x - mean) / (std * math.sqrt(2))))
 
@@ -382,10 +401,11 @@ def build_game_prediction(game, season):
     for offset in (-1.5, -0.5, 0.5, 1.5):
         line = round(model_total + offset, 1)
         under_prob = norm_cdf(line, mean_total, STD_TOTAL)
+        over_prob = calibrate_lean(1 - under_prob, "total")
         total_lines.append({
             "line": line,
-            "overProb": round(1 - under_prob, 4),
-            "underProb": round(under_prob, 4),
+            "overProb": round(over_prob, 4),
+            "underProb": round(1 - over_prob, 4),
         })
 
     # -- F5 (first 5 innings): scale the same run model down to 5 innings.
@@ -429,6 +449,7 @@ def build_game_prediction(game, season):
     lam_home_1st = exp_runs_home * FIRST_INNING_SHARE * FIRST_INNING_BUMP
     lam_away_1st = exp_runs_away * FIRST_INNING_SHARE * FIRST_INNING_BUMP
     nrfi_prob = math.exp(-lam_home_1st) * math.exp(-lam_away_1st)
+    nrfi_prob = calibrate_lean(nrfi_prob, "nrfi")
     nrfi = {
         "expectedFirstInningRuns": {"home": round(lam_home_1st, 3), "away": round(lam_away_1st, 3)},
         "nrfiProb": round(nrfi_prob, 4),
