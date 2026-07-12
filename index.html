@@ -714,6 +714,38 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       </div>
     </div>
   </div>
+
+  <!-- GAME LINES ACCURACY -->
+  <div>
+    <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+      🏟️ GAME LINES ACCURACY &amp; SELF-CALIBRATION
+      <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="glAccUpdated">—</span>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;">
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:14px;" id="glAccStatGrid"></div>
+      <div id="glCalibStatus" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;white-space:nowrap;">⚙ MONEYLINE SELF-CALIBRATION</div>
+        <div style="flex:1;font-family:'Space Mono';font-size:9px;color:var(--text2);" id="glCalibDesc">Awaiting tracked picks…</div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 MONEYLINE CONFIDENCE-TIER CALIBRATION</div>
+        <div id="glCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
+      </div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📋 YESTERDAY'S REPORT CARD — DID IT HIT?</div>
+      <div class="table-wrap">
+        <table class="dtable">
+          <thead>
+            <tr>
+              <th>MATCHUP</th><th>SCORE</th><th>MONEYLINE</th><th>RUN LINE</th><th>TOTAL</th><th>F5</th><th>NRFI</th><th>TEAM HITS</th>
+            </tr>
+          </thead>
+          <tbody id="glReportCard">
+            <tr><td colspan="8" class="empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="main-tab tab-player-props">
@@ -3400,6 +3432,105 @@ async function loadGameLines(){
 }
 
 // ═══════════════════════════════════════
+// GAME LINES ACCURACY — transparency + self-calibration status
+// (backend/grade_game_predictions.py runs every day, checking every market
+// backend/game_model.py predicted against the real final score, and
+// bucketing moneyline picks by confidence so backend/game_model.py can
+// read the results back and nudge its own probability toward reality)
+// ═══════════════════════════════════════
+function glResultBadge(hit){
+  if(hit===true)return'<span class="result-correct">&#10003; HIT</span>';
+  if(hit===false)return'<span class="result-miss">&#10005; MISS</span>';
+  return'<span class="result-pending">— PUSH</span>';
+}
+
+async function loadGameAccuracy(){
+  const statGrid=document.getElementById('glAccStatGrid');
+  const reportCard=document.getElementById('glReportCard');
+  const calibTable=document.getElementById('glCalibTable');
+  const calibDesc=document.getElementById('glCalibDesc');
+  const updEl=document.getElementById('glAccUpdated');
+  if(!statGrid||!reportCard)return;
+
+  let log=null,weights=null;
+  try{ log=await fetchJ('data/game_accuracy_log.json'); }catch(e){}
+  try{ weights=await fetchJ('data/game_model_weights.json'); }catch(e){}
+
+  const sessions=log?.sessions||[];
+  if(!sessions.length){
+    statGrid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text3);font-family:'Space Mono';font-size:9px;">Game-line accuracy accumulates automatically each day as games finish — backend/grade_game_predictions.py runs nightly. Check back after the next collection run.</div>`;
+    reportCard.innerHTML=`<tr><td colspan="8" class="empty">No graded games yet.</td></tr>`;
+    if(calibDesc)calibDesc.textContent='No tracked picks yet.';
+    return;
+  }
+  if(updEl)updEl.textContent=`${sessions.length} DAY${sessions.length===1?'':'S'} TRACKED · LAST: ${sessions[sessions.length-1].date}`;
+
+  const markets=[
+    {key:'moneyline',label:'MONEYLINE'},{key:'runLine',label:'RUN LINE'},
+    {key:'total',label:'TOTAL O/U'},{key:'f5',label:'F5'},
+    {key:'nrfi',label:'NRFI/YRFI'},{key:'teamHits',label:'TEAM HITS'},
+  ];
+  const totals={};
+  markets.forEach(m=>{totals[m.key]={hits:0,total:0};});
+  sessions.forEach(s=>{
+    markets.forEach(m=>{
+      totals[m.key].hits+=s[m.key]?.hits||0;
+      totals[m.key].total+=s[m.key]?.total||0;
+    });
+  });
+  statGrid.innerHTML=markets.map(m=>{
+    const t=totals[m.key];
+    const pct=t.total>0?(t.hits/t.total*100):null;
+    const color=pct==null?'var(--text3)':pct>=55?'var(--green)':pct>=48?'var(--amber)':'var(--red)';
+    return `<div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue';font-size:24px;color:${color}">${pct!=null?pct.toFixed(1)+'%':'—'}</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">${m.label}</div>
+      <div style="font-family:'Space Mono';font-size:7px;color:var(--text3)">${t.hits}/${t.total} picks</div>
+    </div>`;
+  }).join('');
+
+  // Moneyline confidence-tier calibration
+  const buckets=(weights?.moneylineCalibration||[]).filter(b=>b.total>0);
+  if(calibTable){
+    calibTable.innerHTML=buckets.length?buckets.map(b=>{
+      const observed=b.hits/b.total*100;
+      const expected=(b.sumExpected/b.total)*100;
+      const drift=observed-expected;
+      const trusted=b.total>=20;
+      return `<div style="display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+        <span style="min-width:70px;">${(b.lo*100).toFixed(0)}-${(b.hi*100).toFixed(0)}% picks</span>
+        <span style="min-width:60px;">${b.total} tracked</span>
+        <span style="flex:1;">observed ${observed.toFixed(1)}% vs predicted ${expected.toFixed(1)}%</span>
+        <span style="min-width:80px;text-align:right;color:${trusted?(Math.abs(drift)>5?'var(--amber)':'var(--green)'):'var(--text3)'}">${trusted?(drift>=0?'+':'')+drift.toFixed(1)+'pt drift':'needs 20+'}</span>
+      </div>`;
+    }).join(''):'No moneyline picks tracked yet.';
+  }
+  const totalTracked=buckets.reduce((s,b)=>s+b.total,0);
+  const activeBuckets=buckets.filter(b=>b.total>=20);
+  if(calibDesc){
+    calibDesc.textContent=activeBuckets.length
+      ? `${totalTracked} moneyline picks tracked across ${buckets.length} confidence tiers. ${activeBuckets.length} tier(s) have 20+ tracked picks and are actively self-correcting today's predictions (capped at ±8 points).`
+      : `${totalTracked} moneyline picks tracked so far — each confidence tier needs 20+ picks before it starts self-correcting.`;
+  }
+
+  // Yesterday's report card
+  const latest=sessions[sessions.length-1];
+  reportCard.innerHTML=(latest.detail||[]).length?latest.detail.map(g=>{
+    const hitsTxt=Object.entries(g.teamHits||{}).map(([side,h])=>`${side.toUpperCase()} ${glResultBadge(h.hit)}`).join('<br>');
+    return `<tr>
+      <td class="pname">${g.matchup}</td>
+      <td style="font-family:'Space Mono';font-size:11px;color:var(--white);">${g.actualScore}</td>
+      <td>${glResultBadge(g.moneyline?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.moneyline?.pick||'').toUpperCase()} ${g.moneyline?.prob!=null?(g.moneyline.prob*100).toFixed(0)+'%':''}</div></td>
+      <td>${glResultBadge(g.runLine?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.runLine?.pick||'').toUpperCase()} ${g.runLine?.line??''}</div></td>
+      <td>${glResultBadge(g.total?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.total?.pick||'—').toUpperCase()} ${g.total?.line??''}</div></td>
+      <td>${glResultBadge(g.f5?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.f5?.pick||'—').toUpperCase()}</div></td>
+      <td>${glResultBadge(g.nrfi?.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${(g.nrfi?.pick||'').toUpperCase()}</div></td>
+      <td style="font-size:8px;">${hitsTxt||'—'}</td>
+    </tr>`;
+  }).join(''):'<tr><td colspan="8" class="empty">No games graded for the most recent tracked day.</td></tr>';
+}
+
+// ═══════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════
 window.addEventListener('load',async()=>{
@@ -3411,6 +3542,7 @@ window.addEventListener('load',async()=>{
   document.getElementById('dateDisp').textContent=today();
   setProgress(2,'STARTING...');
   loadGameLines(); // independent of the HR engine below; don't block on it
+  loadGameAccuracy();
   await buildPredictions();
   scheduleAutoRefresh();
 });

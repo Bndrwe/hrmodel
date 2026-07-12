@@ -104,6 +104,16 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
+      - name: Collect game-line results (final scores/hits/innings)
+        run: python backend/collect_game_results.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Grade game-line predictions and update moneyline calibration
+        run: python backend/grade_game_predictions.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Archive old season data
         run: python backend/archive_season.py
 
@@ -114,6 +124,9 @@ jobs:
           git add "data/results/*.json"       || true
           git add data/model_weights.json     || true
           git add data/training_log.json      || true
+          git add "data/game_results/*.json"  || true
+          git add data/game_accuracy_log.json || true
+          git add data/game_model_weights.json || true
           if git diff-index --quiet HEAD; then
             echo "No changes to commit - skipping push."
           else

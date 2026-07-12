@@ -60,6 +60,40 @@ GAME_FETCH_WORKERS = 4
 SUB_FETCH_WORKERS = 8
 
 
+def _load_game_model_weights():
+    path = Path(__file__).resolve().parent.parent / "data" / "game_model_weights.json"
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+_GAME_MODEL_WEIGHTS = _load_game_model_weights()
+_ML_CALIBRATION_BUCKETS = _GAME_MODEL_WEIGHTS.get("moneylineCalibration", [])
+
+
+def calibrate_moneyline(p_home):
+    """Nudges the Pythagorean home-win probability toward what's actually
+    been observed for picks at this confidence level. grade_game_predictions.py
+    runs every day, bucketing every moneyline pick by its predicted
+    probability and tracking whether the favorite actually won -- this is
+    what closes the loop, instead of the model running the same formula
+    forever regardless of how it's actually performed. Only trusts buckets
+    with >=20 tracked picks, and caps the correction at +/-8 points so a
+    short bad or good streak can't swing it hard."""
+    fav_prob = max(p_home, 1 - p_home)
+    for b in _ML_CALIBRATION_BUCKETS:
+        lo, hi, total = b.get("lo", 0), b.get("hi", 1), b.get("total", 0)
+        if lo <= fav_prob < hi and total >= 20:
+            observed = b.get("hits", 0) / total
+            expected = b.get("sumExpected", total * (lo + hi) / 2) / total
+            drift = observed - expected
+            adjustment = clamp(drift * 0.4, -0.08, 0.08)
+            fav_prob = clamp(fav_prob + adjustment, 0.51, 0.99)
+            break
+    return fav_prob if p_home >= 0.5 else 1 - fav_prob
+
+
 def norm_cdf(x, mean, std):
     return 0.5 * (1 + math.erf((x - mean) / (std * math.sqrt(2))))
 
@@ -327,6 +361,7 @@ def build_game_prediction(game, season):
     exp_runs_away = clamp(exp_runs_away, 1.5, 10.0)
 
     p_home = (exp_runs_home ** PYTHAG_EXP) / (exp_runs_home ** PYTHAG_EXP + exp_runs_away ** PYTHAG_EXP)
+    p_home = calibrate_moneyline(p_home)
     p_away = 1 - p_home
 
     mean_margin = exp_runs_home - exp_runs_away
