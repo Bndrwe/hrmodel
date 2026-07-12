@@ -1,0 +1,3785 @@
+{
+  "updatedAt": "2026-07-12",
+  "matches": [
+    {
+      "matchId": "3262045",
+      "tournament": "UTR Pro Match Series",
+      "tour": "WTA",
+      "time": "18:00",
+      "player1": {
+        "name": "Rennard M.",
+        "slug": "rennard-0bec2",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Mann V.",
+        "slug": "mann-5d13a",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 1.77,
+        "player2": 1.88
+      },
+      "modelProb": {
+        "player1": 0.5098,
+        "player2": 0.4902
+      },
+      "pick": "player1",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262103",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "09:00",
+      "player1": {
+        "name": "Svatikova L.",
+        "slug": "svatikova",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Najzer K.",
+        "slug": "najzer",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262061",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "11:35",
+      "player1": {
+        "name": "Mykhailets S.",
+        "slug": "mykhailets",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Hlavata N.",
+        "slug": "hlavata",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 9.0,
+        "player2": 1.01
+      },
+      "modelProb": {
+        "player1": 0.2406,
+        "player2": 0.7594
+      },
+      "pick": "player2",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262065",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "13:55",
+      "player1": {
+        "name": "Teodosescu A.",
+        "slug": "teodosescu-5c762",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Barendse L.",
+        "slug": "barendse",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 1.08,
+        "player2": 6.13
+      },
+      "modelProb": {
+        "player1": 0.7276,
+        "player2": 0.2724
+      },
+      "pick": "player1",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262301",
+      "tournament": "Davis Cup",
+      "tour": "ATP",
+      "time": "--:--",
+      "player1": {
+        "name": "Sydow P.",
+        "slug": "sydow-3197f",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gonzalez A.",
+        "slug": "gonzalez-cbfba",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262303",
+      "tournament": "Davis Cup",
+      "tour": "ATP",
+      "time": "--:--",
+      "player1": {
+        "name": "Bergen Y.",
+        "slug": "bergen-3c7b8",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Bennaton G.",
+        "slug": "bennaton",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262305",
+      "tournament": "Davis Cup",
+      "tour": "ATP",
+      "time": "--:--",
+      "player1": {
+        "name": "Samson D.",
+        "slug": "samson-b8115",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Lopez Alcerro M.",
+        "slug": "lopez-alcerro",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262117",
+      "tournament": "UTR Pro Tennis Series 3",
+      "tour": "ATP",
+      "time": "16:30",
+      "player1": {
+        "name": "Butera L.",
+        "slug": "butera-86150",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sanders O.",
+        "slug": "sanders-620d7",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 1.98,
+        "player2": 1.71
+      },
+      "modelProb": {
+        "player1": 0.4762,
+        "player2": 0.5238
+      },
+      "pick": "player2",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262101",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "ATP",
+      "time": "09:00",
+      "player1": {
+        "name": "Sheyngezikht L.",
+        "slug": "sheyngezikht",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Portugal J.",
+        "slug": "portugal-099eb",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262015",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "ATP",
+      "time": "10:00",
+      "player1": {
+        "name": "Mikovic N.",
+        "slug": "mikovic-5a4c2",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Vuglar L.",
+        "slug": "vuglar",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 2.15,
+        "player2": 1.55
+      },
+      "modelProb": {
+        "player1": 0.4473,
+        "player2": 0.5527
+      },
+      "pick": "player2",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3261863",
+      "tournament": "Wimbledon",
+      "tour": "ATP",
+      "time": "17:00Livestreams1xBetbet365UnibetTVBBC RED Button (Gbr)BBC iPlayer (Gbr)BBC Sport (Gbr)Stan Sport (Aus)HBO Max (Cze/Svk)BBC iPlayer app (Gbr)BBC Sport app (Gbr)TNT Sports 2 (Gbr)Nine (Aus)",
+      "player1": {
+        "name": "Sinner J.",
+        "slug": "sinner-8b8e8",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Zverev A.",
+        "slug": "zverev-6f768",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.2
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262681",
+      "tournament": "Newport challenger",
+      "tour": "ATP",
+      "time": "20:00Livestreamsbwinbet365Unibet1xBetBetVictor",
+      "player1": {
+        "name": "Fearnley J.",
+        "slug": "fearnley",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Walton A.",
+        "slug": "walton",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.84
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262335",
+      "tournament": "Braunschweig challenger",
+      "tour": "ATP",
+      "time": "14:00Livestreamsbwinbet365Unibet1xBetBetssonBetVictor",
+      "player1": {
+        "name": "Choinski J.",
+        "slug": "choinski",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gaston H.",
+        "slug": "gaston-e1fa4",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.6
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262643",
+      "tournament": "Iasi challenger",
+      "tour": "ATP",
+      "time": "18:00Livestreamsbwinbet365Unibet1xBetBetVictorBetsson",
+      "player1": {
+        "name": "Droguet T.",
+        "slug": "droguet",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Piros Z.",
+        "slug": "piros",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.64
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262673",
+      "tournament": "Bogot\u00e1 5 challenger",
+      "tour": "ATP",
+      "time": "18:00Livestreamsbwinbet365Unibet1xBetBetVictorBetsson",
+      "player1": {
+        "name": "Mejia N.",
+        "slug": "mejia-a7d27",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Soto M.",
+        "slug": "soto-fec8d",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.43
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262315",
+      "tournament": "Trieste challenger",
+      "tour": "ATP",
+      "time": "12:00Livestreamsbwin1xBetBetssonBetVictorbet365Unibet",
+      "player1": {
+        "name": "Dodig M.",
+        "slug": "dodig-b6156",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Dellien H.",
+        "slug": "dellien",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.39
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262317",
+      "tournament": "Liege challenger",
+      "tour": "ATP",
+      "time": "14:30LivestreamsBetVictor1xBet",
+      "player1": {
+        "name": "Broska F.",
+        "slug": "broska",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Giustino L.",
+        "slug": "giustino-1d545",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.01
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262291",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "13:00Livestreamsbwinbet365Unibet1xBetBetVictor",
+      "player1": {
+        "name": "Chidekh C.",
+        "slug": "chidekh",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Searle H.",
+        "slug": "searle-78f04",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.61
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262293",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "12:00Livestreams1xBetbet365",
+      "player1": {
+        "name": "Wessels L.",
+        "slug": "wessels-3ac5c",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Juan Mano A.",
+        "slug": "juan-mano",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.96
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262243",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "13:00Livestreams1xBetbet365",
+      "player1": {
+        "name": "Donald M.",
+        "slug": "donald-1f277",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Wiskandt M.",
+        "slug": "wiskandt",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.86
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262329",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "17:00Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Lokoli L.",
+        "slug": "lokoli",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ghazouani Durand Y.",
+        "slug": "ghazouani-durand",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.23
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262627",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "18:00Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Kim A.",
+        "slug": "kim-f6a25",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Svajda T.",
+        "slug": "svajda-cce6f",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.12
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262677",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "18:00Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Rice K.",
+        "slug": "rice-6b866",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Miyoshi K.",
+        "slug": "miyoshi-1fb72",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.93
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262107",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "04:00",
+      "player1": {
+        "name": "Jasika O.",
+        "slug": "jasika",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Matsuda K.",
+        "slug": "matsuda-ec691",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 1.48,
+        "player2": 2.49
+      },
+      "modelProb": {
+        "player1": 0.5827,
+        "player2": 0.4173
+      },
+      "pick": "player1",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262237",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "10:00Livestreams1xBet",
+      "player1": {
+        "name": "Milic O.",
+        "slug": "milic-b10f4",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Arzhankin A.",
+        "slug": "arzhankin",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.31
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262457",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "10:00Livestreams1xBet",
+      "player1": {
+        "name": "Lopez Morillo I.",
+        "slug": "lopez-morillo",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Lagerbohm L.",
+        "slug": "lagerbohm",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.49
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262171",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "10:30Livestreams1xBetbet365",
+      "player1": {
+        "name": "Montsi K.",
+        "slug": "montsi-a0436",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Shimanov O.",
+        "slug": "shimanov",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.13
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262175",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "10:30Livestreams1xBet",
+      "player1": {
+        "name": "Duran T.",
+        "slug": "duran-a44ae",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Dougaz A.",
+        "slug": "dougaz",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.12
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262185",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "12:00Livestreams1xBet",
+      "player1": {
+        "name": "Borisiouk M.",
+        "slug": "borisiouk",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Nordquist A.",
+        "slug": "nordquist",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.49
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262235",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "13:00Livestreams1xBet",
+      "player1": {
+        "name": "Papoe C.",
+        "slug": "papoe-52fc0",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Snitari I.",
+        "slug": "snitari",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.04
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262341",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "16:00Livestreams1xBet",
+      "player1": {
+        "name": "Estevez J.",
+        "slug": "estevez-4ab72",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Zarate C.",
+        "slug": "zarate-fab15",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.33
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262683",
+      "tournament": "Nottingham 3 challenger",
+      "tour": "ATP",
+      "time": "20:30Livestreams1xBet",
+      "player1": {
+        "name": "Johnson S.",
+        "slug": "johnson-a3da6",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Zamora N.",
+        "slug": "zamora-6a932",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.29
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262449",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "ATP",
+      "time": "09:00",
+      "player1": {
+        "name": "Portugal J.",
+        "slug": "portugal-099eb",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Rovai S.",
+        "slug": "rovai-0eea1",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 5.88
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262451",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "ATP",
+      "time": "10:10",
+      "player1": {
+        "name": "Gavrea M.",
+        "slug": "gavrea",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Pougault A.",
+        "slug": "pougault",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 4.0
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262453",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "ATP",
+      "time": "10:10",
+      "player1": {
+        "name": "Jansson O.",
+        "slug": "jansson-27d57",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Krstic V.",
+        "slug": "krstic",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.82
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262377",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "10:30Livestreams1xBetBetVictorbwinUnibetbet365",
+      "player1": {
+        "name": "Bueno G.",
+        "slug": "bueno-01b7e",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Marcondes I.",
+        "slug": "marcondes",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.59
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262383",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "10:30Livestreams1xBetBetVictorUnibetbwinbet365",
+      "player1": {
+        "name": "Krumich M.",
+        "slug": "krumich",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Silva F.",
+        "slug": "silva-cb43c",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.69
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262379",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "12:00Livestreams1xBetBetVictorbwinbet365Unibet",
+      "player1": {
+        "name": "Rejchtman Vinciguerra W.",
+        "slug": "rejchtman-vinciguerra",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Midon L.",
+        "slug": "midon",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 9.51
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262381",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "12:00Livestreams1xBetBetVictorbwinUnibetbet365",
+      "player1": {
+        "name": "Passaro F.",
+        "slug": "passaro-5f6f1",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kasnikowski M.",
+        "slug": "kasnikowski",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.81
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262369",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "13:30Livestreams1xBetBetVictorbwinbet365",
+      "player1": {
+        "name": "Moller E.",
+        "slug": "moller-6ea06",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Faurel T.",
+        "slug": "faurel-53b9f",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.45
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262375",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "13:30Livestreams1xBetBetVictorbwinbet365",
+      "player1": {
+        "name": "Coria F.",
+        "slug": "coria-df292",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Daniel T.",
+        "slug": "daniel-2dd17",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.06
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262371",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "14:20",
+      "player1": {
+        "name": "Slavik N.",
+        "slug": "slavik",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Damas M.",
+        "slug": "damas",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 4.79
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262373",
+      "tournament": "Bastad",
+      "tour": "ATP",
+      "time": "15:00Livestreams1xBetBetVictorbwinbet365",
+      "player1": {
+        "name": "Carballes Baena R.",
+        "slug": "carballes-baena",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sanchez Jover C.",
+        "slug": "sanchez-jover",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.21
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262491",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "11:00",
+      "player1": {
+        "name": "Alves M.",
+        "slug": "alves-4adf9",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Van Sambeek F.",
+        "slug": "van-sambeek",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.22
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262493",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "11:00Livestreamsbet365BetVictor1xBetbwinUnibet",
+      "player1": {
+        "name": "Raquillet L.",
+        "slug": "raquillet",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kumstat J.",
+        "slug": "kumstat",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.1
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262505",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "11:00Livestreamsbet365BetVictor1xBetbwinUnibet",
+      "player1": {
+        "name": "Balciunas M.",
+        "slug": "balciunas",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Petkovic M.",
+        "slug": "petkovic-11864",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 5.11
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262489",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "12:30Livestreamsbet365BetVictor1xBetbwin",
+      "player1": {
+        "name": "Gutierrez O.",
+        "slug": "gutierrez-00b30",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Campana Lee G.",
+        "slug": "campana-lee",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.78
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262497",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "12:30Livestreamsbet365BetVictor1xBetbwin",
+      "player1": {
+        "name": "Brouwer G.",
+        "slug": "brouwer-44152",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Huang T.",
+        "slug": "huang-5117a",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.31
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262503",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "13:00LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Chazal M.",
+        "slug": "chazal",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Jong S.",
+        "slug": "jong-f7977",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.04
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262483",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "14:00LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Kuzmanov D.",
+        "slug": "kuzmanov",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "De Jonge D.",
+        "slug": "de-jonge",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.15
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262487",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "14:00LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Yevseyev D.",
+        "slug": "yevseyev",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Borrelli L.",
+        "slug": "borrelli-c1bd0",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.03
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262495",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "15:00LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Marti Pujolras A.",
+        "slug": "marti-pujolras",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Forger A.",
+        "slug": "forger-fe3ad",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.47
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262485",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "15:30LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Vales A.",
+        "slug": "vales",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Nijboer R.",
+        "slug": "nijboer",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.04
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262499",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "15:30LivestreamsBetVictorbet3651xBetbwin",
+      "player1": {
+        "name": "Molleker R.",
+        "slug": "molleker",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Donders D.",
+        "slug": "donders",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.08
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262501",
+      "tournament": "Bunschoten challenger",
+      "tour": "ATP",
+      "time": "17:00Livestreamsbet3651xBetbwin",
+      "player1": {
+        "name": "Wessels L.",
+        "slug": "wessels-3ac5c",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sels J.",
+        "slug": "sels",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.89
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262459",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "10:00LivestreamsBetVictor1xBetbet365Unibetbwin",
+      "player1": {
+        "name": "Villanueva G.",
+        "slug": "villanueva-55ff0",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Rahmani K.",
+        "slug": "rahmani-1a554",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.37
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262461",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "10:00Livestreams1xBetbet365bwin",
+      "player1": {
+        "name": "Gandolfi G.",
+        "slug": "gandolfi",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Janvier M.",
+        "slug": "janvier",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.77
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262463",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "10:00LivestreamsBetVictor1xBetbet365Unibetbwin",
+      "player1": {
+        "name": "Forti F.",
+        "slug": "forti-f61d4",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Pampanin P.",
+        "slug": "pampanin-6dd55",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.03
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262465",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "11:30LivestreamsBetVictor1xBetbet365bwinUnibet",
+      "player1": {
+        "name": "Delaney J.",
+        "slug": "delaney-da784",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Makk P.",
+        "slug": "makk",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 8.26
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262475",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "11:30LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Prihodko O.",
+        "slug": "prihodko",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Balestrieri A.",
+        "slug": "balestrieri",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.02
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262477",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "11:30Livestreams1xBetbet365bwinUnibet",
+      "player1": {
+        "name": "Crivellaro G.",
+        "slug": "crivellaro",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Bassem Sobhy M.",
+        "slug": "bassem-sobhy",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.43
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262467",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "13:00LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Kravchenko G.",
+        "slug": "kravchenko-62c4a",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Lorusso L.",
+        "slug": "lorusso",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.03
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262471",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "13:00LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Pieri S.",
+        "slug": "pieri-b83b4",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Tabacco G.",
+        "slug": "tabacco-3fc98",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.43
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262473",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "13:00LivestreamsBetVictor1xBetbet365bwinUnibet",
+      "player1": {
+        "name": "Poljak D.",
+        "slug": "poljak",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Vincent Ruggeri S.",
+        "slug": "vincent-ruggeri",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.29
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262469",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "14:30LivestreamsBetVictor1xBetbwin",
+      "player1": {
+        "name": "Salazar D.",
+        "slug": "salazar-a04be",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Arnaboldi F.",
+        "slug": "arnaboldi-d7371",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 4.98
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262479",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "14:30LivestreamsBetVictor1xBetbet365",
+      "player1": {
+        "name": "Binda A.",
+        "slug": "binda",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gil Garcia A.",
+        "slug": "gil-garcia-9f309",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.15
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262481",
+      "tournament": "Cordenons challenger",
+      "tour": "ATP",
+      "time": "14:30LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Fuele M.",
+        "slug": "fuele",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Rossi L.",
+        "slug": "rossi-54a2e",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.62
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262687",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "16:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Gurenko V.",
+        "slug": "gurenko",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Dalmasso G.",
+        "slug": "dalmasso",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 8.95
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262689",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "16:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Bouchelaghem C.",
+        "slug": "bouchelaghem",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Vithoontien L.",
+        "slug": "vithoontien",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.28
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262691",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "16:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Roux E.",
+        "slug": "roux-f9a00",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ganesan A.",
+        "slug": "ganesan-7c731",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 11.5
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262685",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "17:30Livestreams1xBetbet365",
+      "player1": {
+        "name": "Trotter J.",
+        "slug": "trotter",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Horwood J.",
+        "slug": "horwood",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": null
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262693",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "17:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Heck H.",
+        "slug": "heck",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Isomura K.",
+        "slug": "isomura-6342d",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.67
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262695",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "17:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Martin D.",
+        "slug": "martin-23226",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Arseneault M.",
+        "slug": "arseneault-b5aa8",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.48
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262697",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "19:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "George B.",
+        "slug": "george-bfca6",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Magadan A.",
+        "slug": "magadan-68c65",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 5.38
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262699",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "19:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Winter E.",
+        "slug": "winter-e2184",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Roberts J.",
+        "slug": "roberts-4c2c4",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.04
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262701",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "19:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Poling K.",
+        "slug": "poling",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kuhar M.",
+        "slug": "kuhar-46457",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.18
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262703",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "20:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Tokuda R.",
+        "slug": "tokuda-f9c9a",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Rozin S.",
+        "slug": "rozin",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.77
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262705",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "20:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Pearson K.",
+        "slug": "pearson-645f7",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kirchheimer S.",
+        "slug": "kirchheimer",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.57
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262707",
+      "tournament": "Granby challenger",
+      "tour": "ATP",
+      "time": "23:00LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Miyoshi K.",
+        "slug": "miyoshi-1fb72",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kuzuhara B.",
+        "slug": "kuzuhara",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.3
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262113",
+      "tournament": "Gstaad",
+      "tour": "ATP",
+      "time": "11:00Livestreams1xBetBetVictorUnibetbwinbet365",
+      "player1": {
+        "name": "Tabur C.",
+        "slug": "tabur",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Huesler M.",
+        "slug": "huesler",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.66
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262247",
+      "tournament": "Gstaad",
+      "tour": "ATP",
+      "time": "11:00Livestreams1xBetBetVictorbwinbet365Unibet",
+      "player1": {
+        "name": "Cina F.",
+        "slug": "cina",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Hemery C.",
+        "slug": "hemery",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.38
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262251",
+      "tournament": "Gstaad",
+      "tour": "ATP",
+      "time": "12:30Livestreams1xBetBetVictorUnibetbwinbet365",
+      "player1": {
+        "name": "Dietrich D.",
+        "slug": "dietrich-fa350",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Monteiro T.",
+        "slug": "monteiro-f1500",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.67
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262323",
+      "tournament": "Gstaad",
+      "tour": "ATP",
+      "time": "12:30Livestreams1xBetBetVictorbwinbet365",
+      "player1": {
+        "name": "Skatov T.",
+        "slug": "skatov",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sachko V.",
+        "slug": "sachko",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.88
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262511",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "18:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Giunta M.",
+        "slug": "giunta-87d40",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Barroso Campos A.",
+        "slug": "barroso-campos",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.4
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262513",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "18:30LivestreamsBetVictor1xBetbwinbet365",
+      "player1": {
+        "name": "Heredia S.",
+        "slug": "heredia-f10e3",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Almazan Valiente I.",
+        "slug": "almazan-valiente",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.89
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262523",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "18:30",
+      "player1": {
+        "name": "Ouakaa A.",
+        "slug": "ouakaa",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ferra C.",
+        "slug": "ferra",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.01
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262525",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "18:30LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Linde Palacios S.",
+        "slug": "linde-palacios",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Malige M.",
+        "slug": "malige-dbd0f",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 7.23
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262515",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "19:40",
+      "player1": {
+        "name": "Palan D.",
+        "slug": "palan",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Martin Espinar A.",
+        "slug": "martin-espinar",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.06
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262517",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "19:40",
+      "player1": {
+        "name": "Dev S.",
+        "slug": "dev",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gonzalez Fernandez M.",
+        "slug": "gonzalez-fernandez-c548b",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.99
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262519",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "20:00LivestreamsBetVictor1xBetbet365",
+      "player1": {
+        "name": "Kumasaka T.",
+        "slug": "kumasaka",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Turriziani Alvarez A.",
+        "slug": "turriziani-alvarez",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.37
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262521",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "20:00LivestreamsBetVictor1xBetbet365bwin",
+      "player1": {
+        "name": "Lagutin P.",
+        "slug": "lagutin-d90ac",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Tepmahc N.",
+        "slug": "tepmahc",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.41
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262509",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "21:30Livestreams1xBetBetVictorbet365",
+      "player1": {
+        "name": "Siancha Borlenghi A.",
+        "slug": "siancha-borlenghi",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ivashka I.",
+        "slug": "ivashka",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 11.1
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262527",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "21:30LivestreamsBetVictor1xBetbet365",
+      "player1": {
+        "name": "Echeverria J.",
+        "slug": "echeverria-ef17c",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Munk Mesa B.",
+        "slug": "munk-mesa",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.16
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262529",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "21:30LivestreamsBetVictor1xBetbet365",
+      "player1": {
+        "name": "Azkara A.",
+        "slug": "azkara-85692",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Leong M.",
+        "slug": "leong-e28bd",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.9
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262507",
+      "tournament": "Pozoblanco challenger",
+      "tour": "ATP",
+      "time": "22:00LivestreamsBetVictor1xBetbet365",
+      "player1": {
+        "name": "Callejon Hernando S.",
+        "slug": "callejon-hernando",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Radulov I.",
+        "slug": "radulov",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.57
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262325",
+      "tournament": "Umag",
+      "tour": "ATP",
+      "time": "17:00Livestreams1xBetBetVictorBetssonbet365",
+      "player1": {
+        "name": "Cecchinato M.",
+        "slug": "cecchinato",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Olivieri G.",
+        "slug": "olivieri-ff875",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.23
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262343",
+      "tournament": "Umag",
+      "tour": "ATP",
+      "time": "17:00Livestreams1xBetBetVictorBetssonbet365",
+      "player1": {
+        "name": "Guerrieri A.",
+        "slug": "guerrieri",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gomez F.",
+        "slug": "gomez-e101b",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.5
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262667",
+      "tournament": "Umag",
+      "tour": "ATP",
+      "time": "17:00Livestreams1xBetBetVictorBetssonbet365",
+      "player1": {
+        "name": "Neumayer L.",
+        "slug": "neumayer",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Topo M.",
+        "slug": "topo-77408",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.31
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262669",
+      "tournament": "Umag",
+      "tour": "ATP",
+      "time": "17:00Livestreams1xBetBetVictorBetssonbet365",
+      "player1": {
+        "name": "Prado Angelo J.",
+        "slug": "prado-angelo",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sanchez Izquierdo N.",
+        "slug": "sanchez-izquierdo-99add",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.98
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262333",
+      "tournament": "Newport Beach WTA",
+      "tour": "WTA",
+      "time": "18:30Livestreamsbet365Unibet1xBet",
+      "player1": {
+        "name": "Volynets K.",
+        "slug": "volynets",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Maria T.",
+        "slug": "maria-8ad07",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.04
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262313",
+      "tournament": "Contrexeville WTA",
+      "tour": "WTA",
+      "time": "15:00Livestreamsbet365Unibet1xBet",
+      "player1": {
+        "name": "Sherif M.",
+        "slug": "sherif-78113",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Vandromme J.",
+        "slug": "vandromme",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.68
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262331",
+      "tournament": "Aschaffenburg ITF",
+      "tour": "WTA",
+      "time": "13:00Livestreams1xBetbet365",
+      "player1": {
+        "name": "Sobolieva A.",
+        "slug": "sobolieva",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gorgodze E.",
+        "slug": "gorgodze",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.37
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262249",
+      "tournament": "Haag 2 ITF",
+      "tour": "WTA",
+      "time": "13:30Livestreams1xBetbet365",
+      "player1": {
+        "name": "Vedder E.",
+        "slug": "vedder",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Boskovic L.",
+        "slug": "boskovic-5bb24",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.5
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262311",
+      "tournament": "Columbus ITF",
+      "tour": "WTA",
+      "time": "16:00Livestreams1xBetbet365",
+      "player1": {
+        "name": "Hosogi S.",
+        "slug": "hosogi",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Pareja J.",
+        "slug": "pareja-fe715",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 4.33
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262241",
+      "tournament": "Corroios-Seixal ITF",
+      "tour": "WTA",
+      "time": "12:00",
+      "player1": {
+        "name": "Lee C.",
+        "slug": "lee-3f464",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Gao X.",
+        "slug": "gao-5c222",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.73
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262109",
+      "tournament": "Don Benito ITF",
+      "tour": "WTA",
+      "time": "10:25Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Ryser V.",
+        "slug": "ryser",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Hruncakova V.",
+        "slug": "hruncakova",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.19
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262179",
+      "tournament": "Hillcrest 2 ITF",
+      "tour": "WTA",
+      "time": "11:30Livestreams1xBetbet365",
+      "player1": {
+        "name": "Leykina P.",
+        "slug": "leykina",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Hossam Salah J.",
+        "slug": "hossam-salah",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.81
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262635",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "09:00",
+      "player1": {
+        "name": "Barendse L.",
+        "slug": "barendse",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Soulie A.",
+        "slug": "soulie-46233",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 5.33
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262637",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "09:00",
+      "player1": {
+        "name": "Welker E.",
+        "slug": "welker",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Hlavata N.",
+        "slug": "hlavata",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.73
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262639",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "10:10",
+      "player1": {
+        "name": "Obradovic A.",
+        "slug": "obradovic-33b41",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Horvit M.",
+        "slug": "horvit",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.61
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262641",
+      "tournament": "UTR Pro Tennis Series 5",
+      "tour": "WTA",
+      "time": "10:10",
+      "player1": {
+        "name": "Najzer K.",
+        "slug": "najzer",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Borodulina V.",
+        "slug": "borodulina",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.57
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262177",
+      "tournament": "Astana 14 ITF",
+      "tour": "WTA",
+      "time": "08:00Livestreams1xBet",
+      "player1": {
+        "name": "Sagandikova A.",
+        "slug": "sagandikova",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Maklakova E.",
+        "slug": "maklakova",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.14
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262111",
+      "tournament": "Kursumlijska Banja 9 ITF",
+      "tour": "WTA",
+      "time": "10:00Livestreams1xBet",
+      "player1": {
+        "name": "Tomase E.",
+        "slug": "tomase",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Karunaratne A.",
+        "slug": "karunaratne",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.12
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262181",
+      "tournament": "Luan 2 ITF",
+      "tour": "WTA",
+      "time": "04:00",
+      "player1": {
+        "name": "Trynkina A.",
+        "slug": "trynkina",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Shek C.",
+        "slug": "shek",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": 1.53,
+        "player2": 2.35
+      },
+      "modelProb": {
+        "player1": 0.5687,
+        "player2": 0.4313
+      },
+      "pick": "player1",
+      "source": "odds+ranking"
+    },
+    {
+      "matchId": "3262183",
+      "tournament": "Monastir 43 ITF",
+      "tour": "WTA",
+      "time": "10:30Livestreams1xBet",
+      "player1": {
+        "name": "Rojas S.",
+        "slug": "rojas-322ef",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Perapekhina Y.",
+        "slug": "perapekhina",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.16
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262671",
+      "tournament": "Rancho Santa Fe ITF",
+      "tour": "WTA",
+      "time": "19:00Livestreams1xBet",
+      "player1": {
+        "name": "Miroshnichenko V.",
+        "slug": "miroshnichenko-94494",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Shcherbinina A.",
+        "slug": "shcherbinina",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.12
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262319",
+      "tournament": "Rio Claro ITF",
+      "tour": "WTA",
+      "time": "15:30Livestreams1xBet",
+      "player1": {
+        "name": "Souza M.",
+        "slug": "souza-e06d4",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Babel O.",
+        "slug": "babel-4eade",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 3.91
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262245",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "16:00Livestreams1xBet",
+      "player1": {
+        "name": "Tagger L.",
+        "slug": "tagger-1a5b1",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Sieg M.",
+        "slug": "sieg",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.1
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262307",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "16:00Livestreams1xBetbet365",
+      "player1": {
+        "name": "Hibino N.",
+        "slug": "hibino",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Tona M.",
+        "slug": "tona-6576b",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.11
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262309",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "16:00Livestreams1xBet",
+      "player1": {
+        "name": "Ito A.",
+        "slug": "ito-dabf4",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Mansouri Y.",
+        "slug": "mansouri-a1964",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.27
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262321",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "17:30Livestreams1xBet",
+      "player1": {
+        "name": "Micic E.",
+        "slug": "micic-2eaa8",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kulikova A.",
+        "slug": "kulikova-1f1c3",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.83
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262339",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "17:30Livestreams1xBet",
+      "player1": {
+        "name": "Hodzic M.",
+        "slug": "hodzic-4835b",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Yashina E.",
+        "slug": "yashina",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.11
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262675",
+      "tournament": "Athens WTA",
+      "tour": "WTA",
+      "time": "17:30Livestreams1xBet",
+      "player1": {
+        "name": "Morvayova V.",
+        "slug": "morvayova",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Nepliy E.",
+        "slug": "nepliy",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.28
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262345",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "09:00Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Romero Gormaz L.",
+        "slug": "romero-gormaz",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Todoni C.",
+        "slug": "todoni-0af2b",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.02
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262347",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "09:00Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Kulambayeva Z.",
+        "slug": "kulambayeva",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Zaar L.",
+        "slug": "zaar",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.71
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262359",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "09:00Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Garcia-Perez G.",
+        "slug": "garcia-perez",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Prisacariu A.",
+        "slug": "prisacariu",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.38
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262357",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "10:30Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Pridankina E.",
+        "slug": "pridankina",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ionescu E.",
+        "slug": "ionescu-4f8cd",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.02
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262365",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "10:30Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Werner C.",
+        "slug": "werner-0c6a8",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Amariei I.",
+        "slug": "amariei",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.2
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262367",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "10:30Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Herea C.",
+        "slug": "herea",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Kazionova E.",
+        "slug": "kazionova",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.77
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262361",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "12:00Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Avanesyan E.",
+        "slug": "avanesyan-8de1d",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Seibold E.",
+        "slug": "seibold",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.08
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262363",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "12:00Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Fetecau I.",
+        "slug": "fetecau",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Pieri T.",
+        "slug": "pieri-0492e",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 2.61
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262349",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "13:30Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Liu C.",
+        "slug": "liu-53de8",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Popa M.",
+        "slug": "popa-2eece",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.12
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262351",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "13:30Livestreamsbet3651xBetUnibet",
+      "player1": {
+        "name": "Okalova M.",
+        "slug": "okalova",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Oz I.",
+        "slug": "oz-08ffe",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 5.51
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262353",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "15:00Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Lepchenko V.",
+        "slug": "lepchenko",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Burcescu M.",
+        "slug": "burcescu",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 1.28
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    },
+    {
+      "matchId": "3262355",
+      "tournament": "Iasi WTA",
+      "tour": "WTA",
+      "time": "15:00Livestreamsbet3651xBet",
+      "player1": {
+        "name": "Kozyreva M.",
+        "slug": "kozyreva",
+        "rank": null,
+        "points": null
+      },
+      "player2": {
+        "name": "Ibragimova A.",
+        "slug": "ibragimova-ef6ec",
+        "rank": null,
+        "points": null
+      },
+      "odds": {
+        "player1": null,
+        "player2": 7.92
+      },
+      "modelProb": {
+        "player1": 0.5,
+        "player2": 0.5
+      },
+      "pick": "player1",
+      "source": "ranking-only"
+    }
+  ]
+}
