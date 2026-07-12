@@ -64,11 +64,14 @@ def grade_day(date_str):
         tot = g.get("total", {}) or {}
         model_total = tot.get("modelTotal")
         tot_pick, tot_hit = None, None
-        if model_total is not None:
-            over_line = next((l for l in tot.get("lines", []) if l.get("line") == model_total), None)
-            if over_line:
-                tot_pick = "over" if over_line.get("overProb", 0.5) >= 0.5 else "under"
-                tot_hit = (actual_total > model_total) if tot_pick == "over" else (actual_total < model_total)
+        if model_total is not None and tot.get("lines"):
+            # game_model.py only ever emits the 4 alternate lines *around*
+            # modelTotal (+/-0.5, +/-1.5) -- modelTotal itself is never one
+            # of them -- so grade using whichever alternate line sits
+            # closest to it as the representative over/under lean.
+            over_line = min(tot["lines"], key=lambda l: abs(l.get("line", model_total) - model_total))
+            tot_pick = "over" if over_line.get("overProb", 0.5) >= 0.5 else "under"
+            tot_hit = (actual_total > model_total) if tot_pick == "over" else (actual_total < model_total)
 
         f5 = g.get("f5", {}) or {}
         f5_runs = r.get("f5Runs")
@@ -143,7 +146,12 @@ def update_accuracy_log(date_str, graded):
         "teamHits": {"hits": hits_hits, "total": hits_total},
         "detail": graded,
     }
+    # Replace any existing session for this date rather than appending a
+    # duplicate -- a manual re-run (backfill, bugfix, retry) should
+    # supersede the prior grading for that day, not double-count it.
+    log["sessions"] = [s for s in log.get("sessions", []) if s.get("date") != date_str]
     log["sessions"].append(session)
+    log["sessions"].sort(key=lambda s: s["date"])
     log["sessions"] = log["sessions"][-60:]  # keep last 60 tracked days
 
     with open(log_path, "w") as f:

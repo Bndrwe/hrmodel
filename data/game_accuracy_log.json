@@ -12,8 +12,8 @@
         "total": 14
       },
       "total": {
-        "hits": 0,
-        "total": 0
+        "hits": 2,
+        "total": 14
       },
       "f5": {
         "hits": 6,
@@ -43,9 +43,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 10.0,
-            "hit": null
+            "hit": true
           },
           "f5": {
             "pick": "away",
@@ -85,9 +85,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 10.0,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -127,9 +127,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 9.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -169,9 +169,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 9.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "away",
@@ -211,9 +211,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 10.0,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -253,9 +253,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 10.0,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "away",
@@ -295,9 +295,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 7.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "away",
@@ -337,9 +337,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 7.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -379,9 +379,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 8.0,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -421,9 +421,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 7.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -463,9 +463,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 9.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "home",
@@ -505,9 +505,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 9.0,
-            "hit": null
+            "hit": true
           },
           "f5": {
             "pick": "away",
@@ -547,9 +547,9 @@
             "hit": true
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 10.5,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "away",
@@ -589,9 +589,9 @@
             "hit": false
           },
           "total": {
-            "pick": null,
+            "pick": "over",
             "line": 9.0,
-            "hit": null
+            "hit": false
           },
           "f5": {
             "pick": "away",
