@@ -1706,137 +1706,6 @@
       }
     },
     {
-      "gamePk": 823274,
-      "gameDate": "2026-07-12T20:10:00Z",
-      "venue": "Petco Park",
-      "homeTeam": "SD",
-      "awayTeam": "TOR",
-      "homeTeamId": 135,
-      "awayTeamId": 141,
-      "homePitcher": "Germ\u00e1n M\u00e1rquez",
-      "awayPitcher": "Kevin Gausman",
-      "expectedRuns": {
-        "home": 3.45,
-        "away": 3.84
-      },
-      "pitchingQuality": {
-        "homeStarter": 4.84,
-        "awayStarter": 4.09,
-        "homePen": 3.97,
-        "awayPen": 3.39
-      },
-      "lineupMatchup": {
-        "home": {
-          "mult": 0.963,
-          "source": "teamSplit"
-        },
-        "away": {
-          "mult": 0.984,
-          "source": "teamSplit"
-        }
-      },
-      "moneyline": {
-        "homeProb": 0.4521,
-        "awayProb": 0.5479,
-        "homeOdds": 121,
-        "awayOdds": -121
-      },
-      "runLine": {
-        "standard": {
-          "homeLine": -1.5,
-          "awayLine": 1.5,
-          "homeCoverProb": 0.3344,
-          "awayCoverProb": 0.6656
-        },
-        "alternates": [
-          {
-            "homeLine": -1.0,
-            "awayLine": 1.0,
-            "homeCoverProb": 0.3767,
-            "awayCoverProb": 0.6233
-          },
-          {
-            "homeLine": -2.5,
-            "awayLine": 2.5,
-            "homeCoverProb": 0.2562,
-            "awayCoverProb": 0.7438
-          }
-        ]
-      },
-      "total": {
-        "modelTotal": 7.5,
-        "lines": [
-          {
-            "line": 6.0,
-            "overProb": 0.6104,
-            "underProb": 0.3896
-          },
-          {
-            "line": 7.0,
-            "overProb": 0.5251,
-            "underProb": 0.4749
-          },
-          {
-            "line": 8.0,
-            "overProb": 0.4386,
-            "underProb": 0.5614
-          },
-          {
-            "line": 9.0,
-            "overProb": 0.355,
-            "underProb": 0.645
-          }
-        ]
-      },
-      "f5": {
-        "expectedRuns": {
-          "home": 1.92,
-          "away": 2.13
-        },
-        "moneyline": {
-          "homeProb": 0.4521,
-          "awayProb": 0.5479,
-          "homeOdds": 121,
-          "awayOdds": -121
-        },
-        "runLine": {
-          "homeLine": -0.5,
-          "awayLine": 0.5,
-          "homeCoverProb": 0.4742,
-          "awayCoverProb": 0.5258
-        },
-        "total": {
-          "modelTotal": 4.0,
-          "overProb": 0.5058,
-          "underProb": 0.4942
-        }
-      },
-      "nrfi": {
-        "expectedFirstInningRuns": {
-          "home": 0.403,
-          "away": 0.448
-        },
-        "nrfiProb": 0.4272,
-        "yrfiProb": 0.5728
-      },
-      "teamHits": {
-        "home": {
-          "team": "SD",
-          "expectedHits": 6.6,
-          "modelLine": 6.5,
-          "overProb": 0.5135,
-          "underProb": 0.4865
-        },
-        "away": {
-          "team": "TOR",
-          "expectedHits": 7.97,
-          "modelLine": 8.0,
-          "overProb": 0.4967,
-          "underProb": 0.5033
-        }
-      }
-    },
-    {
       "gamePk": 823925,
       "gameDate": "2026-07-12T20:10:00Z",
       "venue": "UNIQLO Field at Dodger Stadium",
@@ -1964,6 +1833,137 @@
           "modelLine": 7.0,
           "overProb": 0.5058,
           "underProb": 0.4942
+        }
+      }
+    },
+    {
+      "gamePk": 823274,
+      "gameDate": "2026-07-12T20:10:00Z",
+      "venue": "Petco Park",
+      "homeTeam": "SD",
+      "awayTeam": "TOR",
+      "homeTeamId": 135,
+      "awayTeamId": 141,
+      "homePitcher": "Germ\u00e1n M\u00e1rquez",
+      "awayPitcher": "Kevin Gausman",
+      "expectedRuns": {
+        "home": 3.45,
+        "away": 3.84
+      },
+      "pitchingQuality": {
+        "homeStarter": 4.84,
+        "awayStarter": 4.09,
+        "homePen": 3.97,
+        "awayPen": 3.39
+      },
+      "lineupMatchup": {
+        "home": {
+          "mult": 0.963,
+          "source": "teamSplit"
+        },
+        "away": {
+          "mult": 0.984,
+          "source": "teamSplit"
+        }
+      },
+      "moneyline": {
+        "homeProb": 0.4521,
+        "awayProb": 0.5479,
+        "homeOdds": 121,
+        "awayOdds": -121
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.3344,
+          "awayCoverProb": 0.6656
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.3767,
+            "awayCoverProb": 0.6233
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.2562,
+            "awayCoverProb": 0.7438
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.5,
+        "lines": [
+          {
+            "line": 6.0,
+            "overProb": 0.6104,
+            "underProb": 0.3896
+          },
+          {
+            "line": 7.0,
+            "overProb": 0.5251,
+            "underProb": 0.4749
+          },
+          {
+            "line": 8.0,
+            "overProb": 0.4386,
+            "underProb": 0.5614
+          },
+          {
+            "line": 9.0,
+            "overProb": 0.355,
+            "underProb": 0.645
+          }
+        ]
+      },
+      "f5": {
+        "expectedRuns": {
+          "home": 1.92,
+          "away": 2.13
+        },
+        "moneyline": {
+          "homeProb": 0.4521,
+          "awayProb": 0.5479,
+          "homeOdds": 121,
+          "awayOdds": -121
+        },
+        "runLine": {
+          "homeLine": -0.5,
+          "awayLine": 0.5,
+          "homeCoverProb": 0.4742,
+          "awayCoverProb": 0.5258
+        },
+        "total": {
+          "modelTotal": 4.0,
+          "overProb": 0.5058,
+          "underProb": 0.4942
+        }
+      },
+      "nrfi": {
+        "expectedFirstInningRuns": {
+          "home": 0.403,
+          "away": 0.448
+        },
+        "nrfiProb": 0.4272,
+        "yrfiProb": 0.5728
+      },
+      "teamHits": {
+        "home": {
+          "team": "SD",
+          "expectedHits": 6.6,
+          "modelLine": 6.5,
+          "overProb": 0.5135,
+          "underProb": 0.4865
+        },
+        "away": {
+          "team": "TOR",
+          "expectedHits": 7.97,
+          "modelLine": 8.0,
+          "overProb": 0.4967,
+          "underProb": 0.5033
         }
       }
     }
