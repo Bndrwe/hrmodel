@@ -48,6 +48,18 @@ def _text(td):
     return td.get_text(strip=True).replace("\xa0", "") if td is not None else ""
 
 
+def _match_time(td):
+    """Extract just the HH:MM kickoff time. High-profile TV matches embed
+    a hidden livestream-provider tooltip inside this same cell, which a
+    plain get_text() would concatenate onto the time (e.g.
+    "17:00Livestreams1xBetbet365Unibet...") -- so match the leading
+    HH:MM pattern instead of trusting the full cell text."""
+    if td is None:
+        return None
+    m = re.match(r"\s*(\d{1,2}:\d{2})", _text(td))
+    return m.group(1) if m else None
+
+
 def _slug(href):
     return [s for s in (href or "").split("/") if s][-1] if href else None
 
@@ -129,7 +141,7 @@ def parse_schedule(html):
                     "matchId": match_id,
                     "tournament": current_tournament,
                     "tour": current_tour,
-                    "time": _text(time_td) or None,
+                    "time": _match_time(time_td),
                     "player1": a.get_text(strip=True),
                     "player1Slug": _slug(a.get("href")),
                     "oddsHome": _parse_odds(tr.find("td", class_="coursew")),
@@ -146,10 +158,11 @@ def fetch_rankings(tour_path):
     html = fetch(f"{BASE}/ranking/{tour_path}/")
     soup = BeautifulSoup(html, "lxml")
     out = {}
-    table = soup.find("table", class_="result")
-    if not table:
-        return out
-    for tr in table.find_all("tr"):
+    # The page has more than one <table class="result"> -- the first is
+    # the date/name/country search filter form, not the ranking list --
+    # so scan every <tr> in the whole document and keep the ones that
+    # actually carry a rank cell, rather than trusting table position.
+    for tr in soup.find_all("tr"):
         rank_td = tr.find("td", class_="rank")
         name_td = tr.find("td", class_="t-name")
         pts_td = tr.find("td", class_="long-point")
@@ -174,12 +187,23 @@ def fetch_rankings(tour_path):
 
 
 def implied_prob(odds_a, odds_b):
-    """Devigged market-implied win probability for player A."""
-    if not odds_a or not odds_b or odds_a <= 1 or odds_b <= 1:
-        return None
-    ra, rb = 1.0 / odds_a, 1.0 / odds_b
-    total = ra + rb
-    return ra / total if total > 0 else None
+    """Market-implied win probability for player A. Devigged when both
+    sides are priced; falls back to the single available price (still a
+    real signal, just includes the bookmaker's overround) rather than
+    discarding the match entirely -- this matters most for exactly the
+    highest-profile matches, where one side's price is occasionally
+    missing from the scraped page but the other is a strong signal on
+    its own (e.g. a heavy 1.15 favorite in a Slam quarterfinal)."""
+    a_ok, b_ok = bool(odds_a) and odds_a > 1, bool(odds_b) and odds_b > 1
+    if a_ok and b_ok:
+        ra, rb = 1.0 / odds_a, 1.0 / odds_b
+        total = ra + rb
+        return ra / total if total > 0 else None
+    if a_ok:
+        return clamp(1.0 / odds_a, 0.05, 0.95)
+    if b_ok:
+        return clamp(1.0 - 1.0 / odds_b, 0.05, 0.95)
+    return None
 
 
 def ranking_prob(points_a, points_b):
