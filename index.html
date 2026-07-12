@@ -611,6 +611,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
     <button class="main-tab-btn active" onclick="switchMainTab('player-props',this)">🔥 PLAYER PROPS</button>
     <button class="main-tab-btn" onclick="switchMainTab('game-lines',this)">🏟️ GAME LINES</button>
     <button class="main-tab-btn" onclick="switchMainTab('tennis',this)">🎾 TENNIS</button>
+    <button class="main-tab-btn" onclick="switchMainTab('top-picks',this)">🏆 TOP PICKS</button>
     <button class="main-tab-btn" onclick="switchMainTab('accuracy',this)">📊 MODEL ACCURACY</button>
   </div>
 
@@ -667,7 +668,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="tnUpdated">—</span>
     </div>
     <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-bottom:8px;">
-      Every ATP &amp; WTA tour-level match for the day, not just majors. Model probability blends devigged bookmaker odds with a ranking-points model when odds aren't posted yet — <span id="tnSourceNote">source shown per match</span>. <b style="color:var(--green)">PICK</b> is the model's favorite.
+      Every ATP &amp; WTA tour-level match for the day, not just majors. Model probability blends devigged bookmaker odds with a ranking-points model when odds aren't posted yet — <span id="tnSourceNote">source shown per match</span>. FIRST SET is derived from the same match-win model via best-of-3/5 series math, not a separate signal. <b style="color:var(--green)">PICK</b> is the model's favorite.
     </div>
     <div class="table-wrap">
       <table class="dtable">
@@ -678,8 +679,8 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
             <th>TOURNAMENT</th>
             <th>MATCHUP</th>
             <th>ODDS</th>
-            <th>MODEL PROBABILITY</th>
-            <th>PICK</th>
+            <th>MONEYLINE</th>
+            <th>FIRST SET</th>
           </tr>
         </thead>
         <tbody id="tennisBody">
@@ -695,14 +696,24 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="tnAccUpdated">—</span>
     </div>
     <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;" id="tnAccStatGrid"></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;" id="tnAccStatGrid"></div>
       <div id="tnCalibStatus" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;white-space:nowrap;">⚙ TENNIS SELF-CALIBRATION</div>
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;white-space:nowrap;">⚙ MONEYLINE SELF-CALIBRATION</div>
         <div style="flex:1;font-family:'Space Mono';font-size:9px;color:var(--text2);" id="tnCalibDesc">Awaiting tracked picks…</div>
       </div>
-      <div style="margin-bottom:14px;">
-        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 CONFIDENCE-TIER CALIBRATION</div>
-        <div id="tnCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
+      <div id="tnFsCalibStatus" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;white-space:nowrap;">⚙ FIRST SET SELF-CALIBRATION</div>
+        <div style="flex:1;font-family:'Space Mono';font-size:9px;color:var(--text2);" id="tnFsCalibDesc">Awaiting tracked picks…</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+        <div>
+          <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 MONEYLINE CALIBRATION</div>
+          <div id="tnCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 FIRST SET CALIBRATION</div>
+          <div id="tnFsCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
+        </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;">
         <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;">📋 REPORT CARD — DID IT HIT?</div>
@@ -714,13 +725,29 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       <div class="table-wrap">
         <table class="dtable">
           <thead>
-            <tr><th>MATCHUP</th><th>TOUR</th><th>PICK</th><th>WINNER</th><th>PROB</th><th>RESULT</th></tr>
+            <tr><th>MATCHUP</th><th>TOUR</th><th>MONEYLINE</th><th>FIRST SET</th></tr>
           </thead>
           <tbody id="tnReportCard">
-            <tr><td colspan="6" class="empty">Loading...</td></tr>
+            <tr><td colspan="4" class="empty">Loading...</td></tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- TOP PICKS ACROSS ALL SPORTS -->
+  <div class="main-tab tab-top-picks" style="display:none">
+  <div>
+    <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+      🏆 TOP 5 PICKS — ACROSS EVERY SPORT &amp; MARKET
+      <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;">HR PROPS · MLB GAME LINES · TENNIS</span>
+    </div>
+    <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-bottom:12px;">
+      The single highest-confidence picks the model has right now, ranked by model probability regardless of sport or market. Not a betting strategy by itself — just where the model currently sees the most edge.
+    </div>
+    <div id="globalTopPicks" style="display:flex;flex-direction:column;gap:8px;">
+      <div class="empty" style="text-align:center;padding:30px;color:var(--text3);font-family:'Space Mono';font-size:9px;">Loading picks from every sport...</div>
     </div>
   </div>
   </div>
@@ -993,6 +1020,8 @@ const PARKS = {
 // STATE
 // ═══════════════════════════════════════
 let ALL = [];
+let GL_ALL_PICKS = [];
+let TN_ALL_PICKS = [];
 let FILTERED = [];
 let CURRENT = null;
 let CURR_PROP = 'hr';
@@ -2573,6 +2602,7 @@ function renderTopPicks(){
       ${resultBadge}
     </div>`;
   }).join('');
+  renderGlobalTopPicks();
 }
 
 function applyFilters(){
@@ -3432,6 +3462,43 @@ function pickBestLean(g,mc){
   return candidates[0];
 }
 
+// Merges the three independently-loaded prediction sources (HR props,
+// MLB game lines, tennis) into one ranked list. Each source calls this
+// again whenever it (re)loads, so the combined view fills in
+// progressively rather than waiting on whichever is slowest.
+function renderGlobalTopPicks(){
+  const el=document.getElementById('globalTopPicks');
+  if(!el)return;
+  const hrPicks=(ALL||[]).slice(0,15).map(p=>({
+    sport:'HR PROP',
+    label:p.name,
+    sub:`HOME RUN vs ${p.pitcherName?.split(' ').pop()||'TBD'}`,
+    matchup:p.gameMatchup||'',
+    prob:p.mc?.hr?.prob??p.gameProb,
+  }));
+  const combined=[...hrPicks,...GL_ALL_PICKS.map(p=>({sport:'MLB',...p})),...TN_ALL_PICKS];
+  const top=combined.filter(p=>p.prob!=null).sort((a,b)=>b.prob-a.prob).slice(0,5);
+  if(!top.length){
+    el.innerHTML=`<div class="empty" style="text-align:center;padding:30px;color:var(--text3);font-family:'Space Mono';font-size:9px;">No picks available yet — waiting on today's predictions to load.</div>`;
+    return;
+  }
+  const sportColor={'HR PROP':'var(--gold)','MLB':'var(--cyan)','TENNIS':'var(--green)'};
+  const ranks=['🥇','🥈','🥉','#4','#5'];
+  el.innerHTML=top.map((p,i)=>`
+    <div style="display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">
+      <div style="font-family:'Bebas Neue';font-size:26px;min-width:40px;text-align:center;">${ranks[i]}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;">
+          <span style="font-family:'Space Mono';font-size:8px;letter-spacing:1px;padding:2px 6px;border-radius:3px;background:var(--bg2);color:${sportColor[p.sport]||'var(--text3)'};">${p.sport}</span>
+          <span style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${p.sub}</span>
+        </div>
+        <div class="pname" style="font-size:14px;">${p.label}</div>
+        <div style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${p.matchup}</div>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold);white-space:nowrap;">${fmt1(p.prob*100)}%</div>
+    </div>`).join('');
+}
+
 function renderTopPicksOfDay(allPicks){
   const el=document.getElementById('topPicksOfDay');
   if(!el)return;
@@ -3452,6 +3519,8 @@ async function loadGameLines(){
   if(!data||!data.games||!data.games.length){
     tbody.innerHTML=`<tr><td colspan="10" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
     renderTopPicksOfDay([]);
+    GL_ALL_PICKS=[];
+    renderGlobalTopPicks();
     return;
   }
   const updEl=document.getElementById('glUpdated');
@@ -3527,6 +3596,8 @@ async function loadGameLines(){
     </tr>`;
   }).join('');
   renderTopPicksOfDay(allPicks);
+  GL_ALL_PICKS=allPicks;
+  renderGlobalTopPicks();
 }
 
 // ═══════════════════════════════════════
@@ -3657,30 +3728,50 @@ async function loadTennisMatches(){
   try{ data=await fetchJ(`data/tennis_predictions.json?t=${Date.now()}`); }catch(e){ data=null; }
   if(!data||!data.matches||!data.matches.length){
     tbody.innerHTML=`<tr><td colspan="7" class="empty">Tennis matches unavailable yet — backend/tennis_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    TN_ALL_PICKS=[];
+    renderGlobalTopPicks();
     return;
   }
   const updEl=document.getElementById('tnUpdated');
   if(updEl)updEl.textContent=`UPDATED ${data.updatedAt}`;
 
+  TN_ALL_PICKS=data.matches.flatMap(m=>{
+    const p1=m.player1.name,p2=m.player2.name;
+    const matchup=`${m.tour} · ${m.tournament||''}`;
+    const mlProb=Math.max(m.modelProb.player1,m.modelProb.player2);
+    const mlName=m.pick==='player1'?p1:p2;
+    const picks=[{sport:'TENNIS',label:mlName,sub:`MONEYLINE vs ${m.pick==='player1'?p2:p1}`,matchup,prob:mlProb}];
+    if(m.firstSet){
+      const fsProb=Math.max(m.firstSet.player1,m.firstSet.player2);
+      const fsName=m.firstSet.pick==='player1'?p1:p2;
+      picks.push({sport:'TENNIS',label:fsName,sub:`1ST SET vs ${m.firstSet.pick==='player1'?p2:p1}`,matchup,prob:fsProb});
+    }
+    return picks;
+  });
+  renderGlobalTopPicks();
+
   const sorted=[...data.matches].sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'));
   tbody.innerHTML=sorted.map(m=>{
     const p1=m.player1,p2=m.player2;
     const pick=m.pick==='player1'?p1.name:p2.name;
-    const prob1=(m.modelProb.player1*100).toFixed(1);
-    const prob2=(m.modelProb.player2*100).toFixed(1);
-    const oddsTxt=(m.odds.player1&&m.odds.player2)?`${m.odds.player1.toFixed(2)} / ${m.odds.player2.toFixed(2)}`:'—';
+    const oddsTxt=(m.odds.player1&&m.odds.player2)?`${m.odds.player1.toFixed(2)} / ${m.odds.player2.toFixed(2)}`:
+                  m.odds.player1?`${m.odds.player1.toFixed(2)} / —`:m.odds.player2?`— / ${m.odds.player2.toFixed(2)}`:'—';
     const p1Rank=p1.rank?`#${p1.rank}`:'';
     const p2Rank=p2.rank?`#${p2.rank}`:'';
     const pickProb=Math.max(m.modelProb.player1,m.modelProb.player2);
     const pickColor=pickProb>=.70?'g-clr':pickProb>=.58?'a-clr':'r-clr';
+    const fs=m.firstSet||{player1:.5,player2:.5,pick:'player1'};
+    const fsName=fs.pick==='player1'?p1.name:p2.name;
+    const fsProb=Math.max(fs.player1,fs.player2);
+    const fsColor=fsProb>=.70?'g-clr':fsProb>=.58?'a-clr':'r-clr';
     return `<tr>
       <td style="font-family:'Space Mono';font-size:10px;">${m.time||'—'}</td>
       <td style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${m.tour}</td>
       <td class="pname" style="font-size:10px;">${m.tournament||''}</td>
       <td class="pname">${p1.name} ${p1Rank}<br><span style="color:var(--text3);">vs</span> ${p2.name} ${p2Rank}</td>
       <td style="font-family:'Space Mono';font-size:9px;">${oddsTxt}</td>
-      <td><span class="${pickColor}" style="font-family:'Bebas Neue';font-size:16px;">${prob1}%</span> / <span style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${prob2}%</span></td>
-      <td><div class="model-pick"><span class="model-pick-lbl">${pick}</span><span class="model-pick-sub">${(pickProb*100).toFixed(1)}% · ${m.source==='odds+ranking'?'odds+rank':'rank only'}</span></div></td>
+      <td><div class="model-pick"><span class="model-pick-lbl">${pick}</span><span class="model-pick-sub"><span class="${pickColor}">${(pickProb*100).toFixed(1)}%</span> · ${m.source==='odds+ranking'?'odds+rank':'rank only'}</span></div></td>
+      <td><div class="model-pick"><span class="model-pick-lbl">${fsName}</span><span class="model-pick-sub"><span class="${fsColor}">${(fsProb*100).toFixed(1)}%</span> · set 1</span></div></td>
     </tr>`;
   }).join('');
 }
@@ -3698,21 +3789,45 @@ function renderTennisReportCard(dateStr){
   if(!reportCard)return;
   const session=TN_ACCURACY_SESSIONS.find(s=>s.date===dateStr)||TN_ACCURACY_SESSIONS[TN_ACCURACY_SESSIONS.length-1];
   if(!session){
-    reportCard.innerHTML='<tr><td colspan="6" class="empty">No graded matches yet.</td></tr>';
+    reportCard.innerHTML='<tr><td colspan="4" class="empty">No graded matches yet.</td></tr>';
     return;
   }
   reportCard.innerHTML=(session.detail||[]).length?session.detail.map(g=>{
-    const pickName=g.matchup.split(' vs ')[g.pick==='player1'?0:1];
-    const winnerName=g.matchup.split(' vs ')[g.winner==='player1'?0:1];
+    const names=g.matchup.split(' vs ');
+    const pickName=names[g.pick==='player1'?0:1];
+    const winnerName=names[g.winner==='player1'?0:1];
+    const fs=g.firstSet||{};
+    const fsPickName=fs.pick?names[fs.pick==='player1'?0:1]:null;
+    const fsWinnerName=fs.winner?names[fs.winner==='player1'?0:1]:null;
     return `<tr>
       <td class="pname">${g.matchup}</td>
       <td style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${g.tour}</td>
-      <td>${pickName}</td>
-      <td>${winnerName}</td>
-      <td style="font-family:'Space Mono';font-size:10px;">${(g.prob*100).toFixed(1)}%</td>
-      <td>${tnResultBadge(g.hit)}</td>
+      <td>${tnResultBadge(g.hit)}<div style="font-size:7px;color:var(--text3);margin-top:2px;">picked ${pickName} (${(g.prob*100).toFixed(0)}%) · won: ${winnerName}</div></td>
+      <td>${fs.hit!=null?tnResultBadge(fs.hit):'<span class="result-pending">—</span>'}<div style="font-size:7px;color:var(--text3);margin-top:2px;">${fsPickName?`picked ${fsPickName}${fs.prob!=null?' ('+(fs.prob*100).toFixed(0)+'%)':''} · won: ${fsWinnerName||'—'}`:'no score data'}</div></td>
     </tr>`;
-  }).join(''):`<tr><td colspan="6" class="empty">No matches graded for ${session.date}.</td></tr>`;
+  }).join(''):`<tr><td colspan="4" class="empty">No matches graded for ${session.date}.</td></tr>`;
+}
+
+function tnCalibTableHtml(buckets){
+  return buckets.length?buckets.map(b=>{
+    const observed=b.hits/b.total*100;
+    const expected=(b.sumExpected/b.total)*100;
+    const drift=observed-expected;
+    const trusted=b.total>=20;
+    return `<div style="display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+      <span style="min-width:70px;">${(b.lo*100).toFixed(0)}-${(b.hi*100).toFixed(0)}% picks</span>
+      <span style="min-width:60px;">${b.total} tracked</span>
+      <span style="flex:1;">obs ${observed.toFixed(1)}% vs pred ${expected.toFixed(1)}%</span>
+      <span style="min-width:80px;text-align:right;color:${trusted?(Math.abs(drift)>5?'var(--amber)':'var(--green)'):'var(--text3)'}">${trusted?(drift>=0?'+':'')+drift.toFixed(1)+'pt':'needs 20+'}</span>
+    </div>`;
+  }).join(''):'No picks tracked yet.';
+}
+function tnCalibDescText(buckets, label){
+  const totalTracked=buckets.reduce((s,b)=>s+b.total,0);
+  const activeBuckets=buckets.filter(b=>b.total>=20);
+  return activeBuckets.length
+    ? `${totalTracked} ${label} picks tracked across ${buckets.length} tiers. ${activeBuckets.length} tier(s) have 20+ picks and are actively self-correcting (capped at ±8 points).`
+    : `${totalTracked} ${label} picks tracked so far — each tier needs 20+ picks before it starts self-correcting.`;
 }
 
 async function loadTennisAccuracy(){
@@ -3720,6 +3835,8 @@ async function loadTennisAccuracy(){
   const reportCard=document.getElementById('tnReportCard');
   const calibTable=document.getElementById('tnCalibTable');
   const calibDesc=document.getElementById('tnCalibDesc');
+  const fsCalibTable=document.getElementById('tnFsCalibTable');
+  const fsCalibDesc=document.getElementById('tnFsCalibDesc');
   const updEl=document.getElementById('tnAccUpdated');
   if(!statGrid||!reportCard)return;
 
@@ -3730,8 +3847,9 @@ async function loadTennisAccuracy(){
   const sessions=log?.sessions||[];
   if(!sessions.length){
     statGrid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text3);font-family:'Space Mono';font-size:9px;">Tennis accuracy accumulates automatically as matches finish — backend/grade_tennis_predictions.py runs nightly. Check back after the next collection run.</div>`;
-    reportCard.innerHTML=`<tr><td colspan="6" class="empty">No graded matches yet.</td></tr>`;
+    reportCard.innerHTML=`<tr><td colspan="4" class="empty">No graded matches yet.</td></tr>`;
     if(calibDesc)calibDesc.textContent='No tracked picks yet.';
+    if(fsCalibDesc)fsCalibDesc.textContent='No tracked picks yet.';
     return;
   }
   if(updEl)updEl.textContent=`${sessions.length} DAY${sessions.length===1?'':'S'} TRACKED · LAST: ${sessions[sessions.length-1].date}`;
@@ -3740,11 +3858,20 @@ async function loadTennisAccuracy(){
   const totAll=sessions.reduce((s,x)=>s+(x.total||0),0);
   const pct=totAll>0?(totHits/totAll*100):null;
   const color=pct==null?'var(--text3)':pct>=55?'var(--green)':pct>=48?'var(--amber)':'var(--red)';
+  const fsHits=sessions.reduce((s,x)=>s+(x.firstSet?.hits||0),0);
+  const fsAll=sessions.reduce((s,x)=>s+(x.firstSet?.total||0),0);
+  const fsPct=fsAll>0?(fsHits/fsAll*100):null;
+  const fsColor=fsPct==null?'var(--text3)':fsPct>=55?'var(--green)':fsPct>=48?'var(--amber)':'var(--red)';
   statGrid.innerHTML=`
     <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
       <div style="font-family:'Bebas Neue';font-size:28px;color:${color}">${pct!=null?pct.toFixed(1)+'%':'—'}</div>
-      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">OVERALL ACCURACY</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">MONEYLINE ACCURACY</div>
       <div style="font-family:'Space Mono';font-size:7px;color:var(--text3)">${totHits}/${totAll} picks</div>
+    </div>
+    <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue';font-size:28px;color:${fsColor}">${fsPct!=null?fsPct.toFixed(1)+'%':'—'}</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">FIRST SET ACCURACY</div>
+      <div style="font-family:'Space Mono';font-size:7px;color:var(--text3)">${fsHits}/${fsAll} picks</div>
     </div>
     <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
       <div style="font-family:'Bebas Neue';font-size:28px;color:var(--cyan)">${sessions.length}</div>
@@ -3752,31 +3879,15 @@ async function loadTennisAccuracy(){
     </div>
     <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
       <div style="font-family:'Bebas Neue';font-size:28px;color:var(--gold)">${totAll}</div>
-      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">TOTAL PICKS GRADED</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">MATCHES GRADED</div>
     </div>`;
 
   const buckets=(weights?.calibrationBuckets||[]).filter(b=>b.total>0);
-  if(calibTable){
-    calibTable.innerHTML=buckets.length?buckets.map(b=>{
-      const observed=b.hits/b.total*100;
-      const expected=(b.sumExpected/b.total)*100;
-      const drift=observed-expected;
-      const trusted=b.total>=20;
-      return `<div style="display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
-        <span style="min-width:70px;">${(b.lo*100).toFixed(0)}-${(b.hi*100).toFixed(0)}% picks</span>
-        <span style="min-width:60px;">${b.total} tracked</span>
-        <span style="flex:1;">observed ${observed.toFixed(1)}% vs predicted ${expected.toFixed(1)}%</span>
-        <span style="min-width:80px;text-align:right;color:${trusted?(Math.abs(drift)>5?'var(--amber)':'var(--green)'):'var(--text3)'}">${trusted?(drift>=0?'+':'')+drift.toFixed(1)+'pt drift':'needs 20+'}</span>
-      </div>`;
-    }).join(''):'No tennis picks tracked yet.';
-  }
-  const totalTracked=buckets.reduce((s,b)=>s+b.total,0);
-  const activeBuckets=buckets.filter(b=>b.total>=20);
-  if(calibDesc){
-    calibDesc.textContent=activeBuckets.length
-      ? `${totalTracked} picks tracked across ${buckets.length} confidence tiers. ${activeBuckets.length} tier(s) have 20+ tracked picks and are actively self-correcting today's predictions (capped at ±8 points).`
-      : `${totalTracked} picks tracked so far — each confidence tier needs 20+ picks before it starts self-correcting.`;
-  }
+  const fsBuckets=(weights?.firstSetCalibrationBuckets||[]).filter(b=>b.total>0);
+  if(calibTable)calibTable.innerHTML=tnCalibTableHtml(buckets);
+  if(fsCalibTable)fsCalibTable.innerHTML=tnCalibTableHtml(fsBuckets);
+  if(calibDesc)calibDesc.textContent=tnCalibDescText(buckets,'moneyline');
+  if(fsCalibDesc)fsCalibDesc.textContent=tnCalibDescText(fsBuckets,'first-set');
 
   TN_ACCURACY_SESSIONS=sessions;
   const histSel=document.getElementById('tnHistorySel');

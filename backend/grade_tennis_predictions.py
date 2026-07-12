@@ -34,6 +34,14 @@ def grade_day(date_str):
             continue
         prob = max(m["modelProb"]["player1"], m["modelProb"]["player2"])
         hit = m["pick"] == r["winner"]
+
+        fs = m.get("firstSet") or {}
+        fs_winner = r.get("firstSetWinner")
+        fs_hit, fs_prob = None, None
+        if fs and fs_winner is not None:
+            fs_prob = max(fs.get("player1", 0.5), fs.get("player2", 0.5))
+            fs_hit = fs.get("pick") == fs_winner
+
         graded.append({
             "matchId": m.get("matchId"),
             "matchup": f"{m['player1']['name']} vs {m['player2']['name']}",
@@ -44,6 +52,12 @@ def grade_day(date_str):
             "prob": round(prob, 4),
             "source": m.get("source"),
             "hit": hit,
+            "firstSet": {
+                "pick": fs.get("pick"),
+                "winner": fs_winner,
+                "prob": round(fs_prob, 4) if fs_prob is not None else None,
+                "hit": fs_hit,
+            },
         })
     return graded
 
@@ -53,11 +67,14 @@ def update_accuracy_log(date_str, graded):
     log = _load(log_path) or {"sessions": []}
 
     hits = sum(1 for g in graded if g["hit"])
+    fs_hits = sum(1 for g in graded if g["firstSet"].get("hit") is True)
+    fs_total = sum(1 for g in graded if g["firstSet"].get("hit") is not None)
     session = {
         "date": date_str,
         "matchesGraded": len(graded),
         "hits": hits,
         "total": len(graded),
+        "firstSet": {"hits": fs_hits, "total": fs_total},
         "detail": graded,
     }
     log["sessions"] = [s for s in log.get("sessions", []) if s.get("date") != date_str]
@@ -68,37 +85,55 @@ def update_accuracy_log(date_str, graded):
     with open(log_path, "w") as f:
         json.dump(log, f, indent=2)
 
-    print(f"Graded {len(graded)} tennis matches for {date_str}: {hits}/{len(graded)} hit")
+    print(f"Graded {len(graded)} tennis matches for {date_str}: {hits}/{len(graded)} hit "
+          f"(first set: {fs_hits}/{fs_total})")
     return log
 
 
-def update_calibration(log):
+def _bucket_stats(entries):
+    """entries: iterable of (prob, hit) pairs -> filled confidence buckets."""
     buckets = [{"lo": lo, "hi": hi, "total": 0, "hits": 0, "sumExpected": 0.0}
                for lo, hi in CONFIDENCE_BUCKETS]
-    for session in log.get("sessions", []):
-        for g in session.get("detail", []):
-            prob, hit = g.get("prob"), g.get("hit")
-            if prob is None or hit is None:
-                continue
-            for b in buckets:
-                if b["lo"] <= prob < b["hi"]:
-                    b["total"] += 1
-                    if hit:
-                        b["hits"] += 1
-                    b["sumExpected"] += prob
-                    break
+    for prob, hit in entries:
+        if prob is None or hit is None:
+            continue
+        for b in buckets:
+            if b["lo"] <= prob < b["hi"]:
+                b["total"] += 1
+                if hit:
+                    b["hits"] += 1
+                b["sumExpected"] += prob
+                break
+    return buckets
+
+
+def update_calibration(log):
+    sessions = log.get("sessions", [])
+    buckets = _bucket_stats(
+        (g.get("prob"), g.get("hit")) for s in sessions for g in s.get("detail", [])
+    )
+    fs_buckets = _bucket_stats(
+        (g.get("firstSet", {}).get("prob"), g.get("firstSet", {}).get("hit"))
+        for s in sessions for g in s.get("detail", [])
+    )
 
     weights_path = Path("data/tennis_model_weights.json")
     weights = _load(weights_path) or {}
     weights["calibrationBuckets"] = buckets
+    weights["firstSetCalibrationBuckets"] = fs_buckets
     weights["accuracySummary"] = {
         "hits": sum(b["hits"] for b in buckets),
         "total": sum(b["total"] for b in buckets),
     }
+    weights["firstSetAccuracySummary"] = {
+        "hits": sum(b["hits"] for b in fs_buckets),
+        "total": sum(b["total"] for b in fs_buckets),
+    }
     weights["lastUpdated"] = date.today().isoformat()
     with open(weights_path, "w") as f:
         json.dump(weights, f, indent=2)
-    print(f"Updated tennis calibration across {sum(b['total'] for b in buckets)} tracked picks")
+    print(f"Updated tennis calibration across {sum(b['total'] for b in buckets)} match picks, "
+          f"{sum(b['total'] for b in fs_buckets)} first-set picks")
 
 
 def main():

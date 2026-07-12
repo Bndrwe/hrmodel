@@ -36,6 +36,23 @@ def determine_winner(m):
     return "player1" if sets1 > sets2 else "player2"
 
 
+def determine_first_set_winner(m):
+    """Whoever won more games in the first score column won set 1. Ties
+    (game counts equal, e.g. a retirement before the set finished) can't
+    be resolved from game counts alone, so those are left ungraded rather
+    than guessed."""
+    p1s, p2s = m.get("player1Scores", []), m.get("player2Scores", [])
+    if not p1s or not p2s:
+        return None
+    try:
+        a, b = int(p1s[0]), int(p2s[0])
+    except (ValueError, TypeError):
+        return None
+    if a == b:
+        return None
+    return "player1" if a > b else "player2"
+
+
 def main():
     yesterday = date.today() - timedelta(days=1)
     try:
@@ -58,6 +75,7 @@ def main():
         results.append({
             "matchId": m["matchId"],
             "winner": winner,
+            "firstSetWinner": determine_first_set_winner(m),
             "player1Scores": m.get("player1Scores", []),
             "player2Scores": m.get("player2Scores", []),
         })

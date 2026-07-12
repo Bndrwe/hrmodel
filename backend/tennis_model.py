@@ -222,6 +222,53 @@ def blend_prob(odds_p, rank_p):
     return clamp(0.65 * odds_p + 0.35 * rank_p, 0.03, 0.97), "odds+ranking"
 
 
+MAJORS = ("wimbledon", "us open", "french open", "roland garros", "australian open")
+
+
+def best_of_for(tournament, tour):
+    """Men's Slams are best-of-5; every other ATP/WTA tour-level match
+    (including all WTA, even at Slams) is best-of-3."""
+    name = (tournament or "").lower()
+    if tour == "ATP" and any(m in name for m in MAJORS):
+        return 5
+    return 3
+
+
+def _match_prob_from_set_prob(p, best_of):
+    """P(win the match) given a constant per-set win probability p,
+    treating sets as i.i.d. -- the standard best-of-N series formula."""
+    if best_of == 5:
+        return p**3 * (1 + 3 * (1 - p) + 6 * (1 - p) ** 2)
+    return p**2 * (3 - 2 * p)
+
+
+def set_prob_from_match_prob(match_prob, best_of):
+    """Invert _match_prob_from_set_prob via bisection (it's monotonic
+    increasing in p on [0,1], so this converges cleanly)."""
+    lo, hi = 0.0, 1.0
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        if _match_prob_from_set_prob(mid, best_of) < match_prob:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def first_set_prob(match_prob1, tournament, tour):
+    """First-set win probability for player 1, derived from the same
+    match-win probability the model already computed -- not a separate
+    signal, just what that probability implies about a single set once
+    you assume sets are i.i.d. Bernoulli trials (the standard simplifying
+    assumption in tennis analytics; real matches have some serve-order/
+    momentum correlation this ignores, so treat it as a reasonable
+    estimate, not a precise one)."""
+    bo = best_of_for(tournament, tour)
+    if match_prob1 >= 0.5:
+        return clamp(set_prob_from_match_prob(match_prob1, bo), 0.05, 0.95)
+    return clamp(1 - set_prob_from_match_prob(1 - match_prob1, bo), 0.05, 0.95)
+
+
 def _load_weights():
     path = Path(__file__).resolve().parent.parent / "data" / "tennis_model_weights.json"
     try:
@@ -231,12 +278,14 @@ def _load_weights():
         return {}
 
 
-def calibrate(prob, weights):
+def calibrate(prob, weights, bucket_key="calibrationBuckets"):
     """Bounded, evidence-gated self-correction -- same shape as the MLB
     moneyline calibration in game_model.py. Only engages once a confidence
-    tier has enough tracked picks (>=20) to say anything meaningful."""
+    tier has enough tracked picks (>=20) to say anything meaningful.
+    bucket_key lets the match-winner and first-set markets each learn
+    from their own tracked history rather than sharing one signal."""
     fav_prob = max(prob, 1 - prob)
-    for b in weights.get("calibrationBuckets", []):
+    for b in weights.get(bucket_key, []):
         lo, hi, total = b.get("lo", 0), b.get("hi", 1), b.get("total", 0)
         if lo <= fav_prob < hi and total >= 20:
             observed = b.get("hits", 0) / total
@@ -274,6 +323,11 @@ def build_predictions(target_date):
         prob1, source = blend_prob(odds_p, rank_p)
         prob1 = calibrate(prob1, weights)
         pick = "player1" if prob1 >= 0.5 else "player2"
+
+        fs_prob1 = first_set_prob(prob1, m.get("tournament"), m.get("tour"))
+        fs_prob1 = calibrate(fs_prob1, weights, bucket_key="firstSetCalibrationBuckets")
+        fs_pick = "player1" if fs_prob1 >= 0.5 else "player2"
+
         out_matches.append({
             "matchId": m.get("matchId"),
             "tournament": m.get("tournament"),
@@ -287,6 +341,11 @@ def build_predictions(target_date):
             "modelProb": {"player1": round(prob1, 4), "player2": round(1 - prob1, 4)},
             "pick": pick,
             "source": source,
+            "firstSet": {
+                "player1": round(fs_prob1, 4),
+                "player2": round(1 - fs_prob1, 4),
+                "pick": fs_pick,
+            },
         })
     return out_matches
 
