@@ -1,7 +1,7 @@
 # Parlay Analyzer with OpenRouter AI
 
 ## Overview
-This guide shows how to add AI-powered parlay analysis to your HR Oracle app using OpenRouter.
+This guide shows how to add AI-powered parlay analysis to your Edge IQ app using OpenRouter.
 
 ## ⚠️ IMPORTANT SECURITY NOTE
 **NEVER** commit your API key directly to GitHub or embed it in client-side JavaScript! Anyone can view your HTML source and steal your key.
@@ -33,7 +33,7 @@ export default {
         'Authorization': `Bearer ${env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': allowedOrigin,
-        'X-Title': 'HR Oracle Parlay Analyzer'
+        'X-Title': 'Edge IQ Parlay Analyzer'
       },
       body: JSON.stringify(body)
     });

@@ -1,4 +1,4 @@
-name: Run HR Oracle Model
+name: Run Edge IQ Model
 
 on:
   schedule:
@@ -17,6 +17,16 @@ on:
 # this block the default token is read-only and every push returns 403.
 permissions:
   contents: write
+
+# Serialize runs on the same branch so two triggers firing close together
+# (e.g. a scheduled run overlapping a manual workflow_dispatch, or a push
+# to backend/** landing mid-run) queue up instead of racing to push the
+# same branch, which is what caused intermittent "Commit predictions"
+# failures. Queued runs still execute in full -- cancel-in-progress stays
+# false so a queued run never clobbers one already writing data.
+concurrency:
+  group: run-model-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   generate-predictions:
@@ -69,8 +79,20 @@ jobs:
           else
             git commit -m "chore: update predictions $(date -u +'%Y-%m-%d %H:%M UTC')"
             # Use the HTTPS remote that actions/checkout already configured
-            # with the GITHUB_TOKEN credential.
-            git push origin HEAD:${{ github.ref_name }}
+            # with the GITHUB_TOKEN credential. Retry if another run snuck
+            # a push in between our checkout and this push (belt-and-
+            # suspenders alongside the concurrency group above) -- these
+            # are all regenerated-daily data files, so on conflict our
+            # just-computed version is what should win.
+            for i in 1 2 3 4 5; do
+              if git push origin HEAD:${{ github.ref_name }}; then
+                break
+              fi
+              echo "Push rejected, merging latest remote (attempt $i)..."
+              git fetch origin ${{ github.ref_name }}
+              git merge -X ours --no-edit origin/${{ github.ref_name }}
+              sleep 3
+            done
           fi
 
   collect-results:
@@ -131,5 +153,13 @@ jobs:
             echo "No changes to commit - skipping push."
           else
             git commit -m "chore: update results and model weights $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push origin HEAD:${{ github.ref_name }}
+            for i in 1 2 3 4 5; do
+              if git push origin HEAD:${{ github.ref_name }}; then
+                break
+              fi
+              echo "Push rejected, merging latest remote (attempt $i)..."
+              git fetch origin ${{ github.ref_name }}
+              git merge -X ours --no-edit origin/${{ github.ref_name }}
+              sleep 3
+            done
           fi

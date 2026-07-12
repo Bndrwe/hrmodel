@@ -1,4 +1,4 @@
-"""HR Oracle - main prediction pipeline.
+"""Edge IQ - main prediction pipeline.
 
 Fetches real season stats, recent form, platoon splits, head-to-head
 history, and pitcher stats from the MLB Stats API for every batter in
@@ -362,7 +362,7 @@ def get_park_info(team_id):
 # -- main -------------------------------------------------------------
 
 def main():
-    print("Starting HR Oracle model run...")
+    print("Starting Edge IQ model run...")
     today  = date.today().isoformat()
     season = date.today().year
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR Oracle v4 — Matchup Intelligence</title>
+<title>Edge IQ v5 — Matchup Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -412,8 +412,8 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
 
 <!-- LOADING -->
 <div id="loading">
-  <div class="ld-logo">HR <span>ORACLE</span></div>
-  <div class="ld-sub">MATCHUP INTELLIGENCE ENGINE v4</div>
+  <div class="ld-logo">EDGE <span>IQ</span></div>
+  <div class="ld-sub">MATCHUP INTELLIGENCE ENGINE v5</div>
   <div class="ld-bar"><div class="ld-fill" id="ldFill" style="width:0%"></div></div>
   <div id="ldMsg">INITIALIZING...</div>
 </div>
@@ -585,7 +585,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
 
 <!-- MAIN PAGE -->
 <header>
-  <div class="h-logo">HR <span>ORACLE</span> <span style="font-size:13px;color:var(--text3);letter-spacing:1px;">v4</span></div>
+  <div class="h-logo">EDGE <span>IQ</span> <span style="font-size:13px;color:var(--text3);letter-spacing:1px;">v5</span></div>
   <div style="display:flex;gap:10px;align-items:center;">
     <span id="liveIndicator" class="live-dot"><span class="live-dot-circle"></span>LIVE</span>
     <button class="hbtn primary" onclick="refreshData()">↻ REFRESH</button>
@@ -1999,7 +1999,7 @@ async function buildPredictions(){
 }
 
 // ═══════════════════════════════════════
-// LIVE POLLING — v4 (accurate)
+// LIVE POLLING — v5 (accurate)
 // ═══════════════════════════════════════
 
 async function startLivePolling(games){
@@ -3189,7 +3189,7 @@ function copyParlay(){
   if(!PARLAY.length)return;
   const odds=calculateParlayOdds();
   const lines=PARLAY.map(l=>`• ${l.name} — ${PROP_LABELS[l.prop]} (${(l.prob*100).toFixed(1)}%)`);
-  const text=`🎲 HR Oracle v4 Parlay\n${lines.join('\n')}\n\nCombo: ${(odds.combo*100).toFixed(2)}%  Fair Odds: ${odds.american}  Decimal: ${odds.decimal}×\n\nGenerated ${new Date().toLocaleString()}`;
+  const text=`🎲 Edge IQ v5 Parlay\n${lines.join('\n')}\n\nCombo: ${(odds.combo*100).toFixed(2)}%  Fair Odds: ${odds.american}  Decimal: ${odds.decimal}×\n\nGenerated ${new Date().toLocaleString()}`;
   navigator.clipboard?.writeText(text).then(()=>alert('Parlay copied to clipboard!')).catch(()=>alert(text));
 }
 
@@ -3228,7 +3228,7 @@ function showHistory(){
   if(!s.total){alert('No history yet.\n\nPredictions are verified automatically after games end each day. Check back tomorrow!');return;}
   const hiAcc=s.hi>0?(s.hiHits/s.hi*100).toFixed(1)+'%':'N/A';
   const allAcc=s.total>0?(s.totalHits/s.total*100).toFixed(1)+'%':'N/A';
-  alert(`📊 HR Oracle v4 — Model Accuracy\n\n` +
+  alert(`📊 Edge IQ v5 — Model Accuracy\n\n` +
     `High-confidence picks (≥25%)\n  ${s.hiHits} hits / ${s.hi} picks = ${hiAcc}\n\n` +
     `All picks tracked\n  ${s.totalHits} hits / ${s.total} picks = ${allAcc}\n\n` +
     `History accumulates automatically each day.\nLast 30 days shown.`);
@@ -3381,7 +3381,7 @@ async function loadGameLines(){
   const tbody=document.getElementById('gameLinesBody');
   if(!tbody)return;
   let data=null;
-  try{ data=await fetchJ('data/game_predictions.json'); }catch(e){ data=null; }
+  try{ data=await fetchJ(`data/game_predictions.json?t=${Date.now()}`); }catch(e){ data=null; }
   if(!data||!data.games||!data.games.length){
     tbody.innerHTML=`<tr><td colspan="10" class="empty">Game lines unavailable yet — backend/game_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
     renderTopPicksOfDay([]);
@@ -3509,8 +3509,8 @@ async function loadGameAccuracy(){
   if(!statGrid||!reportCard)return;
 
   let log=null,weights=null;
-  try{ log=await fetchJ('data/game_accuracy_log.json'); }catch(e){}
-  try{ weights=await fetchJ('data/game_model_weights.json'); }catch(e){}
+  try{ log=await fetchJ(`data/game_accuracy_log.json?t=${Date.now()}`); }catch(e){}
+  try{ weights=await fetchJ(`data/game_model_weights.json?t=${Date.now()}`); }catch(e){}
 
   const sessions=log?.sessions||[];
   if(!sessions.length){
@@ -3647,7 +3647,7 @@ async function analyzeParlay() {
         messages: [
           {
             role: 'system',
-            content: `You are an expert baseball analyst working with HR Oracle, a predictive model. The user is viewing today's home run predictions from the model which includes probability percentages for each player. When analyzing parlays, reference the model's data and predictions that are currently displayed on the page. Provide insights on the combined probability, risk assessment, value analysis, and whether the parlay makes sense based on the model's predictions.`
+            content: `You are an expert baseball analyst working with Edge IQ, a predictive model. The user is viewing today's home run predictions from the model which includes probability percentages for each player. When analyzing parlays, reference the model's data and predictions that are currently displayed on the page. Provide insights on the combined probability, risk assessment, value analysis, and whether the parlay makes sense based on the model's predictions.`
           },
           {
             role: 'user',

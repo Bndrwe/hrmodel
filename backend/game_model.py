@@ -1,4 +1,4 @@
-"""HR Oracle - game-level prediction engine.
+"""Edge IQ - game-level prediction engine.
 
 Extends the HR-prop model with whole-game MLB predictions: moneylines,
 run-line/alternate spreads, totals (over/under), first-5-innings (F5)
@@ -514,7 +514,7 @@ def build_game_prediction(game, season):
 
 
 def main():
-    print("Starting HR Oracle game-prediction model run...")
+    print("Starting Edge IQ game-prediction model run...")
     today = date.today().isoformat()
     season = date.today().year
 
