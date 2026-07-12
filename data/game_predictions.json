@@ -920,6 +920,137 @@
       }
     },
     {
+      "gamePk": 822951,
+      "gameDate": "2026-07-12T17:40:00Z",
+      "venue": "Tropicana Field",
+      "homeTeam": "TB",
+      "awayTeam": "SEA",
+      "homeTeamId": 139,
+      "awayTeamId": 136,
+      "homePitcher": "Ian Seymour",
+      "awayPitcher": "Emerson Hancock",
+      "expectedRuns": {
+        "home": 3.99,
+        "away": 3.2
+      },
+      "pitchingQuality": {
+        "homeStarter": 3.98,
+        "awayStarter": 3.48,
+        "homePen": 3.44,
+        "awayPen": 3.51
+      },
+      "lineupMatchup": {
+        "home": {
+          "mult": 1.029,
+          "source": "teamSplit"
+        },
+        "away": {
+          "mult": 0.916,
+          "source": "teamSplit"
+        }
+      },
+      "moneyline": {
+        "homeProb": 0.5993,
+        "awayProb": 0.4007,
+        "homeOdds": -150,
+        "awayOdds": 150
+      },
+      "runLine": {
+        "standard": {
+          "homeLine": -1.5,
+          "awayLine": 1.5,
+          "homeCoverProb": 0.4357,
+          "awayCoverProb": 0.5643
+        },
+        "alternates": [
+          {
+            "homeLine": -1.0,
+            "awayLine": 1.0,
+            "homeCoverProb": 0.4807,
+            "awayCoverProb": 0.5193
+          },
+          {
+            "homeLine": -2.5,
+            "awayLine": 2.5,
+            "homeCoverProb": 0.3485,
+            "awayCoverProb": 0.6515
+          }
+        ]
+      },
+      "total": {
+        "modelTotal": 7.0,
+        "lines": [
+          {
+            "line": 5.5,
+            "overProb": 0.6431,
+            "underProb": 0.3569
+          },
+          {
+            "line": 6.5,
+            "overProb": 0.5594,
+            "underProb": 0.4406
+          },
+          {
+            "line": 7.5,
+            "overProb": 0.4729,
+            "underProb": 0.5271
+          },
+          {
+            "line": 8.5,
+            "overProb": 0.3877,
+            "underProb": 0.6123
+          }
+        ]
+      },
+      "f5": {
+        "expectedRuns": {
+          "home": 2.22,
+          "away": 1.78
+        },
+        "moneyline": {
+          "homeProb": 0.5993,
+          "awayProb": 0.4007,
+          "homeOdds": -150,
+          "awayOdds": 150
+        },
+        "runLine": {
+          "homeLine": -0.5,
+          "awayLine": 0.5,
+          "homeCoverProb": 0.553,
+          "awayCoverProb": 0.447
+        },
+        "total": {
+          "modelTotal": 4.0,
+          "overProb": 0.4992,
+          "underProb": 0.5008
+        }
+      },
+      "nrfi": {
+        "expectedFirstInningRuns": {
+          "home": 0.465,
+          "away": 0.373
+        },
+        "nrfiProb": 0.4323,
+        "yrfiProb": 0.5677
+      },
+      "teamHits": {
+        "home": {
+          "team": "TB",
+          "expectedHits": 7.25,
+          "modelLine": 7.0,
+          "overProb": 0.5328,
+          "underProb": 0.4672
+        },
+        "away": {
+          "team": "SEA",
+          "expectedHits": 6.75,
+          "modelLine": 6.5,
+          "overProb": 0.533,
+          "underProb": 0.467
+        }
+      }
+    },
+    {
       "gamePk": 823842,
       "gameDate": "2026-07-12T17:40:00Z",
       "venue": "loanDepot park",
