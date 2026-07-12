@@ -80,6 +80,12 @@ main{max-width:1520px;margin:0 auto;padding:18px 20px;display:flex;flex-directio
 .main-tab-btn{font-family:'Bebas Neue';font-size:15px;letter-spacing:1px;padding:9px 20px;background:var(--surface);border:1px solid var(--border);border-bottom:2px solid var(--border);border-radius:8px 8px 0 0;color:var(--text2);cursor:pointer;transition:all .15s;}
 .main-tab-btn:hover{color:var(--text);border-color:var(--bord2);}
 .main-tab-btn.active{background:var(--bg2);color:var(--green);border-color:var(--border);border-bottom-color:var(--green);}
+.main-tab-btn.disabled-tab{opacity:.4;cursor:not-allowed;}
+.main-tab-btn.disabled-tab:hover{color:var(--text2);border-color:var(--border);}
+.sub-tabs{display:none;gap:5px;margin-top:8px;padding-left:4px;}
+.sub-tab-btn{font-family:'Space Mono';font-size:10px;letter-spacing:1px;padding:6px 14px;background:transparent;border:1px solid var(--border);border-radius:5px;color:var(--text3);cursor:pointer;transition:all .15s;}
+.sub-tab-btn:hover{color:var(--text);border-color:var(--bord2);}
+.sub-tab-btn.active{background:var(--surface);color:var(--cyan);border-color:var(--cyan);}
 
 /* ── TOP PICKS CARDS ── */
 .picks-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
@@ -607,15 +613,23 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
 </div></div>
 
 <main>
-  <div class="main-tabs" id="mainTabs">
-    <button class="main-tab-btn active" onclick="switchMainTab('player-props',this)">🔥 PLAYER PROPS</button>
-    <button class="main-tab-btn" onclick="switchMainTab('game-lines',this)">🏟️ GAME LINES</button>
-    <button class="main-tab-btn" onclick="switchMainTab('tennis',this)">🎾 TENNIS</button>
-    <button class="main-tab-btn" onclick="switchMainTab('top-picks',this)">🏆 TOP PICKS</button>
-    <button class="main-tab-btn" onclick="switchMainTab('accuracy',this)">📊 MODEL ACCURACY</button>
+  <div class="main-tabs" id="primaryTabs">
+    <button class="main-tab-btn active" onclick="switchPrimaryTab('top-picks',this)">🏆 TOP PICKS</button>
+    <button class="main-tab-btn" onclick="switchPrimaryTab('mlb',this)">⚾ MLB</button>
+    <button class="main-tab-btn" onclick="switchPrimaryTab('tennis',this)">🎾 TENNIS</button>
+    <button class="main-tab-btn disabled-tab" onclick="return false;" title="NBA, NFL, and more coming soon">➕ MORE SPORTS SOON</button>
+  </div>
+  <div class="sub-tabs" id="mlbSubTabs">
+    <button class="sub-tab-btn active" onclick="switchMainTab('player-props',this)">🔥 PLAYER PROPS</button>
+    <button class="sub-tab-btn" onclick="switchMainTab('game-lines',this)">🏟️ GAME LINES</button>
+    <button class="sub-tab-btn" onclick="switchMainTab('accuracy',this)">📊 ACCURACY</button>
+  </div>
+  <div class="sub-tabs" id="tennisSubTabs">
+    <button class="sub-tab-btn active" onclick="switchMainTab('tennis-matches',this)">🎾 MATCHES</button>
+    <button class="sub-tab-btn" onclick="switchMainTab('tennis-accuracy',this)">📊 ACCURACY</button>
   </div>
 
-  <div class="main-tab tab-player-props">
+  <div class="main-tab tab-player-props" style="display:none">
   <div>
     <div class="sec-title">🔥 TOP 5 TONIGHT</div>
     <div class="picks-row" id="picksRow"></div>
@@ -661,7 +675,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
   </div>
 
   <!-- TENNIS: ATP / WTA -->
-  <div class="main-tab tab-tennis" style="display:none">
+  <div class="main-tab tab-tennis-matches" style="display:none">
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
       🎾 TENNIS — ATP &amp; WTA MATCH WINNER
@@ -689,7 +703,9 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
       </table>
     </div>
   </div>
+  </div>
 
+  <div class="main-tab tab-tennis-accuracy" style="display:none">
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
       🎾 TENNIS ACCURACY &amp; SELF-CALIBRATION
@@ -737,7 +753,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
   </div>
 
   <!-- TOP PICKS ACROSS ALL SPORTS -->
-  <div class="main-tab tab-top-picks" style="display:none">
+  <div class="main-tab tab-top-picks">
   <div>
     <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
       🏆 TOP 5 PICKS — ACROSS EVERY SPORT &amp; MARKET
@@ -852,7 +868,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
   </div>
   </div>
 
-  <div class="main-tab tab-player-props">
+  <div class="main-tab tab-player-props" style="display:none">
   <!-- PARLAY BUILDER -->
   <div>
     <div class="sec-title">🎲 PARLAY BUILDER</div>
@@ -2680,13 +2696,43 @@ function setTableProp(prop, btn){
 }
 
 // ═══════════════════════════════════════
-// MAIN TABS — Player Props / Game Lines / Model Accuracy
+// TABS — Top Picks / MLB (Player Props, Game Lines, Accuracy) /
+// Tennis (Matches, Accuracy) / more sports soon
 // ═══════════════════════════════════════
+
+// Switches the sub-tab content within whichever sport is currently
+// active. Scopes the active-state toggle to siblings of the clicked
+// button (its sub-tab bar) rather than every button on the page, so it
+// doesn't fight with switchPrimaryTab's own active state.
 function switchMainTab(tab, btn){
   document.querySelectorAll('.main-tab').forEach(d=>d.style.display='none');
   document.querySelectorAll('.tab-'+tab).forEach(d=>d.style.display='');
-  document.querySelectorAll('.main-tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn){
+    const group=btn.parentElement;
+    if(group)group.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+}
+
+// Top-level sport switch. Shows/hides the relevant sub-tab bar and
+// defaults to that sport's first sub-tab every time it's selected.
+function switchPrimaryTab(section, btn){
+  document.querySelectorAll('#primaryTabs .main-tab-btn').forEach(b=>b.classList.remove('active'));
   if(btn)btn.classList.add('active');
+
+  const mlbSub=document.getElementById('mlbSubTabs');
+  const tnSub=document.getElementById('tennisSubTabs');
+  if(mlbSub)mlbSub.style.display=section==='mlb'?'flex':'none';
+  if(tnSub)tnSub.style.display=section==='tennis'?'flex':'none';
+
+  if(section==='mlb'){
+    switchMainTab('player-props', mlbSub?.querySelector('.sub-tab-btn'));
+  } else if(section==='tennis'){
+    switchMainTab('tennis-matches', tnSub?.querySelector('.sub-tab-btn'));
+  } else if(section==='top-picks'){
+    document.querySelectorAll('.main-tab').forEach(d=>d.style.display='none');
+    document.querySelectorAll('.tab-top-picks').forEach(d=>d.style.display='');
+  }
 }
 
 function renderTable(preds){
