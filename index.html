@@ -610,6 +610,7 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
   <div class="main-tabs" id="mainTabs">
     <button class="main-tab-btn active" onclick="switchMainTab('player-props',this)">🔥 PLAYER PROPS</button>
     <button class="main-tab-btn" onclick="switchMainTab('game-lines',this)">🏟️ GAME LINES</button>
+    <button class="main-tab-btn" onclick="switchMainTab('tennis',this)">🎾 TENNIS</button>
     <button class="main-tab-btn" onclick="switchMainTab('accuracy',this)">📊 MODEL ACCURACY</button>
   </div>
 
@@ -654,6 +655,72 @@ flex-wrap:wrap;}.sb-cell{min-width:50%;}}
           <tr><td colspan="10" class="empty">Loading game lines...</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  </div>
+
+  <!-- TENNIS: ATP / WTA -->
+  <div class="main-tab tab-tennis" style="display:none">
+  <div>
+    <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+      🎾 TENNIS — ATP &amp; WTA MATCH WINNER
+      <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="tnUpdated">—</span>
+    </div>
+    <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-bottom:8px;">
+      Every ATP &amp; WTA tour-level match for the day, not just majors. Model probability blends devigged bookmaker odds with a ranking-points model when odds aren't posted yet — <span id="tnSourceNote">source shown per match</span>. <b style="color:var(--green)">PICK</b> is the model's favorite.
+    </div>
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr>
+            <th>TIME</th>
+            <th>TOUR</th>
+            <th>TOURNAMENT</th>
+            <th>MATCHUP</th>
+            <th>ODDS</th>
+            <th>MODEL PROBABILITY</th>
+            <th>PICK</th>
+          </tr>
+        </thead>
+        <tbody id="tennisBody">
+          <tr><td colspan="7" class="empty">Loading tennis matches...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-title" style="display:flex;align-items:center;justify-content:space-between;">
+      🎾 TENNIS ACCURACY &amp; SELF-CALIBRATION
+      <span style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;" id="tnAccUpdated">—</span>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;" id="tnAccStatGrid"></div>
+      <div id="tnCalibStatus" style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;white-space:nowrap;">⚙ TENNIS SELF-CALIBRATION</div>
+        <div style="flex:1;font-family:'Space Mono';font-size:9px;color:var(--text2);" id="tnCalibDesc">Awaiting tracked picks…</div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;margin-bottom:8px;">📈 CONFIDENCE-TIER CALIBRATION</div>
+        <div id="tnCalibTable" style="font-family:'Space Mono';font-size:8px;color:var(--text3);">Accumulating…</div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;">
+        <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);letter-spacing:1px;">📋 REPORT CARD — DID IT HIT?</div>
+        <div>
+          <label class="t-label" style="display:inline;margin-right:6px;">VIEW DAY</label>
+          <select id="tnHistorySel" onchange="renderTennisReportCard(this.value)"></select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="dtable">
+          <thead>
+            <tr><th>MATCHUP</th><th>TOUR</th><th>PICK</th><th>WINNER</th><th>PROB</th><th>RESULT</th></tr>
+          </thead>
+          <tbody id="tnReportCard">
+            <tr><td colspan="6" class="empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   </div>
@@ -3581,6 +3648,147 @@ async function loadGameAccuracy(){
 }
 
 // ═══════════════════════════════════════
+// TENNIS — ATP / WTA
+// ═══════════════════════════════════════
+async function loadTennisMatches(){
+  const tbody=document.getElementById('tennisBody');
+  if(!tbody)return;
+  let data=null;
+  try{ data=await fetchJ(`data/tennis_predictions.json?t=${Date.now()}`); }catch(e){ data=null; }
+  if(!data||!data.matches||!data.matches.length){
+    tbody.innerHTML=`<tr><td colspan="7" class="empty">Tennis matches unavailable yet — backend/tennis_model.py publishes these once a day via GitHub Actions. Check back soon.</td></tr>`;
+    return;
+  }
+  const updEl=document.getElementById('tnUpdated');
+  if(updEl)updEl.textContent=`UPDATED ${data.updatedAt}`;
+
+  const sorted=[...data.matches].sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'));
+  tbody.innerHTML=sorted.map(m=>{
+    const p1=m.player1,p2=m.player2;
+    const pick=m.pick==='player1'?p1.name:p2.name;
+    const prob1=(m.modelProb.player1*100).toFixed(1);
+    const prob2=(m.modelProb.player2*100).toFixed(1);
+    const oddsTxt=(m.odds.player1&&m.odds.player2)?`${m.odds.player1.toFixed(2)} / ${m.odds.player2.toFixed(2)}`:'—';
+    const p1Rank=p1.rank?`#${p1.rank}`:'';
+    const p2Rank=p2.rank?`#${p2.rank}`:'';
+    const pickProb=Math.max(m.modelProb.player1,m.modelProb.player2);
+    const pickColor=pickProb>=.70?'g-clr':pickProb>=.58?'a-clr':'r-clr';
+    return `<tr>
+      <td style="font-family:'Space Mono';font-size:10px;">${m.time||'—'}</td>
+      <td style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${m.tour}</td>
+      <td class="pname" style="font-size:10px;">${m.tournament||''}</td>
+      <td class="pname">${p1.name} ${p1Rank}<br><span style="color:var(--text3);">vs</span> ${p2.name} ${p2Rank}</td>
+      <td style="font-family:'Space Mono';font-size:9px;">${oddsTxt}</td>
+      <td><span class="${pickColor}" style="font-family:'Bebas Neue';font-size:16px;">${prob1}%</span> / <span style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${prob2}%</span></td>
+      <td><div class="model-pick"><span class="model-pick-lbl">${pick}</span><span class="model-pick-sub">${(pickProb*100).toFixed(1)}% · ${m.source==='odds+ranking'?'odds+rank':'rank only'}</span></div></td>
+    </tr>`;
+  }).join('');
+}
+
+function tnResultBadge(hit){
+  if(hit===true)return'<span class="result-correct">&#10003; HIT</span>';
+  if(hit===false)return'<span class="result-miss">&#10005; MISS</span>';
+  return'<span class="result-pending">—</span>';
+}
+
+let TN_ACCURACY_SESSIONS=[];
+
+function renderTennisReportCard(dateStr){
+  const reportCard=document.getElementById('tnReportCard');
+  if(!reportCard)return;
+  const session=TN_ACCURACY_SESSIONS.find(s=>s.date===dateStr)||TN_ACCURACY_SESSIONS[TN_ACCURACY_SESSIONS.length-1];
+  if(!session){
+    reportCard.innerHTML='<tr><td colspan="6" class="empty">No graded matches yet.</td></tr>';
+    return;
+  }
+  reportCard.innerHTML=(session.detail||[]).length?session.detail.map(g=>{
+    const pickName=g.matchup.split(' vs ')[g.pick==='player1'?0:1];
+    const winnerName=g.matchup.split(' vs ')[g.winner==='player1'?0:1];
+    return `<tr>
+      <td class="pname">${g.matchup}</td>
+      <td style="font-family:'Space Mono';font-size:9px;color:var(--text3);">${g.tour}</td>
+      <td>${pickName}</td>
+      <td>${winnerName}</td>
+      <td style="font-family:'Space Mono';font-size:10px;">${(g.prob*100).toFixed(1)}%</td>
+      <td>${tnResultBadge(g.hit)}</td>
+    </tr>`;
+  }).join(''):`<tr><td colspan="6" class="empty">No matches graded for ${session.date}.</td></tr>`;
+}
+
+async function loadTennisAccuracy(){
+  const statGrid=document.getElementById('tnAccStatGrid');
+  const reportCard=document.getElementById('tnReportCard');
+  const calibTable=document.getElementById('tnCalibTable');
+  const calibDesc=document.getElementById('tnCalibDesc');
+  const updEl=document.getElementById('tnAccUpdated');
+  if(!statGrid||!reportCard)return;
+
+  let log=null,weights=null;
+  try{ log=await fetchJ(`data/tennis_accuracy_log.json?t=${Date.now()}`); }catch(e){}
+  try{ weights=await fetchJ(`data/tennis_model_weights.json?t=${Date.now()}`); }catch(e){}
+
+  const sessions=log?.sessions||[];
+  if(!sessions.length){
+    statGrid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text3);font-family:'Space Mono';font-size:9px;">Tennis accuracy accumulates automatically as matches finish — backend/grade_tennis_predictions.py runs nightly. Check back after the next collection run.</div>`;
+    reportCard.innerHTML=`<tr><td colspan="6" class="empty">No graded matches yet.</td></tr>`;
+    if(calibDesc)calibDesc.textContent='No tracked picks yet.';
+    return;
+  }
+  if(updEl)updEl.textContent=`${sessions.length} DAY${sessions.length===1?'':'S'} TRACKED · LAST: ${sessions[sessions.length-1].date}`;
+
+  const totHits=sessions.reduce((s,x)=>s+(x.hits||0),0);
+  const totAll=sessions.reduce((s,x)=>s+(x.total||0),0);
+  const pct=totAll>0?(totHits/totAll*100):null;
+  const color=pct==null?'var(--text3)':pct>=55?'var(--green)':pct>=48?'var(--amber)':'var(--red)';
+  statGrid.innerHTML=`
+    <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue';font-size:28px;color:${color}">${pct!=null?pct.toFixed(1)+'%':'—'}</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">OVERALL ACCURACY</div>
+      <div style="font-family:'Space Mono';font-size:7px;color:var(--text3)">${totHits}/${totAll} picks</div>
+    </div>
+    <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue';font-size:28px;color:var(--cyan)">${sessions.length}</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">DAYS TRACKED</div>
+    </div>
+    <div style="text-align:center;padding:10px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue';font-size:28px;color:var(--gold)">${totAll}</div>
+      <div style="font-family:'Space Mono';font-size:8px;color:var(--text3);margin-top:2px">TOTAL PICKS GRADED</div>
+    </div>`;
+
+  const buckets=(weights?.calibrationBuckets||[]).filter(b=>b.total>0);
+  if(calibTable){
+    calibTable.innerHTML=buckets.length?buckets.map(b=>{
+      const observed=b.hits/b.total*100;
+      const expected=(b.sumExpected/b.total)*100;
+      const drift=observed-expected;
+      const trusted=b.total>=20;
+      return `<div style="display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+        <span style="min-width:70px;">${(b.lo*100).toFixed(0)}-${(b.hi*100).toFixed(0)}% picks</span>
+        <span style="min-width:60px;">${b.total} tracked</span>
+        <span style="flex:1;">observed ${observed.toFixed(1)}% vs predicted ${expected.toFixed(1)}%</span>
+        <span style="min-width:80px;text-align:right;color:${trusted?(Math.abs(drift)>5?'var(--amber)':'var(--green)'):'var(--text3)'}">${trusted?(drift>=0?'+':'')+drift.toFixed(1)+'pt drift':'needs 20+'}</span>
+      </div>`;
+    }).join(''):'No tennis picks tracked yet.';
+  }
+  const totalTracked=buckets.reduce((s,b)=>s+b.total,0);
+  const activeBuckets=buckets.filter(b=>b.total>=20);
+  if(calibDesc){
+    calibDesc.textContent=activeBuckets.length
+      ? `${totalTracked} picks tracked across ${buckets.length} confidence tiers. ${activeBuckets.length} tier(s) have 20+ tracked picks and are actively self-correcting today's predictions (capped at ±8 points).`
+      : `${totalTracked} picks tracked so far — each confidence tier needs 20+ picks before it starts self-correcting.`;
+  }
+
+  TN_ACCURACY_SESSIONS=sessions;
+  const histSel=document.getElementById('tnHistorySel');
+  if(histSel){
+    histSel.innerHTML=[...sessions].reverse().map((s,i)=>
+      `<option value="${s.date}"${i===0?' selected':''}>${s.date} (${s.matchesGraded} matches)</option>`
+    ).join('');
+  }
+  renderTennisReportCard(sessions[sessions.length-1].date);
+}
+
+// ═══════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════
 window.addEventListener('load',async()=>{
@@ -3593,6 +3801,8 @@ window.addEventListener('load',async()=>{
   setProgress(2,'STARTING...');
   loadGameLines(); // independent of the HR engine below; don't block on it
   loadGameAccuracy();
+  loadTennisMatches();
+  loadTennisAccuracy();
   await buildPredictions();
   scheduleAutoRefresh();
 });
