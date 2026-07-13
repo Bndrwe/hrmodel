@@ -1,0 +1,127 @@
+{
+  "calibrationBuckets": [
+    {
+      "lo": 0.5,
+      "hi": 0.55,
+      "total": 310,
+      "hits": 294,
+      "sumExpected": 155.80080000000004
+    },
+    {
+      "lo": 0.55,
+      "hi": 0.6,
+      "total": 32,
+      "hits": 17,
+      "sumExpected": 18.470999999999997
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.65,
+      "total": 26,
+      "hits": 16,
+      "sumExpected": 16.2595
+    },
+    {
+      "lo": 0.65,
+      "hi": 0.7,
+      "total": 23,
+      "hits": 14,
+      "sumExpected": 15.6503
+    },
+    {
+      "lo": 0.7,
+      "hi": 0.75,
+      "total": 34,
+      "hits": 30,
+      "sumExpected": 24.444399999999998
+    },
+    {
+      "lo": 0.75,
+      "hi": 0.8,
+      "total": 23,
+      "hits": 16,
+      "sumExpected": 17.763099999999998
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.01,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    }
+  ],
+  "firstSetCalibrationBuckets": [
+    {
+      "lo": 0.5,
+      "hi": 0.55,
+      "total": 322,
+      "hits": 56,
+      "sumExpected": 162.01739999999998
+    },
+    {
+      "lo": 0.55,
+      "hi": 0.6,
+      "total": 45,
+      "hits": 24,
+      "sumExpected": 25.749900000000004
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.65,
+      "total": 41,
+      "hits": 28,
+      "sumExpected": 25.860500000000002
+    },
+    {
+      "lo": 0.65,
+      "hi": 0.7,
+      "total": 34,
+      "hits": 30,
+      "sumExpected": 22.838300000000004
+    },
+    {
+      "lo": 0.7,
+      "hi": 0.75,
+      "total": 6,
+      "hits": 3,
+      "sumExpected": 4.2378
+    },
+    {
+      "lo": 0.75,
+      "hi": 0.8,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.01,
+      "total": 0,
+      "hits": 0,
+      "sumExpected": 0.0
+    }
+  ],
+  "accuracySummary": {
+    "hits": 387,
+    "total": 448
+  },
+  "firstSetAccuracySummary": {
+    "hits": 141,
+    "total": 448
+  },
+  "lastUpdated": "2026-07-13"
+}
