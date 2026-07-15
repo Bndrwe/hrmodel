@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-14",
+  "games": [
+    {
+      "homeRuns": 0,
+      "awayRuns": 4,
+      "homeHits": 3,
+      "awayHits": 7,
+      "firstInningRuns": {
+        "home": 0,
+        "away": 3
+      },
+      "f5Runs": {
+        "home": 0,
+        "away": 3
+      },
+      "f5Complete": true,
+      "gamePk": 823443
+    }
+  ]
+}
