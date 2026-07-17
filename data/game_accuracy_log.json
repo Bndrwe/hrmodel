@@ -1433,6 +1433,78 @@
           }
         }
       ]
+    },
+    {
+      "date": "2026-07-16",
+      "gamesGraded": 1,
+      "moneyline": {
+        "hits": 0,
+        "total": 1
+      },
+      "runLine": {
+        "hits": 1,
+        "total": 1
+      },
+      "total": {
+        "hits": 0,
+        "total": 1
+      },
+      "f5": {
+        "hits": 0,
+        "total": 1
+      },
+      "nrfi": {
+        "hits": 0,
+        "total": 1
+      },
+      "teamHits": {
+        "hits": 1,
+        "total": 2
+      },
+      "detail": [
+        {
+          "gamePk": 823440,
+          "matchup": "NYM @ PHI",
+          "actualScore": "4-1",
+          "moneyline": {
+            "pick": "home",
+            "prob": 0.544,
+            "hit": false
+          },
+          "runLine": {
+            "pick": "away",
+            "line": -1.5,
+            "hit": true
+          },
+          "total": {
+            "pick": "over",
+            "line": 8.5,
+            "hit": false
+          },
+          "f5": {
+            "pick": "home",
+            "hit": false
+          },
+          "nrfi": {
+            "pick": "yrfi",
+            "hit": false
+          },
+          "teamHits": {
+            "home": {
+              "pick": "over",
+              "line": 8.0,
+              "actual": 4,
+              "hit": false
+            },
+            "away": {
+              "pick": "under",
+              "line": 8.5,
+              "actual": 7,
+              "hit": true
+            }
+          }
+        }
+      ]
     }
   ]
 }
