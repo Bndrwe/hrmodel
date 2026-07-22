@@ -10,37 +10,37 @@
     {
       "lo": 0.55,
       "hi": 0.6,
-      "total": 918,
-      "hits": 686,
-      "sumExpected": 533.9190999999967
+      "total": 974,
+      "hits": 726,
+      "sumExpected": 566.7778999999977
     },
     {
       "lo": 0.6,
       "hi": 0.65,
-      "total": 738,
-      "hits": 436,
-      "sumExpected": 457.5808000000002
+      "total": 904,
+      "hits": 532,
+      "sumExpected": 560.3535000000006
     },
     {
       "lo": 0.65,
       "hi": 0.7,
-      "total": 344,
-      "hits": 234,
-      "sumExpected": 231.40090000000004
+      "total": 402,
+      "hits": 270,
+      "sumExpected": 270.56080000000003
     },
     {
       "lo": 0.7,
       "hi": 0.75,
-      "total": 253,
-      "hits": 202,
-      "sumExpected": 184.30599999999998
+      "total": 286,
+      "hits": 223,
+      "sumExpected": 208.53309999999993
     },
     {
       "lo": 0.75,
       "hi": 0.8,
-      "total": 287,
-      "hits": 197,
-      "sumExpected": 220.89920000000004
+      "total": 314,
+      "hits": 216,
+      "sumExpected": 241.48970000000003
     },
     {
       "lo": 0.8,
@@ -68,30 +68,30 @@
     {
       "lo": 0.55,
       "hi": 0.6,
-      "total": 1372,
-      "hits": 899,
-      "sumExpected": 786.2459000000028
+      "total": 1479,
+      "hits": 968,
+      "sumExpected": 849.2916000000046
     },
     {
       "lo": 0.6,
       "hi": 0.65,
-      "total": 437,
-      "hits": 294,
-      "sumExpected": 274.1132000000003
+      "total": 603,
+      "hits": 393,
+      "sumExpected": 376.4874
     },
     {
       "lo": 0.65,
       "hi": 0.7,
-      "total": 164,
-      "hits": 127,
-      "sumExpected": 109.3566
+      "total": 189,
+      "hits": 144,
+      "sumExpected": 126.34060000000002
     },
     {
       "lo": 0.7,
       "hi": 0.75,
-      "total": 304,
-      "hits": 222,
-      "sumExpected": 220.8144
+      "total": 346,
+      "hits": 252,
+      "sumExpected": 250.78780000000003
     },
     {
       "lo": 0.75,
@@ -116,12 +116,12 @@
     }
   ],
   "accuracySummary": {
-    "hits": 2363,
-    "total": 3201
+    "hits": 2575,
+    "total": 3541
   },
   "firstSetAccuracySummary": {
-    "hits": 1838,
-    "total": 3201
+    "hits": 2053,
+    "total": 3541
   },
-  "lastUpdated": "2026-07-21"
+  "lastUpdated": "2026-07-22"
 }

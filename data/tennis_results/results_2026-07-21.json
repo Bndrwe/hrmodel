@@ -1,0 +1,7187 @@
+{
+  "date": "2026-07-21",
+  "results": [
+    {
+      "matchId": "3270041",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270039",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270035",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "5",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273065",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271315",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273483",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270031",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271319",
+      "winner": "player2",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "1",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "65",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269865",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269863",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269873",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269875",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "65",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269869",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272351",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "65",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "1",
+        "64",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272349",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "4",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272347",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270665",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270663",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "67",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "7",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272341",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272343",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270661",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "2",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272339",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273095",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270827",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "5",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "7",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273093",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273091",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270841",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273087",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273089",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "64",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270833",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "66",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273085",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270835",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273183",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "4",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "65",
+        "6",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270997",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "2",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270999",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271011",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273179",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271001",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271009",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273489",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273177",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272697",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "5",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "64",
+        "7",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272699",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272693",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270849",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270853",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272695",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270851",
+      "winner": "player2",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "68",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270855",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272703",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270859",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272701",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270863",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272223",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270591",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "63",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270575",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272225",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272233",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270583",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "63",
+        "6",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272229",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272227",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270581",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "63",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "5",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272515",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272805",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272809",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272799",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272481",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272505",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272507",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272479",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "64",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "65",
+        "7",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272503",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "63",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "65",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272467",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272373",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "62",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272439",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272469",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272379",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272477",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "3",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "6",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272449",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272441",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272443",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273003",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273027",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "64",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273031",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "2",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273029",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273019",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273017",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271329",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273001",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272741",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "65",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "65",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271337",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "5",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "7",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271331",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272743",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272791",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "5",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "7",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272739",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "60",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271325",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272753",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272751",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "63",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272781",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272783",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "6",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272789",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271223",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "64",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "7",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272787",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272785",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273235",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "0",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272775",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "65",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272779",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272777",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272773",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271823",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271825",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272157",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272169",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272171",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272165",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272159",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272163",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272167",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271819",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271829",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "65",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271369",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273073",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273239",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272717",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271363",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "1",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "6",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271815",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273229",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271361",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "6",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271209",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272083",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271813",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271207",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270687",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "6",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272079",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272061",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272709",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272051",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272707",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272045",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272055",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272043",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273897",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273391",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273395",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "3",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272981",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "0",
+        "8",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272993",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "0",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272985",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273231",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272979",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "8",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272983",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272989",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "0",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272987",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273389",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272253",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "8",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "65",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272971",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "6",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272977",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272975",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272973",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272735",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "8",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272249",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "7",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272301",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272299",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272737",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "2",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271419",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272245",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271421",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272289",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272251",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272733",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272731",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273207",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272725",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272729",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273233",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272283",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "12",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "10",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272723",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272257",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "0",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272099",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272287",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272097",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272281",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271423",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "7",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272113",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272093",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272279",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272291",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272727",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272295",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272095",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272111",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "3",
+        "14",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "61",
+        "6",
+        "12",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272285",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "3",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "65",
+        "6",
+        "7",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272265",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "0",
+        "7",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272259",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "5",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272263",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272255",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272275",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "11",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "9",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272297",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272269",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271457",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "1",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272267",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "66",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272273",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271657",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272271",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272109",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272105",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272101",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271963",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271961",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271965",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272247",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271295",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269939",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "69",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269931",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "5",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "7",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272715",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271305",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269925",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269929",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271303",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3269937",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271117",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272215",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271115",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "1",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271105",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272221",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271103",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "2",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271101",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271107",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272219",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271231",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272815",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272819",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271245",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271243",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271233",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272813",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271227",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272821",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271239",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "64",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272817",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "64",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270013",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270005",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270009",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270025",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270011",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270003",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271631",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273481",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272883",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272877",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272879",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272873",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272881",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272869",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "2",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272859",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "65",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "7",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272863",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272865",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "66",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "7",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272861",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272867",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272853",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272855",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272871",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272857",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272195",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "4",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272203",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272199",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272205",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273771",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273769",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273761",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "0",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "4",
+        "61",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273763",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "67",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273765",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273767",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273823",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273821",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273817",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "1",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273819",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273173",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "62",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "1",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273175",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273169",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273171",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273167",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273165",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272003",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272019",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "6",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "1",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272033",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272023",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272009",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273651",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273649",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273647",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273645",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272611",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272613",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272615",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272621",
+      "winner": "player2",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "7",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "65",
+        "6",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273127",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273125",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273119",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273113",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273121",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273117",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273123",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273115",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3274703",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272565",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272585",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272575",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272583",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "4",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272567",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272569",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272645",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272647",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272931",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272649",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272651",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "1",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272937",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272933",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271397",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273243",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273899",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271391",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271389",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271189",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "7",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271191",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271067",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3270771",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271069",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273643",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "0",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "2",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273641",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273639",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273637",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273635",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273631",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273629",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273633",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272117",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "2",
+        "7",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "8",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272305",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "1",
+        "5",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272307",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272825",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272115",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272313",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272309",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272311",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273199",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "3",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "4",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273195",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272995",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "4",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "6",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272721",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272997",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "2",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272965",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "3",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "6",
+        "3",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272969",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271731",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271747",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271737",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271745",
+      "winner": "player2",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "4",
+        "7",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "6",
+        "65",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271727",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271749",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3271733",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272329",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "0",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272123",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272325",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272833",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "7",
+        "10",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "5",
+        "8",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272323",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272125",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272827",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272315",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272829",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272119",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "5",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272321",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "1",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272121",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "4",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272317",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273759",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273757",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "61",
+        "6",
+        "11",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "7",
+        "2",
+        "9",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273071",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "7",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "5",
+        "0",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272333",
+      "winner": "player1",
+      "firstSetWinner": "player2",
+      "player1Scores": [
+        "4",
+        "6",
+        "6",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "6",
+        "3",
+        "2",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272835",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "4",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273069",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3273067",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "1",
+        "3",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272335",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "6",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "2",
+        "2",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "matchId": "3272331",
+      "winner": "player1",
+      "firstSetWinner": "player1",
+      "player1Scores": [
+        "6",
+        "7",
+        "",
+        "",
+        ""
+      ],
+      "player2Scores": [
+        "3",
+        "5",
+        "",
+        "",
+        ""
+      ]
+    }
+  ]
+}
